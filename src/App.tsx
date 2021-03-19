@@ -10,15 +10,16 @@ const App: React.FC = () => {
   return (
     <Router>
       <div>
+        <div className="text-3xl">Outer Wilds Ventures</div>
         <nav>
           <ul>
-            <li>
+            <li className="inline-block bg-paper p-2 m-2 rounded-md">
               <Link to="/">List</Link>
             </li>
-            <li>
+            <li className="inline-block bg-paper p-2 m-2 rounded-md">
               <Link to="/grid">Grid</Link>
             </li>
-            {/* <li>
+            {/* <li className="inline-block bg-paper p-2 m-2 rounded-md">
               <Link to="/map">Map</Link>
             </li> */}
           </ul>

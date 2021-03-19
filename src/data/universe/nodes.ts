@@ -126,7 +126,7 @@ const nodes: MapNode[] = [
   {
     id: "chert's-camp",
     name: 'Chert’s Camp',
-    image: "CT_CHERTS_CAMP.png",
+    image: 'CT_CHERTS_CAMP.png',
     logs: [
       'Chert has set up their astronomy gear on the north pole of Ember Twin.',
       'Cher has spotted an unusually high number of supernovae recently.',
@@ -244,7 +244,7 @@ const nodes: MapNode[] = [
   {
     id: "esker's-camp",
     name: 'Esker’s Camp',
-    image: "TM_ESKER.png",
+    image: 'TM_ESKER.png',
     logs: [
       'Esker is growing a crop of trees at their camp. They seemed to be doing ok, but they’ve probably been alone on the moon for too long.',
     ],
@@ -275,7 +275,7 @@ const nodes: MapNode[] = [
   {
     id: "feldspar's-camp",
     name: 'Feldspar’s Camp',
-    image: "DB_FELDSPAR.png",
+    image: 'DB_FELDSPAR.png',
     logs: [
       'Feldspar is alive! They crashed their ship and is now camping inside a huge anglerfish skeleton.',
       'Feldspar doesn’t think my scout tracker is wrong when it says my scout is in two places at once. They have a theory that space doesn’t work the same inside Dark Bramble.',
@@ -327,7 +327,7 @@ const nodes: MapNode[] = [
   {
     id: "gabbro's-island",
     name: 'Gabbro’s Island',
-    image: "GD_GABBRO_ISLAND.png",
+    image: 'GD_GABBRO_ISLAND.png',
     logs: [
       'Gabbro is lounging in a hammock near the island’s shore.',
       'Gabbro found a Nomai statue on another island. The staute’s eyes started glowing and Gabbro saw their memories flash before their eyes.',
@@ -343,7 +343,7 @@ const nodes: MapNode[] = [
     },
   },
   {
-    id: 'gravity-cannon',
+    id: 'gravity-cannon-ct',
     name: 'Gravity Cannon',
     image: 'CT_GRAVITY_CANNON.png',
     logs: [
@@ -359,7 +359,7 @@ const nodes: MapNode[] = [
     },
   },
   {
-    id: 'gravity-cannon',
+    id: 'gravity-cannon-bh',
     name: 'Gravity Cannon',
     image: 'BH_GRAVITY_CANNON.png',
     logs: [
@@ -720,7 +720,7 @@ const nodes: MapNode[] = [
   {
     id: "riebeck's-camp",
     name: 'Riebeck’s Camp',
-    image: "BH_RIEBECK.png",
+    image: 'BH_RIEBECK.png',
     logs: [
       'Riebeck has set up camp at the bottom of the Crossroads. Their excitement at being surrounded by so much Nomai history is matched only by their terror of the black hole.',
       'Riebeck is Timber Hearth’s only archaeologist. They overcame their fear of space to explore Brittle Hollow’s treasure trove of Nomai culture.',
@@ -774,7 +774,7 @@ const nodes: MapNode[] = [
   {
     id: "solanum's-shuttle",
     name: 'Solanum’s Shuttle',
-    image: "QM_SHUTTLE_ALT.png",
+    image: 'QM_SHUTTLE_ALT.png',
     logs: [
       'A Nomai named Solanum landed her shuttle at the Quanum Moon’s south pole and prepared to make the rest of the journey on foot.',
       'Visitors to the Quanum Moon always arrive at the south pole (for reasons unknown to the Nomai).',
