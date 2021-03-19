@@ -4,7 +4,7 @@ const nodes: MapNode[] = [
   {
     id: 'alignment-angle-diagram',
     name: 'Alignment Angle Diagram',
-    image: 'alignment-angle-diagram.png',
+    image: 'BH_WARP_ALIGNMENT_MAP.png',
     logs: [
       'A diagram depicting the alignment angle between a warp tower and its corresponding astral body.',
       'Warp tower alignment angles are not exact. They only need to be within five degress of the astral body’s center.',
