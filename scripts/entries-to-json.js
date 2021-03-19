@@ -35,6 +35,7 @@ const scrub = (input) => {
 };
 
 const PlanetColour = '%%PlanetColour.GREY%%';
+const MapNodeSize = '%%MapNodeSize.MEDIUM%%';
 
 const nodes = scrub(raw)
   .split('\n\n')
@@ -50,6 +51,7 @@ const nodes = scrub(raw)
       image: `${slug}.png`,
       logs,
       colour: PlanetColour,
+      size: MapNodeSize,
       connections: [],
       location: {
         x: 0,

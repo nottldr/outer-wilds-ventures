@@ -9,6 +9,12 @@ export enum PlanetColour {
   RED,
 }
 
+export enum MapNodeSize {
+  SMALL,
+  MEDIUM,
+  LARGE,
+}
+
 type Coordinate = {
   x: number;
   y: number;
@@ -19,6 +25,7 @@ export type MapNode = {
   name: string;
   image: string;
   colour: PlanetColour;
+  size: MapNodeSize;
   logs: Log[];
   connections: NodeID[];
   location: Coordinate;

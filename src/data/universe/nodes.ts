@@ -1,4 +1,4 @@
-import { MapNode, PlanetColour } from './types';
+import { MapNode, MapNodeSize, PlanetColour } from './types';
 
 const nodes: MapNode[] = [
   {
@@ -12,6 +12,7 @@ const nodes: MapNode[] = [
       'Anyone stepping onto the warp platform during the active window will be immediately warped.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -28,6 +29,7 @@ const nodes: MapNode[] = [
       'The adult Nomai were delighted to see the children incorporate their research into the game’s rules.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -46,6 +48,7 @@ const nodes: MapNode[] = [
       'There is an advanced warp core inside the protective casing at the center of the planet. Removing the core will disable the Ash Twin Project.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -61,6 +64,7 @@ const nodes: MapNode[] = [
       'The White Hole Station was used as a model for these towers, which were buolt for the Ash Twin Project.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -78,6 +82,7 @@ const nodes: MapNode[] = [
       'The towers allowed the Nomai to quickly travel between Ash Twin and all other locations crucial to the Ash Twin Project.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -96,6 +101,7 @@ const nodes: MapNode[] = [
       'A Nomai named Poke successfully forged an advanced warp core for the Ash Twin Project.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -110,6 +116,7 @@ const nodes: MapNode[] = [
       'An island of thorny vines and what appears to be a frozen jellyfish. It looks like Feldspar camped here before heading off to Dark Bramble.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -128,6 +135,7 @@ const nodes: MapNode[] = [
       'Chert has become catatonic in response to our sun’s imminent death.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -144,6 +152,7 @@ const nodes: MapNode[] = [
       'According to a Nomai computer, a long-range probe was recently launched from the Orbital Probe Cannon.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -159,6 +168,7 @@ const nodes: MapNode[] = [
       'The Probe was successfully launched, but the cannon’s structural integrity was compromised in the process. Damage is deteced in multiple modules.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -175,6 +185,7 @@ const nodes: MapNode[] = [
       'I launched my Little Scout into the seed. Somehow the seed is much bigger on the inside.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -190,6 +201,7 @@ const nodes: MapNode[] = [
       'All three escape pods were launched from something called the Vessel, which was badly damaged.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -205,6 +217,7 @@ const nodes: MapNode[] = [
       'All three escape pods were launched from something called the Vessel, which was badly damaged.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -221,6 +234,7 @@ const nodes: MapNode[] = [
       'The survivors from Escape Pod 3 detected two distinct beacons from the Vessel, as if it was in two locations at once.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -235,6 +249,7 @@ const nodes: MapNode[] = [
       'Esker is growing a crop of trees at their camp. They seemed to be doing ok, but they’ve probably been alone on the moon for too long.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -250,6 +265,7 @@ const nodes: MapNode[] = [
       'The Nomai were disappointed by their failure to detect a signal from something called the Eye of the universe.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -266,6 +282,7 @@ const nodes: MapNode[] = [
       'Feldspar doesn’t sound overly eager to return to civilization. They’ve been enjoying the (relative) peace and quiet.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -282,6 +299,7 @@ const nodes: MapNode[] = [
       'After tasting the inside of the jellyfish, Feldspar concluded that these jellyfish are only useful for insulation from electricity.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -299,6 +317,7 @@ const nodes: MapNode[] = [
       'Clary, the Nomai who stayed behind, lost contact with the other two after they descended below the Interloper’s surface.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -316,6 +335,7 @@ const nodes: MapNode[] = [
       'Gabbro and I seem to be the only ones aware that we’re in a time loop.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -331,6 +351,7 @@ const nodes: MapNode[] = [
       'I recalled a Nomai shuttle from the Quantum Moon.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -346,6 +367,7 @@ const nodes: MapNode[] = [
       'I recalled a Nomai shuttle from the Interloper.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -363,6 +385,7 @@ const nodes: MapNode[] = [
       'The Nomai traveled to this solar system in pursuit of a signal from something older than the universe itself. They named the source of this signal the “Eye of the universe.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -379,6 +402,7 @@ const nodes: MapNode[] = [
       'The Nomai wanted to know if a 22-minute negative time interval was possible. They concluded it would require new technology to produce the necessary energy as well as an advanced warp core to handle those energies. Ash Twin was proposed as a location for the project.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -395,6 +419,7 @@ const nodes: MapNode[] = [
       'Coleus and Melorae returned to examine the rock. They theorized that when a conscious being is in contact with a quantum object and ceases to observe his or her surroundings, the being can become entangled with that quantum object, and they both move together.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -411,6 +436,7 @@ const nodes: MapNode[] = [
       'A Nomai named Privet countered that they wouldn’t be capable if receiving the probe’s data if the Probe Tracking Module was destroyed.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -425,6 +451,7 @@ const nodes: MapNode[] = [
       'A lookout platform with a spectacular view of the solar system. Esker uses their signalscope here to keep tabs on the other travelers.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -437,6 +464,7 @@ const nodes: MapNode[] = [
     image: 'mural-(panel-1).png',
     logs: ['A mural of a Nomai vessel ecountering a signal.'],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -449,6 +477,7 @@ const nodes: MapNode[] = [
     image: 'mural-(panel-2).png',
     logs: ['A mural of Dark Bramble ensnaring the Nomai vessel.'],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -461,6 +490,7 @@ const nodes: MapNode[] = [
     image: 'mural-(panel-3).png',
     logs: ['A mural of three escape pods evacuating the Nomai vessel.'],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -478,6 +508,7 @@ const nodes: MapNode[] = [
       'If I launch my scout into the seed, I can take photos of an enormous derelict Nomai ship.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -494,6 +525,7 @@ const nodes: MapNode[] = [
       'The Nomai discovered a species of four-eyed, semi-aquatic lifeforms in the waterways near the mine.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -509,6 +541,7 @@ const nodes: MapNode[] = [
       'The Nomai were able to warp here from the White Hole Station. This is where they first recreated warp technology.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -524,6 +557,7 @@ const nodes: MapNode[] = [
       'I passed through the electric barrier and reached the coral forest at the planet’s core.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -541,6 +575,7 @@ const nodes: MapNode[] = [
       'The Nomai abandoned this settlement over growing concerns about its stability.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -557,6 +592,7 @@ const nodes: MapNode[] = [
       'The Nomai pushed the Orbital Probe Cannon above its maximum power setting to create the greatest chance of finding the Eye of the universe.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -574,6 +610,7 @@ const nodes: MapNode[] = [
       'I found Nomai coordinated marking the location of the Eye of the universe.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -589,6 +626,7 @@ const nodes: MapNode[] = [
       'I found a strange rock shard that moves when I’m not watching. It emits a signal on the Quantum Fluctuations frequency.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -604,6 +642,7 @@ const nodes: MapNode[] = [
       'I found a poem written on one of the trees in the grove.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -619,6 +658,7 @@ const nodes: MapNode[] = [
       'I found a dead Nomai in a space suit near the south pole.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -635,6 +675,7 @@ const nodes: MapNode[] = [
       'The Quantum Moon travels to a total of five locations.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -651,6 +692,7 @@ const nodes: MapNode[] = [
       'This shard emits the same signal as the Quantum Moon.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -668,6 +710,7 @@ const nodes: MapNode[] = [
       '’Recall the rule of the sixth location’ is inscribed next to a mural of a tower hanging above a black hole.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -683,6 +726,7 @@ const nodes: MapNode[] = [
       'Riebeck is Timber Hearth’s only archaeologist. They overcame their fear of space to explore Brittle Hollow’s treasure trove of Nomai culture.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -700,6 +744,7 @@ const nodes: MapNode[] = [
       'One of the Nomai stayed behind to examine the alien matter while the other rushed back to the surface to warn the rest of the Nomai.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -719,6 +764,7 @@ const nodes: MapNode[] = [
       'Solanum has a hypothesis that she may not be entirely alive.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -734,6 +780,7 @@ const nodes: MapNode[] = [
       'Visitors to the Quanum Moon always arrive at the south pole (for reasons unknown to the Nomai).',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -751,6 +798,7 @@ const nodes: MapNode[] = [
       'There were concerns that the probability of launching a probe in the correct direction would be absurdly small.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -766,6 +814,7 @@ const nodes: MapNode[] = [
       'I found a Nomai statue lying on the beach. It looks just like the one in our observatory.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -782,6 +831,7 @@ const nodes: MapNode[] = [
       'The statues were designed to only activate once the Ash Twin Project succeeded, or in the event that it failed.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -798,6 +848,7 @@ const nodes: MapNode[] = [
       'The Nomai traveled to this solar system in pursuit of a signal from something older than the universe itself. They named the source of this signal the “Eye of the universe.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -815,6 +866,7 @@ const nodes: MapNode[] = [
       'According to a Nomai computer, our sun has reached the end if its natural life cycle.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -830,6 +882,7 @@ const nodes: MapNode[] = [
       'There also exists a rarer type of cyclone that spins the opposite direction and pushes objects beneath the waters and below the current.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -846,6 +899,7 @@ const nodes: MapNode[] = [
       'After the two groups of Nomai stranded on Ember Twin and Brittle Hollow were reunited, it became their united goal to find and visit the Quantum Moon.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -863,6 +917,7 @@ const nodes: MapNode[] = [
       '’Remember, the other quantum shards have other lessons to teach.’',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -882,6 +937,7 @@ const nodes: MapNode[] = [
       'I found a recording of the original signal the Nomai encountered from the Eye of the universe. The Nomai were worried the signal might disappear, so they warped before they could tell another clan where theye were going.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -898,6 +954,7 @@ const nodes: MapNode[] = [
       "('Hal says the statue has never opened its eyes before (despite Hornfels’ best efforts).”)*",
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -914,6 +971,7 @@ const nodes: MapNode[] = [
       'Even the smallest crack or opening in the protective shell would destroy everything.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -931,6 +989,7 @@ const nodes: MapNode[] = [
       'This negative time interval between an object arriving and departing was incredibly miniscule (roughly one hundred-thousandth of a second). The Nomai were skeptical if their equipment could even measure time to such a small degree.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
@@ -946,6 +1005,7 @@ const nodes: MapNode[] = [
       'I successfully repaired another ‘satellite’ for Gossan.',
     ],
     colour: PlanetColour.GREY,
+    size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,
