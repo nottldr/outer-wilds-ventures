@@ -13,12 +13,12 @@ const Location: React.FC<Props> = (props) => {
   return (
     <div>
       <h1
-        className={`text-lg font-bold p-4 my-2 text-center ${theme.bg} ${theme.bghover} ${theme.text}`}
+        className={`text-lg font-bold p-4 my-2 text-center ${theme.bg} ${theme.bghover} ${theme.text} font-serif`}
       >
         {name}
       </h1>
       <Card {...props} />
-      <ul className="list-disc list-inside mx-4">
+      <ul className="list-disc list-inside mx-4 font-space-mono">
         {logs.map((log, idx) => (
           <li key={idx}>{log}</li>
         ))}

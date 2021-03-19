@@ -32,6 +32,11 @@ module.exports = {
       'card-grey-hover': '#ECEDE7',
       'card-grey-text': '#1B242B',
     },
+    fontFamily: {
+      'flow-block': ['Flow Block'],
+      serif: ['ITC Serif Gothic Std', 'serif'],
+      'space-mono': ['Space Mono', 'monospace'],
+    },
   },
   variants: {
     extend: {},

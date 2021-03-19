@@ -36,7 +36,7 @@ const Card: React.FC<Props> = ({ name, logs, colour, size }) => {
 
   return (
     <div
-      className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer`}
+      className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer font-space-mono`}
       style={{
         width: dimensions.width,
         padding: 2,
