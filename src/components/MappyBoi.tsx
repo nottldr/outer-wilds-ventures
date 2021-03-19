@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapNode } from '../data/universe/types';
+import dimensionsFrom from '../util/dimensions-from';
 import Card from './Card';
 import Log from './Log';
 
@@ -18,6 +19,15 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
   const sorted = React.useMemo(
     () =>
       nodes.sort((a, b) => {
+        const da = dimensionsFrom(a.size);
+        const db = dimensionsFrom(b.size);
+
+        if (da.width < db.width) {
+          return 1;
+        } else if (da.width > db.width) {
+          return -1;
+        }
+
         const ya = a.location.y;
         const yb = b.location.y;
 

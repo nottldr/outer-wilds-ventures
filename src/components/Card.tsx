@@ -1,37 +1,12 @@
 import React from 'react';
-import { MapNode, MapNodeSize } from '../data/universe/types';
+import { MapNode } from '../data/universe/types';
+import dimensionsFrom from '../util/dimensions-from';
 import themeFrom from '../util/theme-from';
 
 export type Props = {
   onSelect?: (node: MapNode) => void;
   node: MapNode;
   isSelected?: boolean;
-};
-
-type Dimensions = {
-  width: number;
-};
-
-const dimensionsFrom = (size: MapNodeSize): Dimensions => {
-  switch (size) {
-    case MapNodeSize.XSMALL:
-      return {
-        width: 80,
-      };
-    case MapNodeSize.SMALL:
-      return {
-        width: 100,
-      };
-    case MapNodeSize.LARGE:
-      return {
-        width: 140,
-      };
-    default:
-    case MapNodeSize.MEDIUM:
-      return {
-        width: 120,
-      };
-  }
 };
 
 const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
@@ -45,12 +20,22 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
       className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer font-space-mono`}
       style={{
         width: dimensions.width,
+        maxWidth: dimensions.width,
+        minWidth: dimensions.width,
         padding: 2,
       }}
       onClick={() => onSelect?.(node)}
     >
-      <h1 className={`text-lg font-bold text-center`}>{name}</h1>
-      <div className="relative">
+      <h1
+        className={`${dimensions.titleFontSize} font-bold text-center leading-tight p-1`}
+      >
+        {name}
+      </h1>
+      <div className="relative w-full aspect-w-1 aspect-h-1">
+        <div
+          className="h-full w-full absolute bg-white bg-cover"
+          style={{ backgroundImage: `url(/img/cards/${node.image})` }}
+        ></div>
         <div
           className="h-full w-full absolute flex items-center justify-center content-center text-white text-6xl shadow-md"
           style={{
@@ -60,11 +45,6 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
         >
           {logs.length}
         </div>
-        <img
-          src="/img/cards/BH_BLACK_HOLE_FORGE.png"
-          alt={`${name}`}
-          className="block"
-        />
       </div>
     </div>
   );

@@ -168,7 +168,7 @@ const nodes: MapNode[] = [
       'The Probe was successfully launched, but the cannon’s structural integrity was compromised in the process. Damage is deteced in multiple modules.',
     ],
     colour: PlanetColour.GREEN,
-    size: MapNodeSize.XSMALL,
+    size: MapNodeSize.SMALL,
     connections: [],
     location: {
       x: 0.6946,
@@ -764,7 +764,7 @@ const nodes: MapNode[] = [
       'Solanum has a hypothesis that she may not be entirely alive.',
     ],
     colour: PlanetColour.PURPLE,
-    size: MapNodeSize.MEDIUM,
+    size: MapNodeSize.SMALL,
     connections: [],
     location: {
       x: 0.1532,
