@@ -5,7 +5,7 @@ import universe from './data/universe';
 const App: React.FC = () => {
   return (
     <div>
-      <div className="text-3xl">Outer Worlds Ventures</div>
+      <div className="text-3xl">Outer Wilds Ventures</div>
       <Universe nodes={universe.nodes} />
     </div>
   );
