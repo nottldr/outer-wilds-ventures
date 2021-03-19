@@ -1,7 +1,7 @@
 import React from 'react';
-import { MapNode as MapNodeType, PlanetColour } from '../data/universe/types';
+import { MapNode, PlanetColour } from '../data/universe/types';
 
-type Props = MapNodeType;
+type Props = MapNode;
 
 type CardTheme = {
   bg: string;
@@ -45,7 +45,7 @@ const themeFrom = (colour: PlanetColour): CardTheme => {
   }
 };
 
-const MapNode: React.FC<Props> = ({ name, logs, colour }) => {
+const Card: React.FC<Props> = ({ name, logs, colour }) => {
   const theme = themeFrom(colour);
 
   return (
@@ -64,4 +64,4 @@ const MapNode: React.FC<Props> = ({ name, logs, colour }) => {
   );
 };
 
-export default MapNode;
+export default Card;
