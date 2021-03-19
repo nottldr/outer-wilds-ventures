@@ -19,7 +19,7 @@ const Grid: React.FC<Props> = ({ nodes }) => {
   );
 
   return (
-    <div>
+    <div className="bg-page-bg">
       {nodes.map((node) => (
         <div
           key={node.id}
@@ -35,8 +35,8 @@ const Grid: React.FC<Props> = ({ nodes }) => {
         </div>
       ))}
       {selected && (
-        <div className="sticky bottom-0 bg-white border-t-2 border-page-bg w-full">
-          <ul className="list-disc list-inside mx-4 font-space-mono">
+        <div className="sticky bottom-4 p-4 bg-log-bg border-2 text-log-text border-lightblue w-full m-4">
+          <ul className="font-space-mono">
             {selected.logs.map((log, idx) => (
               <li key={idx}>{log}</li>
             ))}
