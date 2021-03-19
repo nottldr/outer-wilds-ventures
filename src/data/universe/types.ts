@@ -4,7 +4,7 @@ type NodeID = string;
 export enum PlanetColour {
   PURRLE,
   GREEN,
-  BROWN,
+  ORANGE,
   GREY,
   RED,
 }
