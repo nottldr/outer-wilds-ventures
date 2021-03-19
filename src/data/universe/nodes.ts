@@ -15,8 +15,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.5,
+      y: 0.9,
     },
   },
   {
@@ -32,8 +32,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2465,
+      y: 0.6872,
     },
   },
   {
@@ -51,8 +51,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.LARGE,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.4095,
+      y: 0.5147,
     },
   },
   {
@@ -67,8 +67,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.3126,
+      y: 0.4927,
     },
   },
   {
@@ -85,8 +85,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.3605,
+      y: 0.4228,
     },
   },
   {
@@ -100,12 +100,12 @@ const nodes: MapNode[] = [
       'All of the warp towers were being constructed on Ash Twin, while the six warp receivers were being constructed at different locations.',
       'A Nomai named Poke successfully forged an advanced warp core for the Ash Twin Project.',
     ],
-    colour: PlanetColour.GREY,
+    colour: PlanetColour.ORANGE,
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.3457,
+      y: 0.6039,
     },
   },
   {
@@ -119,12 +119,12 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.88,
+      y: 0.549,
     },
   },
   {
-    id: "chert's-camp",
+    id: 'cherts-camp',
     name: 'Chert’s Camp',
     image: 'CT_CHERTS_CAMP.png',
     logs: [
@@ -134,12 +134,12 @@ const nodes: MapNode[] = [
       'The stars are simply dying from old age. Apparently they’re much older than we realized.',
       'Chert has become catatonic in response to our sun’s imminent death.',
     ],
-    colour: PlanetColour.GREEN,
+    colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1294,
+      y: 0.6069,
     },
   },
   {
@@ -155,8 +155,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.8274,
+      y: 0.4452,
     },
   },
   {
@@ -171,8 +171,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.6946,
+      y: 0.4639,
     },
   },
   {
@@ -188,8 +188,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.9068,
+      y: 0.2303,
     },
   },
   {
@@ -204,8 +204,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2796,
+      y: 0.8174,
     },
   },
   {
@@ -220,8 +220,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1523,
+      y: 0.7228,
     },
   },
   {
@@ -237,12 +237,12 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1816,
+      y: 0.8675,
     },
   },
   {
-    id: "esker's-camp",
+    id: 'eskers-camp',
     name: 'Esker’s Camp',
     image: 'TM_ESKER.png',
     logs: [
@@ -252,8 +252,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.665,
+      y: 0.2102,
     },
   },
   {
@@ -268,12 +268,12 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7245,
+      y: 0.279,
     },
   },
   {
-    id: "feldspar's-camp",
+    id: 'feldspars-camp',
     name: 'Feldspar’s Camp',
     image: 'DB_FELDSPAR.png',
     logs: [
@@ -285,8 +285,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.9068,
+      y: 0.4037,
     },
   },
   {
@@ -302,8 +302,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.9768,
+      y: 0.44,
     },
   },
   {
@@ -320,12 +320,12 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7147,
+      y: 0.7901,
     },
   },
   {
-    id: "gabbro's-island",
+    id: 'gabbros-island',
     name: 'Gabbro’s Island',
     image: 'GD_GABBRO_ISLAND.png',
     logs: [
@@ -338,8 +338,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.5872,
+      y: 0.4232,
     },
   },
   {
@@ -354,8 +354,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7833,
+      y: 0.7456,
     },
   },
   {
@@ -370,8 +370,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1253,
+      y: 0.0524,
     },
   },
   {
@@ -388,8 +388,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.3452,
+      y: 0.7578,
     },
   },
   {
@@ -405,8 +405,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.3758,
+      y: 0.3921,
     },
   },
   {
@@ -422,8 +422,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.0796,
+      y: 0.3559,
     },
   },
   {
@@ -439,8 +439,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.SMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7253,
+      y: 0.4639,
     },
   },
   {
@@ -454,8 +454,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7761,
+      y: 0.1682,
     },
   },
   {
@@ -467,8 +467,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1745,
+      y: 0.7884,
     },
   },
   {
@@ -480,8 +480,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1943,
+      y: 0.7884,
     },
   },
   {
@@ -493,8 +493,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2132,
+      y: 0.7884,
     },
   },
   {
@@ -511,8 +511,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1577,
+      y: 0.9527,
     },
   },
   {
@@ -528,8 +528,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.4802,
+      y: 0.6128,
     },
   },
   {
@@ -544,8 +544,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2828,
+      y: 0.2858,
     },
   },
   {
@@ -560,8 +560,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7285,
+      y: 0.549,
     },
   },
   {
@@ -578,8 +578,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2269,
+      y: 0.757,
     },
   },
   {
@@ -595,8 +595,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.LARGE,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7253,
+      y: 0.408,
     },
   },
   {
@@ -613,8 +613,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.SMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7543,
+      y: 0.4639,
     },
   },
   {
@@ -629,8 +629,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1074,
+      y: 0.2662,
     },
   },
   {
@@ -645,8 +645,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.0279,
+      y: 0.2524,
     },
   },
   {
@@ -661,8 +661,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.LARGE,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1879,
+      y: 0.1561,
     },
   },
   {
@@ -678,8 +678,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1702,
+      y: 0.2824,
     },
   },
   {
@@ -695,8 +695,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.0799,
+      y: 0.1864,
     },
   },
   {
@@ -713,12 +713,12 @@ const nodes: MapNode[] = [
     size: MapNodeSize.SMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1532,
+      y: 0.1518,
     },
   },
   {
-    id: "riebeck's-camp",
+    id: 'riebecks-camp',
     name: 'Riebeck’s Camp',
     image: 'BH_RIEBECK.png',
     logs: [
@@ -729,8 +729,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.7951,
+      y: 0.2491,
     },
   },
   {
@@ -747,8 +747,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.LARGE,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.6284,
+      y: 0.7901,
     },
   },
   {
@@ -767,12 +767,12 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.1532,
+      y: 0.1952,
     },
   },
   {
-    id: "solanum's-shuttle",
+    id: 'solanums-shuttle',
     name: 'Solanum’s Shuttle',
     image: 'QM_SHUTTLE_ALT.png',
     logs: [
@@ -783,8 +783,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.SMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2203,
+      y: 0.1583,
     },
   },
   {
@@ -801,8 +801,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.8395,
+      y: 0.3332,
     },
   },
   {
@@ -817,8 +817,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.4932,
+      y: 0.4232,
     },
   },
   {
@@ -834,8 +834,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.4744,
+      y: 0.4569,
     },
   },
   {
@@ -851,8 +851,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2136,
+      y: 0.5886,
     },
   },
   {
@@ -869,8 +869,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2487,
+      y: 0.4927,
     },
   },
   {
@@ -885,8 +885,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.SMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.8554,
+      y: 0.3611,
     },
   },
   {
@@ -902,8 +902,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.0965,
+      y: 0.1609,
     },
   },
   {
@@ -920,8 +920,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.0278,
+      y: 0.136,
     },
   },
   {
@@ -940,8 +940,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.LARGE,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2787,
+      y: 0.935,
     },
   },
   {
@@ -957,8 +957,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.6072,
+      y: 0.3111,
     },
   },
   {
@@ -974,8 +974,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.5552,
+      y: 0.6128,
     },
   },
   {
@@ -992,8 +992,8 @@ const nodes: MapNode[] = [
     size: MapNodeSize.MEDIUM,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.2825,
+      y: 0.3921,
     },
   },
   {
@@ -1008,8 +1008,21 @@ const nodes: MapNode[] = [
     size: MapNodeSize.XSMALL,
     connections: [],
     location: {
-      x: 0,
-      y: 0,
+      x: 0.6232,
+      y: 0.3389,
+    },
+  },
+  {
+    id: 'ash-twin-alignment-map',
+    name: 'Ash Twin Alignment Map',
+    image: 'TH_ZERO_G_CAVE.png',
+    logs: [],
+    colour: PlanetColour.ORANGE,
+    size: MapNodeSize.SMALL,
+    connections: [],
+    location: {
+      x: 0.3643,
+      y: 0.6277,
     },
   },
 ];

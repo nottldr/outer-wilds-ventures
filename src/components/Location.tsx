@@ -13,7 +13,7 @@ const Location: React.FC<Props> = (props) => {
   return (
     <div>
       <h1
-        className={`text-lg font-bold p-4 my-2 text-center ${theme.bg} ${theme.bghover} ${theme.text} font-serif`}
+        className={`text-lg font-bold p-4 my-2 text-center ${theme.bg} ${theme.text} font-serif`}
       >
         {name}
       </h1>

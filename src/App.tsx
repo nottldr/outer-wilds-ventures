@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Grid from './components/Grid';
 import List from './components/List';
+import MappyBoi from './components/MappyBoi';
 import universe from './data/universe';
 
 const App: React.FC = () => {
@@ -25,15 +26,17 @@ const App: React.FC = () => {
               Grid
             </NavLink>
           </div>
-          {/* <div className="inline-block bg-paper p-2 m-2 rounded-md">
-              <NavLink to="/map">Map</NavLink>
-            </div> */}
+          <div className="inline-block bg-paper p-2 m-2 rounded-md">
+            <NavLink to="/map" activeClassName="font-bold" exact>
+              Map
+            </NavLink>
+          </div>
         </nav>
 
         <Switch>
-          {/* <Route path="/map">
-            <Map nodes={universe.nodes} />
-          </Route> */}
+          <Route path="/map">
+            <MappyBoi nodes={universe.nodes} />
+          </Route>
           <Route path="/grid">
             <Grid nodes={universe.nodes} />
           </Route>

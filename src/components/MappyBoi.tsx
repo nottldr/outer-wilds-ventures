@@ -1,11 +1,18 @@
 import React from 'react';
-import { MapNode, Universe as UniverseType } from '../data/universe/types';
+import { MapNode } from '../data/universe/types';
 import Card from './Card';
 import Log from './Log';
 
-type Props = UniverseType;
+type Props = {
+  nodes: MapNode[];
+};
 
-const Grid: React.FC<Props> = ({ nodes }) => {
+const size = {
+  width: 3000,
+  height: 3000,
+};
+
+const MappyBoi: React.FC<Props> = ({ nodes }) => {
   const [selected, setSelected] = React.useState<MapNode | undefined>();
 
   const onSelect = React.useCallback(
@@ -20,13 +27,20 @@ const Grid: React.FC<Props> = ({ nodes }) => {
   );
 
   return (
-    <div className="bg-page-bg">
+    <div
+      className="bg-page-bg relative"
+      style={{ width: size.width, height: size.height }}
+    >
       {nodes.map((node) => (
         <div
           key={node.id}
-          className={`inline-block m-2 align-top ${
+          className={`absolute block m-2 align-top ${
             node.id === selected?.id ? 'shadow-md' : ''
           }`}
+          style={{
+            left: node.location.x * size.width,
+            top: node.location.y * size.height,
+          }}
         >
           <Card
             node={node}
@@ -44,4 +58,4 @@ const Grid: React.FC<Props> = ({ nodes }) => {
   );
 };
 
-export default Grid;
+export default MappyBoi;
