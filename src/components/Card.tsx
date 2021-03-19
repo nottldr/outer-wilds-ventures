@@ -29,7 +29,7 @@ const themeFrom = (colour: PlanetColour): CardTheme => {
         bghover: `hover:bg-card-red-hover`,
         text: `text-card-red-text`,
       };
-    case PlanetColour.PURRLE:
+    case PlanetColour.PURPLE:
       return {
         bg: `bg-card-purple`,
         bghover: `hover:bg-card-purple-hover`,

@@ -2,7 +2,7 @@ type Log = string;
 type NodeID = string;
 
 export enum PlanetColour {
-  PURRLE,
+  PURPLE,
   GREEN,
   ORANGE,
   GREY,
@@ -10,6 +10,7 @@ export enum PlanetColour {
 }
 
 export enum MapNodeSize {
+  XSMALL,
   SMALL,
   MEDIUM,
   LARGE,
