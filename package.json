@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.1.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "slugify": "^1.4.7"
   }
 }

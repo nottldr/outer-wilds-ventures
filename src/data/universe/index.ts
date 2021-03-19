@@ -1,32 +1,10 @@
-type Log = string;
-type NodeID = string;
+import nodesJson from './nodes';
+import { MapNode, Universe } from './types';
 
-enum PlanetColour {
-  Purple,
-  Green,
-  Brown,
-  Grey,
-  Red,
-}
+const nodes: MapNode[] = nodesJson;
 
-type Coordinate = {
-  x: number;
-  y: number;
-};
+const universe: Universe = { nodes };
 
-type Node = {
-  id: NodeID;
-  name: string;
-  colour: PlanetColour;
-  logs: Log[];
-  connections: NodeID[];
-  location: Coordinate;
-};
-
-type Universe = {
-  planets: Node[];
-};
-
-const universe: Universe = {};
+// TODO: should we do some validation here, to make sure image paths etc exist? unit test? hmm
 
 export default universe;
