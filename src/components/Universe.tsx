@@ -1,6 +1,6 @@
 import React from 'react';
 import { Universe as UniverseType } from '../data/universe/types';
-import MapNode from './Card';
+import Location from './Location';
 
 type Props = UniverseType;
 
@@ -8,7 +8,7 @@ const Universe: React.FC<Props> = ({ nodes }) => {
   return (
     <div>
       {nodes.map((node) => (
-        <MapNode {...node} />
+        <Location {...node} />
       ))}
     </div>
   );

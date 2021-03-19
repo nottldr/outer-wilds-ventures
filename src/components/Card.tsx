@@ -1,65 +1,64 @@
 import React from 'react';
-import { MapNode, PlanetColour } from '../data/universe/types';
+import { MapNode, MapNodeSize } from '../data/universe/types';
+import themeFrom from '../util/theme-from';
 
 export type Props = MapNode;
 
-type CardTheme = {
-  bg: string;
-  bghover: string;
-  text: string;
+type Dimensions = {
+  width: number;
 };
 
-const themeFrom = (colour: PlanetColour): CardTheme => {
-  switch (colour) {
-    case PlanetColour.GREEN:
+const dimensionsFrom = (size: MapNodeSize): Dimensions => {
+  switch (size) {
+    case MapNodeSize.XSMALL:
       return {
-        bg: `bg-card-green`,
-        bghover: `hover:bg-card-green-hover`,
-        text: `text-card-green-text`,
+        width: 80,
       };
-    case PlanetColour.ORANGE:
+    case MapNodeSize.SMALL:
       return {
-        bg: `bg-card-orange`,
-        bghover: `hover:bg-card-orange-hover`,
-        text: `text-card-orange-text`,
+        width: 100,
       };
-    case PlanetColour.RED:
+    case MapNodeSize.LARGE:
       return {
-        bg: `bg-card-red`,
-        bghover: `hover:bg-card-red-hover`,
-        text: `text-card-red-text`,
-      };
-    case PlanetColour.PURPLE:
-      return {
-        bg: `bg-card-purple`,
-        bghover: `hover:bg-card-purple-hover`,
-        text: `text-card-purple-text`,
+        width: 140,
       };
     default:
-    case PlanetColour.GREY:
+    case MapNodeSize.MEDIUM:
       return {
-        bg: `bg-card-grey`,
-        bghover: `hover:bg-card-grey-hover`,
-        text: `text-card-grey-text`,
+        width: 120,
       };
   }
 };
 
-const Card: React.FC<Props> = ({ name, logs, colour }) => {
+const Card: React.FC<Props> = ({ name, logs, colour, size }) => {
+  const dimensions = dimensionsFrom(size);
   const theme = themeFrom(colour);
 
   return (
-    <div>
-      <h1
-        className={`text-lg font-bold p-4 my-2 text-center ${theme.bg} ${theme.bghover} ${theme.text}`}
-      >
-        {name}
-      </h1>
-      <ul className="list-disc list-inside mx-4">
-        {logs.map((log, idx) => (
-          <li key={idx}>{log}</li>
-        ))}
-      </ul>
+    <div
+      className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer`}
+      style={{
+        width: dimensions.width,
+        padding: 2,
+      }}
+    >
+      <h1 className={`text-lg font-bold text-center`}>{name}</h1>
+      <div className="relative">
+        <div
+          className="h-full w-full absolute flex items-center justify-center content-center text-white text-6xl shadow-md"
+          style={{
+            textShadow:
+              '0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black',
+          }}
+        >
+          {logs.length}
+        </div>
+        <img
+          src="/img/cards/BH_BLACK_HOLE_FORGE.png"
+          alt={`${name}`}
+          className="block"
+        />
+      </div>
     </div>
   );
 };
