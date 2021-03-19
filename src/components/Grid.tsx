@@ -27,7 +27,11 @@ const Grid: React.FC<Props> = ({ nodes }) => {
             node.id === selected?.id ? 'shadow-md' : ''
           }`}
         >
-          <Card node={node} onSelect={onSelect} />
+          <Card
+            node={node}
+            onSelect={onSelect}
+            isSelected={node.id === selected?.id}
+          />
         </div>
       ))}
       {selected && (

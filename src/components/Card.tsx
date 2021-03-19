@@ -5,6 +5,7 @@ import themeFrom from '../util/theme-from';
 export type Props = {
   onSelect?: (node: MapNode) => void;
   node: MapNode;
+  isSelected?: boolean;
 };
 
 type Dimensions = {
@@ -33,11 +34,11 @@ const dimensionsFrom = (size: MapNodeSize): Dimensions => {
   }
 };
 
-const Card: React.FC<Props> = ({ onSelect, node }) => {
+const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
   const { name, colour, size, logs } = node;
 
   const dimensions = dimensionsFrom(size);
-  const theme = themeFrom(colour);
+  const theme = themeFrom(colour, isSelected);
 
   return (
     <div
