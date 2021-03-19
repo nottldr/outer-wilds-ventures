@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapNode, PlanetColour } from '../data/universe/types';
 
-type Props = MapNode;
+export type Props = MapNode;
 
 type CardTheme = {
   bg: string;
