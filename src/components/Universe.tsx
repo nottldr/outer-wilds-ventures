@@ -7,8 +7,8 @@ type Props = UniverseType;
 const Universe: React.FC<Props> = ({ nodes }) => {
   return (
     <div>
-      {nodes.map((node) => (
-        <Location {...node} />
+      {nodes.map((node, idx) => (
+        <Location key={idx} {...node} />
       ))}
     </div>
   );
