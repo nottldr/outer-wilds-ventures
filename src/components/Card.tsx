@@ -2,7 +2,10 @@ import React from 'react';
 import { MapNode, MapNodeSize } from '../data/universe/types';
 import themeFrom from '../util/theme-from';
 
-export type Props = MapNode;
+export type Props = {
+  onSelect?: (node: MapNode) => void;
+  node: MapNode;
+};
 
 type Dimensions = {
   width: number;
@@ -30,7 +33,9 @@ const dimensionsFrom = (size: MapNodeSize): Dimensions => {
   }
 };
 
-const Card: React.FC<Props> = ({ name, logs, colour, size }) => {
+const Card: React.FC<Props> = ({ onSelect, node }) => {
+  const { name, colour, size, logs } = node;
+
   const dimensions = dimensionsFrom(size);
   const theme = themeFrom(colour);
 
@@ -41,6 +46,7 @@ const Card: React.FC<Props> = ({ name, logs, colour, size }) => {
         width: dimensions.width,
         padding: 2,
       }}
+      onClick={() => onSelect?.(node)}
     >
       <h1 className={`text-lg font-bold text-center`}>{name}</h1>
       <div className="relative">

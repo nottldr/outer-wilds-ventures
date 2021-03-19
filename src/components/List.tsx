@@ -4,7 +4,7 @@ import Location from './Location';
 
 type Props = UniverseType;
 
-const Universe: React.FC<Props> = ({ nodes }) => {
+const List: React.FC<Props> = ({ nodes }) => {
   return (
     <div>
       {nodes.map((node, idx) => (
@@ -14,4 +14,4 @@ const Universe: React.FC<Props> = ({ nodes }) => {
   );
 };
 
-export default Universe;
+export default List;
