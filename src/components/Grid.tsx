@@ -35,12 +35,16 @@ const Grid: React.FC<Props> = ({ nodes }) => {
         </div>
       ))}
       {selected && (
-        <div className="sticky bottom-4 p-4 bg-log-bg border-2 text-log-text border-lightblue w-full m-4">
-          <ul className="font-space-mono">
-            {selected.logs.map((log, idx) => (
-              <li key={idx}>{log}</li>
-            ))}
-          </ul>
+        <div className="sticky bottom-0 w-full">
+          <div className="bg-log-bg border-2 text-log-text border-lightblue box-border mx-4 bottom-4 relative">
+            <ul className="font-space-mono list-outside list-disc ml-6">
+              {selected.logs.map((log, idx) => (
+                <li className="my-1" key={idx}>
+                  {log}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </div>

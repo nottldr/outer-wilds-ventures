@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import 'fonts.css';
+
+body {
+  font-variant-ligatures: none;
+}
