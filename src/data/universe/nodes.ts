@@ -382,7 +382,7 @@ const nodes: MapNode[] = [
       'A Nomai city suspended beneath Brittle Hollow’s northern glacier. The city is divided vertically into four districts.',
       'I found a switch in the Meltwater District that raises and lowers the Black Hole Forge.',
       'The Nomai debated how to obtain the powerful, highly advanced warp core required for the Ash Twin Project.',
-      'The Nomai traveled to this solar system in pursuit of a signal from something older than the universe itself. They named the source of this signal the “Eye of the universe.',
+      'The Nomai traveled to this solar system in pursuit of a signal from something older than the universe itself. They named the source of this signal the "Eye of the Universe“.',
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
@@ -571,7 +571,7 @@ const nodes: MapNode[] = [
     logs: [
       'The Nomai constructed a temporary settlement beneath their crashed escape pod.',
       'The Nomai worked together to recall an eye-shaped signal they encountered while aboard the Vessel.',
-      'The signal was somehow older than the universe itself. The Nomai decided to call it the “Eye of the universe.',
+      'The signal was somehow older than the universe itself. The Nomai decided to call it the "Eye of the Universe“.',
       'The Nomai abandoned this settlement over growing concerns about its stability.',
     ],
     colour: PlanetColour.RED,
@@ -845,7 +845,7 @@ const nodes: MapNode[] = [
     logs: [
       'A Nomai city built into the walls of a huge underground cavern. The city is divided vertically into four districts.',
       'The Nomai debated building a Sun Station in order to power the Ash Twin Project. Several Nomai opposed its construction, arguing that failure could result in the destruction of the solar system.',
-      'The Nomai traveled to this solar system in pursuit of a signal from something older than the universe itself. They named the source of this signal the “Eye of the universe.',
+      'The Nomai traveled to this solar system in pursuit of a signal from something older than the universe itself. They named the source of this signal the "Eye of the Universe“.',
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
