@@ -951,7 +951,7 @@ const nodes: MapNode[] = [
     logs: [
       'The one and only Hearthian village, as well as the main source of explosions on this planet.',
       'The Nomai statue in the observatory opened its eyes and looked at me! I saw strange glowing lights and my own memories flashed before my eyes.',
-      "('Hal says the statue has never opened its eyes before (despite Hornfels’ best efforts).”)*",
+      'Hal says the statue has never opened its eyes before (despite Hornfels’ best efforts).',
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
