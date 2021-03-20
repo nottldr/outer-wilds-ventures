@@ -18,7 +18,7 @@ const App: React.FC = () => {
         <nav>
           <div className="inline-block bg-paper p-2 m-2 rounded-md">
             <NavLink to="/" activeClassName="font-bold" exact>
-              List
+              Map
             </NavLink>
           </div>
           <div className="inline-block bg-paper p-2 m-2 rounded-md">
@@ -27,21 +27,21 @@ const App: React.FC = () => {
             </NavLink>
           </div>
           <div className="inline-block bg-paper p-2 m-2 rounded-md">
-            <NavLink to="/map" activeClassName="font-bold" exact>
-              Map
+            <NavLink to="/list" activeClassName="font-bold" exact>
+              List
             </NavLink>
           </div>
         </nav>
 
         <Switch>
-          <Route path="/map">
-            <MappyBoi nodes={universe.nodes} />
+          <Route path="/list">
+            <List nodes={universe.nodes} />
           </Route>
           <Route path="/grid">
             <Grid nodes={universe.nodes} />
           </Route>
           <Route path="/">
-            <List nodes={universe.nodes} />
+            <MappyBoi nodes={universe.nodes} />
           </Route>
         </Switch>
       </div>
