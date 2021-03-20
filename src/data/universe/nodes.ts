@@ -938,7 +938,7 @@ const nodes: MapNode[] = [
       'I activated a three-sided pillar on the Vessel’s bridge that appears to be some sort of input device.',
       'The Nomai tried to call for help, but the Vessel’s outgoing message system broke during the crash.',
       'The Vessel can still hear incoming messages from other Nomai vessels. The remaining Nomai clans are regrouping in response to the impending death of the universe.',
-      'I found a recording of the original signal the Nomai encountered from the Eye of the universe. The Nomai were worried the signal might disappear, so they warped before they could tell another clan where theye were going.',
+      'I found a recording of the original signal the Nomai encountered from the Eye of the universe. The Nomai were worried the signal might disappear, so they warped before they could tell another clan where they were going.',
     ],
     colour: PlanetColour.RED,
     size: MapNodeSize.LARGE,
