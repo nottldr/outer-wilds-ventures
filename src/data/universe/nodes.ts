@@ -65,7 +65,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.ORANGE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['black-hole-forge', 'sun-station', 'white-hole-station'],
     location: {
       x: 0.3126,
       y: 0.4927,
@@ -102,7 +102,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.ORANGE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['ash-twin-project', 'ash-twin-tower-designs'],
     location: {
       x: 0.3457,
       y: 0.6039,
@@ -117,7 +117,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREEN,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['feldspars-camp', 'ocean-depths'],
     location: {
       x: 0.88,
       y: 0.549,
@@ -136,7 +136,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['escape-pod-2', 'the-sunless-city'],
     location: {
       x: 0.1294,
       y: 0.6069,
@@ -153,7 +153,11 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREEN,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: [
+      'orbital-probe-cannon',
+      'southern-observatory',
+      'tornado-simulation',
+    ],
     location: {
       x: 0.8274,
       y: 0.4452,
@@ -186,7 +190,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['feldspars-camp'],
     location: {
       x: 0.9068,
       y: 0.2303,
@@ -202,7 +206,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.RED,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['old-settlement'],
     location: {
       x: 0.2796,
       y: 0.8174,
@@ -218,7 +222,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.RED,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['anglerfish-fossil', 'the-sunless-city'],
     location: {
       x: 0.1523,
       y: 0.7228,
@@ -235,7 +239,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.RED,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['nomai-grave'],
     location: {
       x: 0.1816,
       y: 0.8675,
@@ -250,7 +254,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['lunar-lookout'],
     location: {
       x: 0.665,
       y: 0.2102,
@@ -266,7 +270,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREEN,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['riebecks-camp', 'southern-observatory'],
     location: {
       x: 0.7245,
       y: 0.279,
@@ -283,7 +287,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREEN,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['frozen-jellyfish'],
     location: {
       x: 0.9068,
       y: 0.4037,
@@ -318,7 +322,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['gravity-cannon-ct', 'ruptured-core'],
     location: {
       x: 0.7147,
       y: 0.7901,
@@ -336,7 +340,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['orbital-probe-cannon', 'ocean-depths', 'statue-island'],
     location: {
       x: 0.5872,
       y: 0.4232,
@@ -368,7 +372,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.PURPLE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['tower-of-quantum-knowledge'],
     location: {
       x: 0.1253,
       y: 0.0524,
@@ -386,7 +390,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['anglerfish-fossil', 'black-hole-forge', 'the-vessel'],
     location: {
       x: 0.3452,
       y: 0.7578,
@@ -403,19 +407,19 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.ORANGE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['ash-twin-project'],
     location: {
       x: 0.3758,
       y: 0.3921,
     },
   },
   {
-    id: 'lakebed-caves',
-    name: 'Lakebed Caves',
+    id: 'lakebed-cave',
+    name: 'Lakebed Cave',
     image: 'CT_LAKEBED_CAVERN.png',
     logs: [
       'A Nomai named Coleus was standing on the wandering rock when another Nomai’s lantern died. When they relit the lantern, Coleus and the rock were both gone.',
-      'To travel with a qantum object, I must stand on the object and cease to observe my surroundings (meaning I must be in complete darkness). Coleus used this quantum rule to escape the cave he was trapped in.',
+      'To travel with a quantum object, I must stand on the object and cease to observe my surroundings (meaning I must be in complete darkness). Coleus used this quantum rule to escape the cave he was trapped in.',
       'Coleus and Melorae returned to examine the rock. They theorized that when a conscious being is in contact with a quantum object and ceases to observe his or her surroundings, the being can become entangled with that quantum object, and they both move together.',
     ],
     colour: PlanetColour.PURPLE,
@@ -452,7 +456,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['dark-bramble-seed'],
     location: {
       x: 0.7761,
       y: 0.1682,
@@ -491,7 +495,7 @@ const nodes: MapNode[] = [
     logs: ['A mural of three escape pods evacuating the Nomai vessel.'],
     colour: PlanetColour.RED,
     size: MapNodeSize.XSMALL,
-    connections: [],
+    connections: ['escape-pod-1', 'escape-pod-2', 'escape-pod-3', 'the-vessel'],
     location: {
       x: 0.2132,
       y: 0.7884,
@@ -526,7 +530,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.ORANGE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['ash-twin-project'],
     location: {
       x: 0.4802,
       y: 0.6128,
@@ -542,7 +546,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['quantum-moon', 'white-hole-station'],
     location: {
       x: 0.2828,
       y: 0.2858,
@@ -576,7 +580,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.RED,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['the-hanging-city'],
     location: {
       x: 0.2269,
       y: 0.757,
@@ -627,7 +631,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.PURPLE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['lakebed-cave'],
     location: {
       x: 0.1074,
       y: 0.2662,
@@ -676,7 +680,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.PURPLE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['quantum-moon', 'sixth-location'],
     location: {
       x: 0.1702,
       y: 0.2824,
@@ -693,7 +697,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.PURPLE,
     size: MapNodeSize.XSMALL,
-    connections: [],
+    connections: ['quantum-caves', 'quantum-grove', 'tower-of-quantum-trials'],
     location: {
       x: 0.0799,
       y: 0.1864,
@@ -727,7 +731,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['southern-observatory'],
     location: {
       x: 0.7951,
       y: 0.2491,
@@ -799,7 +803,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREEN,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['orbital-probe-cannon'],
     location: {
       x: 0.8395,
       y: 0.3332,
@@ -832,7 +836,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.ORANGE,
     size: MapNodeSize.XSMALL,
-    connections: [],
+    connections: ['ash-twin-project'],
     location: {
       x: 0.4744,
       y: 0.4569,
@@ -849,7 +853,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['anglerfish-fossil', 'sun-station'],
     location: {
       x: 0.2136,
       y: 0.5886,
@@ -900,7 +904,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.PURPLE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['quantum-shrine', 'sixth-location'],
     location: {
       x: 0.0965,
       y: 0.1609,
@@ -955,7 +959,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.GREY,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['eskers-camp', 'eye-signal-locator', 'gabbros-island'],
     location: {
       x: 0.6072,
       y: 0.3111,
@@ -972,7 +976,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.ORANGE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['nomai-mines'],
     location: {
       x: 0.5552,
       y: 0.6128,
@@ -990,7 +994,7 @@ const nodes: MapNode[] = [
     ],
     colour: PlanetColour.ORANGE,
     size: MapNodeSize.MEDIUM,
-    connections: [],
+    connections: ['high-energy-lab'],
     location: {
       x: 0.2825,
       y: 0.3921,

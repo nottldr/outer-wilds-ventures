@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapNode } from '../data/universe/types';
 import dimensionsFrom from '../util/dimensions-from';
+import notEmpty from '../util/not-empty';
 import Card from './Card';
 import Log from './Log';
 
@@ -42,6 +43,25 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
     [nodes]
   );
 
+  const connections = React.useMemo(() => {
+    const findById = (id: string) => nodes.find((node) => node.id === id);
+
+    return nodes.reduce((prev, node) => {
+      const destinations = node.connections
+        .map((connection) => findById(connection))
+        .filter(notEmpty);
+
+      for (const destination of destinations) {
+        prev.push({
+          source: node,
+          destination,
+        });
+      }
+
+      return prev;
+    }, [] as { source: MapNode; destination: MapNode }[]);
+  }, [nodes]);
+
   const onSelect = React.useCallback(
     (node: MapNode) => {
       if (selected?.id === node.id) {
@@ -76,6 +96,21 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
           />
         </div>
       ))}
+      {connections.length > 0 && (
+        <svg width={size.width} height={size.height}>
+          {connections.map((connection) => (
+            <line
+              key={`${connection.source.id}-to-${connection.destination.id}`}
+              x1={`${connection.source.location.x * 100}%`}
+              y1={`${connection.source.location.y * 100}%`}
+              x2={`${connection.destination.location.x * 100}%`}
+              y2={`${connection.destination.location.y * 100}%`}
+              className="stroke-current text-card-grey"
+              strokeWidth={6}
+            />
+          ))}
+        </svg>
+      )}
       {selected && (
         <div className="sticky bottom-0 w-full">
           <Log logs={selected.logs} />
