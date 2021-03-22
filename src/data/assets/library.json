@@ -1,0 +1,488 @@
+{
+  "defaultSpritePath": "DEFAULT_PHOTO.png",
+  "entries": [
+    {
+      "id": "S_SUNSTATION",
+      "spritePath": "S_SUNSTATION.png",
+      "cardPosition": {
+        "x": -10,
+        "y": 361
+      }
+    },
+    {
+      "id": "CT_CHERT",
+      "spritePath": "CT_CHERTS_CAMP.png",
+      "cardPosition": {
+        "x": -502,
+        "y": 0
+      }
+    },
+    {
+      "id": "CT_QUANTUM_MOON_LOCATOR",
+      "spritePath": "CT_QUANTUM_MOON_LOCATOR.png",
+      "cardPosition": {
+        "x": -301,
+        "y": 988
+      }
+    },
+    {
+      "id": "CT_GRAVITY_CANNON",
+      "spritePath": "CT_GRAVITY_CANNON.png",
+      "cardPosition": {
+        "x": 2023,
+        "y": -567
+      }
+    },
+    {
+      "id": "CT_ESCAPE_POD",
+      "spritePath": "CT_ESCAPE_POD.png",
+      "cardPosition": {
+        "x": -407,
+        "y": -360
+      }
+    },
+    {
+      "id": "CT_HIGH_ENERGY_LAB",
+      "spritePath": "CT_HIGH_ENERGY_LAB.png",
+      "cardPosition": {
+        "x": 503,
+        "y": 671
+      }
+    },
+    {
+      "id": "CT_WARP_TOWER_MAP",
+      "spritePath": "CT_WARP_TOWER_MAP.png",
+      "cardPosition": {
+        "x": 442,
+        "y": 585
+      }
+    },
+    {
+      "id": "CT_SUNLESS_CITY",
+      "spritePath": "CT_SUNLESS_CITY.png",
+      "cardPosition": {
+        "x": -159,
+        "y": 49
+      }
+    },
+    {
+      "id": "CT_ANGLERFISH_FOSSIL",
+      "spritePath": "CT_ANGLERFISH_FOSSIL.png",
+      "cardPosition": {
+        "x": -26,
+        "y": -250
+      }
+    },
+    {
+      "id": "CT_QUANTUM_CAVES",
+      "spritePath": "CT_QUANTUM_CAVES.png",
+      "cardPosition": {
+        "x": -554,
+        "y": 1043
+      }
+    },
+    {
+      "id": "CT_LAKEBED_CAVERN",
+      "spritePath": "CT_LAKEBED_CAVERN.png",
+      "cardPosition": {
+        "x": -666,
+        "y": 761
+      }
+    },
+    {
+      "id": "TT_WARP_TOWERS",
+      "spritePath": "TT_WARP_TOWERS.png",
+      "cardPosition": {
+        "x": 248,
+        "y": 359
+      }
+    },
+    {
+      "id": "TT_TIME_LOOP_DEVICE",
+      "spritePath": "TT_TIME_LOOP_DEVICE.png",
+      "cardPosition": {
+        "x": 645,
+        "y": 282
+      }
+    },
+    {
+      "id": "TH_VILLAGE",
+      "spritePath": "TH_VILLAGE.png",
+      "cardPosition": {
+        "x": 1479,
+        "y": 908
+      }
+    },
+    {
+      "id": "TH_ZERO_G_CAVE",
+      "spritePath": "TH_ZERO_G_CAVE.png",
+      "cardPosition": {
+        "x": 1547.00659,
+        "y": 821.9953
+      }
+    },
+    {
+      "id": "TH_IMPACT_CRATER",
+      "spritePath": "TH_IMPACT_CRATER.png",
+      "cardPosition": {
+        "x": 2701,
+        "y": 1159
+      }
+    },
+    {
+      "id": "TH_NOMAI_MINE",
+      "spritePath": "TH_NOMAI_MINE.png",
+      "cardPosition": {
+        "x": 911,
+        "y": 5
+      }
+    },
+    {
+      "id": "TH_QUANTUM_SHARD",
+      "spritePath": "TH_QUANTUM_SHARD.png",
+      "cardPosition": {
+        "x": -878,
+        "y": 1087
+      }
+    },
+    {
+      "id": "TM_ESKER",
+      "spritePath": "TM_ESKER.png",
+      "cardPosition": {
+        "x": 1716,
+        "y": 1222
+      }
+    },
+    {
+      "id": "TM_NORTH_POLE",
+      "spritePath": "TM_NORTH_POLE.png",
+      "cardPosition": {
+        "x": 2164,
+        "y": 1353
+      }
+    },
+    {
+      "id": "TM_EYE_LOCATOR",
+      "spritePath": "TM_EYE_LOCATOR.png",
+      "cardPosition": {
+        "x": 1957,
+        "y": 1010
+      }
+    },
+    {
+      "id": "BH_RIEBECK",
+      "spritePath": "BH_RIEBECK.png",
+      "cardPosition": {
+        "x": 2241,
+        "y": 1104
+      }
+    },
+    {
+      "id": "BH_GRAVITY_CANNON",
+      "spritePath": "BH_GRAVITY_CANNON.png",
+      "cardPosition": {
+        "x": -483,
+        "y": 1707
+      }
+    },
+    {
+      "id": "BH_QUANTUM_RESEARCH_TOWER",
+      "spritePath": "BH_QUANTUM_RESEARCH_TOWER.png",
+      "cardPosition": {
+        "x": -601,
+        "y": 1375
+      }
+    },
+    {
+      "id": "BH_QUANTUM_SHARD",
+      "spritePath": "BH_QUANTUM_SHARD.png",
+      "cardPosition": {
+        "x": -667.9691,
+        "y": 1288.12549
+      }
+    },
+    {
+      "id": "BH_WARP_RECEIVER",
+      "spritePath": "BH_WARP_RECEIVER.png",
+      "cardPosition": {
+        "x": 123,
+        "y": 1026
+      }
+    },
+    {
+      "id": "BH_ESCAPE_POD",
+      "spritePath": "BH_ESCAPE_POD.png",
+      "cardPosition": {
+        "x": 109,
+        "y": -650
+      }
+    },
+    {
+      "id": "BH_OLD_SETTLEMENT",
+      "spritePath": "BH_OLD_SETTLEMENT.png",
+      "cardPosition": {
+        "x": -106.032265,
+        "y": -466.002
+      }
+    },
+    {
+      "id": "BH_MURAL_1",
+      "spritePath": "BH_MURAL_1.png",
+      "cardPosition": {
+        "x": -314.4257,
+        "y": -562.1994
+      }
+    },
+    {
+      "id": "BH_MURAL_2",
+      "spritePath": "BH_MURAL_2.png",
+      "cardPosition": {
+        "x": -234.028778,
+        "y": -562.1994
+      }
+    },
+    {
+      "id": "BH_MURAL_3",
+      "spritePath": "BH_MURAL_3.png",
+      "cardPosition": {
+        "x": -155.728775,
+        "y": -562.1994
+      }
+    },
+    {
+      "id": "BH_HANGING_CITY",
+      "spritePath": "BH_HANGING_CITY.png",
+      "cardPosition": {
+        "x": 378,
+        "y": -466
+      }
+    },
+    {
+      "id": "BH_BLACK_HOLE_FORGE",
+      "spritePath": "BH_BLACK_HOLE_FORGE.png",
+      "cardPosition": {
+        "x": 381,
+        "y": 8
+      }
+    },
+    {
+      "id": "BH_WARP_ALIGNMENT_MAP",
+      "spritePath": "BH_WARP_ALIGNMENT_MAP.png",
+      "cardPosition": {
+        "x": 454.7,
+        "y": -68.6
+      }
+    },
+    {
+      "id": "BH_OBSERVATORY",
+      "spritePath": "BH_OBSERVATORY.png",
+      "cardPosition": {
+        "x": 2423,
+        "y": 843
+      }
+    },
+    {
+      "id": "BH_TORNADO_SIMULATION",
+      "spritePath": "BH_TORNADO_SIMULATION.png",
+      "cardPosition": {
+        "x": 2491.00049,
+        "y": 755.002136
+      }
+    },
+    {
+      "id": "VM_VOLCANO",
+      "spritePath": "VM_VOLCANO.png",
+      "cardPosition": {
+        "x": 1135,
+        "y": 4
+      }
+    },
+    {
+      "id": "GD_OCEAN",
+      "spritePath": "GD_OCEAN.png",
+      "cardPosition": {
+        "x": 1967,
+        "y": 161
+      }
+    },
+    {
+      "id": "GD_GABBRO_ISLAND",
+      "spritePath": "GD_GABBRO_ISLAND.png",
+      "cardPosition": {
+        "x": 1377.99731,
+        "y": 562.995361
+      }
+    },
+    {
+      "id": "GD_CONSTRUCTION_YARD",
+      "spritePath": "GD_CONSTRUCTION_YARD.png",
+      "cardPosition": {
+        "x": 2372,
+        "y": 493
+      }
+    },
+    {
+      "id": "GD_BRAMBLE_ISLAND",
+      "spritePath": "GD_BRAMBLE_ISLAND.png",
+      "cardPosition": {
+        "x": 2585,
+        "y": 172
+      }
+    },
+    {
+      "id": "GD_STATUE_ISLAND",
+      "spritePath": "GD_STATUE_ISLAND.png",
+      "cardPosition": {
+        "x": 985,
+        "y": 562
+      }
+    },
+    {
+      "id": "GD_STATUE_WORKSHOP",
+      "spritePath": "GD_STATUE_WORKSHOP.png",
+      "cardPosition": {
+        "x": 915.973,
+        "y": 474.019318
+      }
+    },
+    {
+      "id": "GD_QUANTUM_TOWER",
+      "spritePath": "GD_QUANTUM_TOWER.png",
+      "cardPosition": {
+        "x": -877,
+        "y": 1447
+      }
+    },
+    {
+      "id": "ORBITAL_PROBE_CANNON",
+      "spritePath": "ORBITAL_PROBE_CANNON.png",
+      "cardPosition": {
+        "x": 1940.99634,
+        "y": 610.0005
+      }
+    },
+    {
+      "id": "OPC_INTACT_MODULE",
+      "spritePath": "OPC_INTACT_MODULE.png",
+      "cardPosition": {
+        "x": 1818.99719,
+        "y": 448.006348
+      }
+    },
+    {
+      "id": "OPC_BROKEN_MODULE",
+      "spritePath": "OPC_BROKEN_MODULE.png",
+      "cardPosition": {
+        "x": 1937.99731,
+        "y": 445.995361
+      }
+    },
+    {
+      "id": "OPC_SUNKEN_MODULE",
+      "spritePath": "OPC_SUNKEN_MODULE.png",
+      "altSpritePath": "OPC_EYE_COORDINATES.png",
+      "cardPosition": {
+        "x": 2056.99756,
+        "y": 446.0063
+      }
+    },
+    {
+      "id": "DB_FELDSPAR",
+      "spritePath": "DB_FELDSPAR.png",
+      "cardPosition": {
+        "x": 2711,
+        "y": 622
+      }
+    },
+    {
+      "id": "DB_FROZEN_JELLYFISH",
+      "spritePath": "DB_FROZEN_JELLYFISH.png",
+      "cardPosition": {
+        "x": 2984,
+        "y": 511
+      }
+    },
+    {
+      "id": "DB_ESCAPE_POD",
+      "spritePath": "DB_ESCAPE_POD.png",
+      "cardPosition": {
+        "x": -292,
+        "y": -800
+      }
+    },
+    {
+      "id": "DB_NOMAI_GRAVE",
+      "spritePath": "DB_NOMAI_GRAVE.png",
+      "cardPosition": {
+        "x": -387,
+        "y": -1069
+      }
+    },
+    {
+      "id": "DB_VESSEL",
+      "spritePath": "DB_VESSEL.png",
+      "cardPosition": {
+        "x": 105,
+        "y": -1016
+      }
+    },
+    {
+      "id": "WHITE_HOLE_STATION",
+      "spritePath": "WHITE_HOLE_STATION.png",
+      "cardPosition": {
+        "x": 121,
+        "y": 674
+      }
+    },
+    {
+      "id": "COMET_SHUTTLE",
+      "spritePath": "COMET_SHUTTLE.png",
+      "altSpritePath": "COMET_SHUTTLE_ALT.png",
+      "cardPosition": {
+        "x": 1743,
+        "y": -712
+      }
+    },
+    {
+      "id": "COMET_INTERIOR",
+      "spritePath": "COMET_INTERIOR.png",
+      "cardPosition": {
+        "x": 1391.00244,
+        "y": -713.0087
+      }
+    },
+    {
+      "id": "QUANTUM_MOON",
+      "spritePath": "QUANTUM_MOON.png",
+      "cardPosition": {
+        "x": -229,
+        "y": 1383
+      }
+    },
+    {
+      "id": "QM_SHUTTLE",
+      "spritePath": "QM_SHUTTLE.png",
+      "altSpritePath": "QM_SHUTTLE_ALT.png",
+      "cardPosition": {
+        "x": -93,
+        "y": 1375
+      }
+    },
+    {
+      "id": "QM_SHRINE",
+      "spritePath": "QM_SHRINE.png",
+      "cardPosition": {
+        "x": -368,
+        "y": 1395
+      }
+    },
+    {
+      "id": "QM_SIXTH_LOCATION",
+      "spritePath": "QM_SIXTH_LOCATION.png",
+      "cardPosition": {
+        "x": -368.0744,
+        "y": 1262.39429
+      }
+    }
+  ]
+}

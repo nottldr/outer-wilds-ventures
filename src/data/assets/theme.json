@@ -1,0 +1,74 @@
+{
+  "shipLogRumorColor": {
+    "red": 255,
+    "green": 145,
+    "blue": 51,
+    "hex": "#ff9133"
+  },
+  "shipLogSelectionColor": {
+    "red": 158,
+    "green": 250,
+    "blue": 167,
+    "hex": "#9efaa7"
+  },
+  "neutralColor": {
+    "red": 127,
+    "green": 128,
+    "blue": 122,
+    "hex": "#7f807a"
+  },
+  "neutralHighlight": {
+    "red": 226,
+    "green": 228,
+    "blue": 218,
+    "hex": "#e2e4da"
+  },
+  "quantumMoonColor": {
+    "red": 69,
+    "green": 44,
+    "blue": 141,
+    "hex": "#452c8d"
+  },
+  "quantumMoonHighlight": {
+    "red": 125,
+    "green": 79,
+    "blue": 255,
+    "hex": "#7d4fff"
+  },
+  "sunkenModuleColor": {
+    "red": 43,
+    "green": 138,
+    "blue": 86,
+    "hex": "#2b8a56"
+  },
+  "sunkenModuleHighlight": {
+    "red": 79,
+    "green": 255,
+    "blue": 158,
+    "hex": "#4fff9e"
+  },
+  "timeLoopColor": {
+    "red": 180,
+    "green": 108,
+    "blue": 57,
+    "hex": "#b46c39"
+  },
+  "timeLoopHighlight": {
+    "red": 255,
+    "green": 153,
+    "blue": 80,
+    "hex": "#ff9950"
+  },
+  "vesselColor": {
+    "red": 180,
+    "green": 57,
+    "blue": 87,
+    "hex": "#b43957"
+  },
+  "vesselHighlight": {
+    "red": 255,
+    "green": 80,
+    "blue": 124,
+    "hex": "#ff507c"
+  }
+}
