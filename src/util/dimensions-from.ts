@@ -5,27 +5,29 @@ type Dimensions = {
   titleFontSize: string;
 };
 
+const Base = 130;
+
 const dimensionsFrom = (size: MapNodeSize): Dimensions => {
   switch (size) {
     case MapNodeSize.XSMALL:
       return {
-        width: 80,
+        width: Base * 0.6,
         titleFontSize: 'text-xs',
       };
     case MapNodeSize.SMALL:
       return {
-        width: 90,
+        width: Base * 0.8,
         titleFontSize: 'text-xs',
       };
     case MapNodeSize.LARGE:
       return {
-        width: 160,
+        width: Base * 2,
         titleFontSize: 'text-lg',
       };
     default:
     case MapNodeSize.MEDIUM:
       return {
-        width: 130,
+        width: Base,
         titleFontSize: 'text-base',
       };
   }

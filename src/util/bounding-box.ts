@@ -61,6 +61,25 @@ class BoundingBox {
       y: point.y - this._minY + this._paddingTop,
     };
   }
+
+  pointBetween(p1: Point, p2: Point): Point {
+    const pf1 = this.pointFor(p1);
+    const pf2 = this.pointFor(p2);
+
+    return {
+      x: (pf1.x + pf2.x) / 2,
+      y: (pf1.y + pf2.y) / 2,
+    };
+  }
+
+  angleBetween(p1: Point, p2: Point): number {
+    const pf1 = this.pointFor(p1);
+    const pf2 = this.pointFor(p2);
+
+    const radians = Math.atan2(pf2.y - pf1.y, pf2.x - pf1.x);
+
+    return radians * (180 / Math.PI);
+  }
 }
 
 export default BoundingBox;

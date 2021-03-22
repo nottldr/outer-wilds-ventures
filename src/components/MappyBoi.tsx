@@ -104,19 +104,75 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
         </div>
       ))}
       {connections.length > 0 && (
-        <svg width={boundingBox.size.width} height={boundingBox.size.height}>
-          {connections.map((connection, idx) => (
-            <line
-              key={`${connection.source.id}-to-${connection.destination.id}-${idx}`}
-              x1={`${boundingBox.pointFor(connection.source.location).x}`}
-              y1={`${boundingBox.pointFor(connection.source.location).y}`}
-              x2={`${boundingBox.pointFor(connection.destination.location).x}`}
-              y2={`${boundingBox.pointFor(connection.destination.location).y}`}
-              className="stroke-current text-card-grey"
-              strokeWidth={6}
-            />
-          ))}
-        </svg>
+        <>
+          <svg width={boundingBox.size.width} height={boundingBox.size.height}>
+            {connections.map((connection, idx) => (
+              <>
+                <line
+                  key={`${connection.source.id}-to-${connection.destination.id}-${idx}`}
+                  x1={`${boundingBox.pointFor(connection.source.location).x}`}
+                  y1={`${boundingBox.pointFor(connection.source.location).y}`}
+                  x2={`${
+                    boundingBox.pointFor(connection.destination.location).x
+                  }`}
+                  y2={`${
+                    boundingBox.pointFor(connection.destination.location).y
+                  }`}
+                  className="stroke-current text-card-grey"
+                  strokeWidth={6}
+                />
+                <g
+                  transform={`translate(-${24 * 1.7} -${24 * 1.7}) translate(${
+                    boundingBox.pointBetween(
+                      connection.source.location,
+                      connection.destination.location
+                    ).x
+                  } ${
+                    boundingBox.pointBetween(
+                      connection.source.location,
+                      connection.destination.location
+                    ).y
+                  }) rotate(${
+                    boundingBox.angleBetween(
+                      connection.source.location,
+                      connection.destination.location
+                    ) + 180
+                  } ${24 * 1.7} ${24 * 1.7})`}
+                >
+                  <path
+                    className="fill-current text-page-bg"
+                    d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
+                    transform="scale(1.7)"
+                  />
+                </g>
+                <g
+                  className="fill-current text-card-grey"
+                  transform={`translate(-24 -24) translate(${
+                    boundingBox.pointBetween(
+                      connection.source.location,
+                      connection.destination.location
+                    ).x
+                  } ${
+                    boundingBox.pointBetween(
+                      connection.source.location,
+                      connection.destination.location
+                    ).y
+                  }) rotate(${
+                    boundingBox.angleBetween(
+                      connection.source.location,
+                      connection.destination.location
+                    ) + 180
+                  } 24 24)`}
+                >
+                  <path
+                    d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
+                    transform="scale(1)"
+                  />
+                </g>
+              </>
+            ))}
+          </svg>
+        </>
       )}
       {selected && (
         <div className="sticky bottom-0 w-full">
