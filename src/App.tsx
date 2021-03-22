@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Grid from './components/Grid';
 import Content from './components/layout/Content';
 import Sidebar from './components/layout/Sidebar';
@@ -15,8 +10,8 @@ import universe from './data/universe';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="md:flex flex-col md:flex-row md:min-h-screen w-full">
-        <div className="flex flex-col w-full md:w-64 flex-shrink-0">
+      <div className="md:flex flex-col md:flex-row md:max-h-screen w-full">
+        <div className="flex flex-col w-full md:w-80 flex-shrink-0">
           <Sidebar />
         </div>
 
