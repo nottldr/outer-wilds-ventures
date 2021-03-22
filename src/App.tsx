@@ -6,6 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import Grid from './components/Grid';
+import Content from './components/layout/Content';
+import Sidebar from './components/layout/Sidebar';
 import List from './components/List';
 import MappyBoi from './components/MappyBoi';
 import universe from './data/universe';
@@ -13,37 +15,26 @@ import universe from './data/universe';
 const App: React.FC = () => {
   return (
     <Router>
-      <div>
-        <div className="text-3xl">Outer Wilds Ventures</div>
-        <nav>
-          <div className="inline-block bg-paper p-2 m-2 rounded-md">
-            <NavLink to="/" activeClassName="font-bold" exact>
-              Map
-            </NavLink>
-          </div>
-          <div className="inline-block bg-paper p-2 m-2 rounded-md">
-            <NavLink to="/grid" activeClassName="font-bold" exact>
-              Grid
-            </NavLink>
-          </div>
-          <div className="inline-block bg-paper p-2 m-2 rounded-md">
-            <NavLink to="/list" activeClassName="font-bold" exact>
-              List
-            </NavLink>
-          </div>
-        </nav>
+      <div className="md:flex flex-col md:flex-row md:min-h-screen w-full">
+        <div className="flex flex-col w-full md:w-64 flex-shrink-0">
+          <Sidebar />
+        </div>
 
-        <Switch>
-          <Route path="/list">
-            <List nodes={universe.nodes} />
-          </Route>
-          <Route path="/grid">
-            <Grid nodes={universe.nodes} />
-          </Route>
-          <Route path="/">
-            <MappyBoi nodes={universe.nodes} />
-          </Route>
-        </Switch>
+        <div className="flex flex-col flex-1 overflow-scroll">
+          <Content>
+            <Switch>
+              <Route path="/list">
+                <List nodes={universe.nodes} />
+              </Route>
+              <Route path="/grid">
+                <Grid nodes={universe.nodes} />
+              </Route>
+              <Route path="/">
+                <MappyBoi nodes={universe.nodes} />
+              </Route>
+            </Switch>
+          </Content>
+        </div>
       </div>
     </Router>
   );
