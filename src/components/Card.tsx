@@ -34,7 +34,7 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
       <div className="relative w-full aspect-w-1 aspect-h-1">
         <div
           className="h-full w-full absolute bg-white bg-cover"
-          style={{ backgroundImage: `url(/img/cards/${node.image})` }}
+          style={{ backgroundImage: `url(${node.image})` }}
         ></div>
         <div
           className="h-full w-full absolute flex items-center justify-center content-center text-white text-6xl shadow-md"

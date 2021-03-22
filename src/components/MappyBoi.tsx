@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapNode } from '../data/universe/types';
+import BoundingBox from '../util/bounding-box';
 import dimensionsFrom from '../util/dimensions-from';
 import notEmpty from '../util/not-empty';
 import Card from './Card';
@@ -9,17 +10,23 @@ type Props = {
   nodes: MapNode[];
 };
 
-const size = {
-  width: 3000,
-  height: 3000,
-};
-
 const MappyBoi: React.FC<Props> = ({ nodes }) => {
   const [selected, setSelected] = React.useState<MapNode | undefined>();
 
+  const normalised = nodes.map((node) => ({
+    ...node,
+    location: {
+      x: node.location.x,
+      y: -node.location.y,
+    },
+  }));
+
+  const boundingBox = new BoundingBox(normalised.map((n) => n.location));
+  boundingBox.setPadding(150);
+
   const sorted = React.useMemo(
     () =>
-      nodes.sort((a, b) => {
+      normalised.sort((a, b) => {
         const da = dimensionsFrom(a.size);
         const db = dimensionsFrom(b.size);
 
@@ -40,13 +47,13 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
 
         return 0;
       }),
-    [nodes]
+    [normalised]
   );
 
   const connections = React.useMemo(() => {
-    const findById = (id: string) => nodes.find((node) => node.id === id);
+    const findById = (id: string) => normalised.find((node) => node.id === id);
 
-    return nodes.reduce((prev, node) => {
+    return normalised.reduce((prev, node) => {
       const destinations = node.connections
         .map((connection) => findById(connection))
         .filter(notEmpty);
@@ -60,7 +67,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
 
       return prev;
     }, [] as { source: MapNode; destination: MapNode }[]);
-  }, [nodes]);
+  }, [normalised]);
 
   const onSelect = React.useCallback(
     (node: MapNode) => {
@@ -76,7 +83,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
   return (
     <div
       className="bg-page-bg relative"
-      style={{ width: size.width, height: size.height }}
+      style={{ width: boundingBox.size.width, height: boundingBox.size.height }}
     >
       {sorted.map((node) => (
         <div
@@ -85,8 +92,8 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
             node.id === selected?.id ? 'shadow-md' : ''
           }`}
           style={{
-            left: `${node.location.x * 100}%`,
-            top: `${node.location.y * 100}%`,
+            left: `${boundingBox.pointFor(node.location).x}px`,
+            top: `${boundingBox.pointFor(node.location).y}px`,
           }}
         >
           <Card
@@ -97,14 +104,14 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
         </div>
       ))}
       {connections.length > 0 && (
-        <svg width={size.width} height={size.height}>
-          {connections.map((connection) => (
+        <svg width={boundingBox.size.width} height={boundingBox.size.height}>
+          {connections.map((connection, idx) => (
             <line
-              key={`${connection.source.id}-to-${connection.destination.id}`}
-              x1={`${connection.source.location.x * 100}%`}
-              y1={`${connection.source.location.y * 100}%`}
-              x2={`${connection.destination.location.x * 100}%`}
-              y2={`${connection.destination.location.y * 100}%`}
+              key={`${connection.source.id}-to-${connection.destination.id}-${idx}`}
+              x1={`${boundingBox.pointFor(connection.source.location).x}`}
+              y1={`${boundingBox.pointFor(connection.source.location).y}`}
+              x2={`${boundingBox.pointFor(connection.destination.location).x}`}
+              y2={`${boundingBox.pointFor(connection.destination.location).y}`}
               className="stroke-current text-card-grey"
               strokeWidth={6}
             />
