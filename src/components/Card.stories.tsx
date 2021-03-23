@@ -24,7 +24,7 @@ const args: Props = {
       'Anyone stepping onto the warp platform during the active window will be immediately warped.',
     ],
     colour: PlanetColour.GREY,
-    size: MapNodeSize.MEDIUM,
+    sizeClass: MapNodeSize.MEDIUM,
     connections: [],
     location: {
       x: 0,

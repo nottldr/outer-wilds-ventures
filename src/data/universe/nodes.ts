@@ -30,18 +30,18 @@ const nodes: MapNode[] = entries
       return undefined;
     }
 
-    let size = MapNodeSize.MEDIUM;
+    let sizeClass = MapNodeSize.MEDIUM;
 
     const { parentId } = entry;
     if (parentId != null) {
       const parent = entries.find((e) => e.id === parentId);
       if (parent?.isCuriousity) {
-        size = MapNodeSize.SMALL;
+        sizeClass = MapNodeSize.SMALL;
       } else {
-        size = MapNodeSize.XSMALL;
+        sizeClass = MapNodeSize.XSMALL;
       }
     } else if (entry.isCuriousity) {
-      size = MapNodeSize.LARGE;
+      sizeClass = MapNodeSize.LARGE;
     }
 
     return {
@@ -49,7 +49,7 @@ const nodes: MapNode[] = entries
       name: entry.name,
       image: sprites[libraryEntry.spritePath],
       colour: colourForCuriosity(entry.curiousity),
-      size,
+      sizeClass,
       logs: entry.facts.explore.map((f) => f.text),
       connections: entry.facts.rumor.map((f) => f.sourceId).filter(notEmpty),
       location: libraryEntry.cardPosition,

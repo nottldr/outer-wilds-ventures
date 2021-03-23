@@ -26,7 +26,7 @@ export type MapNode = {
   name: string;
   image: string;
   colour: PlanetColour;
-  size: MapNodeSize;
+  sizeClass: MapNodeSize;
   logs: Log[];
   connections: NodeID[];
   location: Coordinate;

@@ -21,8 +21,8 @@ const DetectiveMap: React.FC<Props> = ({
 }) => {
   const sortedNodes = React.useMemo(() => {
     return unsortedNodes.sort((a, b) => {
-      const da = dimensionsFrom(a.size);
-      const db = dimensionsFrom(b.size);
+      const da = dimensionsFrom(a.sizeClass);
+      const db = dimensionsFrom(b.sizeClass);
 
       if (da.width < db.width) {
         return 1;
@@ -128,7 +128,7 @@ const DetectiveMap: React.FC<Props> = ({
           </g>
         ))}
       {sortedNodes.map((node) => {
-        const dimensions = dimensionsFrom(node.size);
+        const dimensions = dimensionsFrom(node.sizeClass);
         const point = boundingBox.pointFor(node.location);
 
         return (
@@ -168,7 +168,7 @@ const DetectiveMap: React.FC<Props> = ({
       {false &&
         sortedNodes.map((node) => {
           const theme = themeFrom(node.colour, node.id === selected?.id);
-          const dimensions = dimensionsFrom(node.size);
+          const dimensions = dimensionsFrom(node.sizeClass);
 
           return (
             <circle

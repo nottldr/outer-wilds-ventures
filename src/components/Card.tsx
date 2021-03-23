@@ -10,9 +10,9 @@ export type Props = {
 };
 
 const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
-  const { name, colour, size, logs } = node;
+  const { name, colour, sizeClass, logs } = node;
 
-  const dimensions = dimensionsFrom(size);
+  const dimensions = dimensionsFrom(sizeClass);
   const theme = themeFrom(colour, isSelected);
 
   return (
