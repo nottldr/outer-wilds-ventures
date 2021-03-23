@@ -35,14 +35,17 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
       >
         {name}
       </h1>
-      <div className="relative w-full aspect-w-1 aspect-h-1">
+      <div
+        className="w-full bg-darkblue"
+        style={{
+          width: dimensions.width - 4,
+          height: dimensions.width - 4,
+        }}
+      >
         <div
-          className="h-full w-full absolute bg-white bg-cover"
-          style={{ backgroundImage: `url(${node.image})` }}
-        ></div>
-        <div
-          className="h-full w-full absolute flex items-center justify-center content-center text-white text-6xl shadow-md"
+          className="h-full w-full flex items-center justify-center content-center text-white text-6xl shadow-md bg-cover"
           style={{
+            backgroundImage: `url(${node.image})`,
             textShadow:
               '0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black',
           }}
