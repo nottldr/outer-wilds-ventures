@@ -10,7 +10,7 @@ body {
 
 .sticky ul {
   list-style: none;
-  margin-left:1.1em;
+  margin-left: 1.1em;
 }
 
 .sticky ul li {
@@ -20,6 +20,6 @@ body {
 }
 
 .sticky ul li::before {
-  content: "— ";
-  color:rgba(88,120,182);
+  content: '— ';
+  color: rgba(88, 120, 182);
 }
