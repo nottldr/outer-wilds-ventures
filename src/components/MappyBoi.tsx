@@ -292,16 +292,23 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                       </div>
                     </foreignObject>
                   );
+                })}
+                {sorted.map((node) => {
+                  const theme = themeFrom(
+                    node.colour,
+                    node.id === selected?.id
+                  );
+                  const dimensions = dimensionsFrom(node.size);
 
-                  // return (
-                  //   <circle
-                  //     key={node.id}
-                  //     className={`fill-current ${theme.bgtext}`}
-                  //     cx={boundingBox.pointFor(node.location).x}
-                  //     cy={boundingBox.pointFor(node.location).y}
-                  //     r={dimensions.width / 2}
-                  //   />
-                  // );
+                  return (
+                    <circle
+                      key={node.id}
+                      className={`fill-current ${theme.bgtext}`}
+                      cx={boundingBox.pointFor(node.location).x}
+                      cy={boundingBox.pointFor(node.location).y}
+                      r={dimensions.width / 4}
+                    />
+                  );
                 })}
               </svg>
             </ReactSVGPanZoom>
