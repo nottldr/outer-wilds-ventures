@@ -72,7 +72,7 @@ const Sidebar: React.FC = () => (
           <h2>Archaeologist Guide</h2>
         </div>
         <div className="mb-8">
-          <ul className="list-disc list-outside mx-2 pl-2">
+          <ul className="list-logentry list-outside mx-2 pl-2">
             <li>Numbers indicate how many entries per Log card</li>
             <li>
               Links (rumours) indicate Log sources, which may be found at either
@@ -84,7 +84,7 @@ const Sidebar: React.FC = () => (
           <h3>Ship Log Categories</h3>
         </div>
         <div className="mb-8">
-          <ul className="list-disc list-outside mx-2 pl-2">
+          <ul className="list-logentry list-outside mx-2 pl-2">
             <li>The Orbital Cannon &amp; The Eye</li>
             <li>The Quantum Moon &amp; related phenomena</li>
             <li>The Vessel &amp; Nomai arrival</li>
