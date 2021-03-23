@@ -22,13 +22,13 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
         width: dimensions.width,
         maxWidth: dimensions.width,
         minWidth: dimensions.width,
-        height: dimensions.height,
+        minHeight: dimensions.height,
         padding: 2,
       }}
       onMouseUp={() => onSelect?.(node)}
     >
       <h1
-        className={`${dimensions.titleFontSize} font-bold text-center leading-tight p-1 flex-1 flex justify-center items-center`}
+        className={`${dimensions.titleFontSize} font-bold text-center leading-tight pb-1 flex-1 flex justify-center items-center`}
         style={{
           fontSize: dimensions.titleFontSizeA,
         }}
@@ -36,7 +36,7 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
         {name}
       </h1>
       <div
-        className="w-full bg-darkblue"
+        className="w-full h-full bg-darkblue"
         style={{
           width: dimensions.width - 4,
           height: dimensions.width - 4,

@@ -36,9 +36,9 @@ const nodes: MapNode[] = entries
     if (parentId != null) {
       const parent = entries.find((e) => e.id === parentId);
       if (parent?.isCuriousity) {
-        size = MapNodeSize.XSMALL;
-      } else {
         size = MapNodeSize.SMALL;
+      } else {
+        size = MapNodeSize.XSMALL;
       }
     } else if (entry.isCuriousity) {
       size = MapNodeSize.LARGE;

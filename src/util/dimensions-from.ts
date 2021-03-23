@@ -7,8 +7,8 @@ type Dimensions = {
   titleFontSizeA: string;
 };
 
-const BaseWidth = 130;
-const BaseHeight = BaseWidth * 1.5;
+const BaseWidth = 110;
+const BaseHeight = BaseWidth * 1.4;
 
 const dimensionsFrom = (size: MapNodeSize): Dimensions => {
   switch (size) {
@@ -17,7 +17,7 @@ const dimensionsFrom = (size: MapNodeSize): Dimensions => {
         width: BaseWidth * 0.6,
         height: BaseHeight * 0.6,
         titleFontSize: 'text-xs',
-        titleFontSizeA: '10px',
+        titleFontSizeA: '8px',
       };
     case MapNodeSize.SMALL:
       return {
@@ -39,7 +39,7 @@ const dimensionsFrom = (size: MapNodeSize): Dimensions => {
         width: BaseWidth,
         height: BaseHeight,
         titleFontSize: 'text-base',
-        titleFontSizeA: '16px',
+        titleFontSizeA: '143x',
       };
   }
 };
