@@ -7,3 +7,14 @@
 body {
   font-variant-ligatures: none;
 }
+
+.sticky ul {
+  list-style: none;
+  margin-left:-2px;
+}
+
+.sticky ul li::before {
+  content: "— ";
+  color:rgba(88,120,182);
+  margin-right: 0.2rem;
+}
