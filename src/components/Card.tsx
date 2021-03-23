@@ -17,17 +17,21 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
 
   return (
     <div
-      className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer font-space-mono`}
+      className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer font-space-mono flex flex-col`}
       style={{
         width: dimensions.width,
         maxWidth: dimensions.width,
         minWidth: dimensions.width,
+        height: dimensions.height,
         padding: 2,
       }}
       onClick={() => onSelect?.(node)}
     >
       <h1
-        className={`${dimensions.titleFontSize} font-bold text-center leading-tight p-1`}
+        className={`${dimensions.titleFontSize} font-bold text-center leading-tight p-1 flex-1 flex justify-center items-center`}
+        style={{
+          fontSize: dimensions.titleFontSizeA,
+        }}
       >
         {name}
       </h1>

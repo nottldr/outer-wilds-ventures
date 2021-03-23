@@ -258,16 +258,50 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                     node.id === selected?.id
                   );
                   const dimensions = dimensionsFrom(node.size);
+                  const point = boundingBox.pointFor(node.location);
 
                   return (
-                    <circle
-                      key={node.id}
-                      className={`fill-current ${theme.bgtext}`}
-                      cx={boundingBox.pointFor(node.location).x}
-                      cy={boundingBox.pointFor(node.location).y}
-                      r={dimensions.width / 2}
-                    />
+                    <foreignObject
+                      x={point.x - dimensions.width / 2}
+                      y={point.y - dimensions.height / 2}
+                      width={dimensions.width}
+                      height={dimensions.height}
+                    >
+                      <div
+                        // @ts-ignore
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <div
+                          key={node.id}
+                          // className={`absolute transform -translate-x-1/2 -translate-y-2/4 ${
+                          //   node.id === selected?.id ? 'shadow-md' : ''
+                          // }`}
+                          style={
+                            {
+                              // left: `${boundingBox.pointFor(node.location).x}px`,
+                              // top: `${boundingBox.pointFor(node.location).y}px`,
+                            }
+                          }
+                        >
+                          <Card
+                            node={node}
+                            onSelect={onSelect}
+                            isSelected={node.id === selected?.id}
+                          />
+                        </div>
+                      </div>
+                    </foreignObject>
                   );
+
+                  // return (
+                  //   <circle
+                  //     key={node.id}
+                  //     className={`fill-current ${theme.bgtext}`}
+                  //     cx={boundingBox.pointFor(node.location).x}
+                  //     cy={boundingBox.pointFor(node.location).y}
+                  //     r={dimensions.width / 2}
+                  //   />
+                  // );
                 })}
               </svg>
             </ReactSVGPanZoom>
