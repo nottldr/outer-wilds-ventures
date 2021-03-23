@@ -10,7 +10,7 @@ import universe from './data/universe';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="md:flex flex-col md:flex-row md:max-h-screen w-full">
+      <div className="md:flex flex-col md:flex-row md:h-screen w-full">
         <div className="flex flex-col w-full md:w-80 flex-shrink-0">
           <Sidebar />
         </div>
