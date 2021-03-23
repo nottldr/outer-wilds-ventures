@@ -109,30 +109,9 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
     });
   }, [width, height]);
 
-  console.log({ width, height }, width > 0 && height > 0);
-
   return (
     <>
       <div className="bg-page-bg relative max-w-full h-full overflow-scroll">
-        {false &&
-          sorted.map((node) => (
-            <div
-              key={node.id}
-              className={`absolute transform -translate-x-1/2 -translate-y-2/4 ${
-                node.id === selected?.id ? 'shadow-md' : ''
-              }`}
-              style={{
-                left: `${boundingBox.pointFor(node.location).x}px`,
-                top: `${boundingBox.pointFor(node.location).y}px`,
-              }}
-            >
-              <Card
-                node={node}
-                onSelect={onSelect}
-                isSelected={node.id === selected?.id}
-              />
-            </div>
-          ))}
         <div
           className="text-white absolute top-0 right-0"
           style={{ zIndex: 999 }}
@@ -155,11 +134,11 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
             width > 0 && height > 0 ? 'visible' : 'invisible'
           } h-full`}
         >
-          {(true || (width > 0 && height > 0)) && (
+          {width > 0 && height > 0 && (
             <ReactSVGPanZoom
               value={value as any}
               onChangeValue={onChangeValue}
-              tool="pan"
+              tool="auto"
               background={theme.colors['page-bg']}
               SVGBackground={theme.colors['page-bg']}
               onChangeTool={() => {}}
@@ -253,15 +232,12 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                     </g>
                   ))}
                 {sorted.map((node) => {
-                  const theme = themeFrom(
-                    node.colour,
-                    node.id === selected?.id
-                  );
                   const dimensions = dimensionsFrom(node.size);
                   const point = boundingBox.pointFor(node.location);
 
                   return (
                     <foreignObject
+                      key={node.id}
                       x={point.x - dimensions.width / 2}
                       y={point.y - dimensions.height / 2}
                       width={dimensions.width}
@@ -293,23 +269,24 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                     </foreignObject>
                   );
                 })}
-                {sorted.map((node) => {
-                  const theme = themeFrom(
-                    node.colour,
-                    node.id === selected?.id
-                  );
-                  const dimensions = dimensionsFrom(node.size);
+                {false &&
+                  sorted.map((node) => {
+                    const theme = themeFrom(
+                      node.colour,
+                      node.id === selected?.id
+                    );
+                    const dimensions = dimensionsFrom(node.size);
 
-                  return (
-                    <circle
-                      key={node.id}
-                      className={`fill-current ${theme.bgtext}`}
-                      cx={boundingBox.pointFor(node.location).x}
-                      cy={boundingBox.pointFor(node.location).y}
-                      r={dimensions.width / 4}
-                    />
-                  );
-                })}
+                    return (
+                      <circle
+                        key={node.id}
+                        className={`fill-current ${theme.bgtext}`}
+                        cx={boundingBox.pointFor(node.location).x}
+                        cy={boundingBox.pointFor(node.location).y}
+                        r={dimensions.width / 4}
+                      />
+                    );
+                  })}
               </svg>
             </ReactSVGPanZoom>
           )}

@@ -25,7 +25,7 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
         height: dimensions.height,
         padding: 2,
       }}
-      onClick={() => onSelect?.(node)}
+      onMouseUp={() => onSelect?.(node)}
     >
       <h1
         className={`${dimensions.titleFontSize} font-bold text-center leading-tight p-1 flex-1 flex justify-center items-center`}
