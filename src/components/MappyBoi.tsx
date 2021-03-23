@@ -65,13 +65,10 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
     }
 
     window.requestAnimationFrame(() => {
-      console.log('resize via requestAnimationFrame');
       setIsReady(true);
       _fitToViewer();
     });
   }, [width, height]);
-
-  console.log({ width, height });
 
   return (
     <>
