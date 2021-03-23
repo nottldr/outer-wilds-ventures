@@ -15,6 +15,8 @@ body {
 
 .sticky ul li {
   text-indent: -1.1em;
+  line-height: 1.25em;
+  margin-bottom: 10px;
 }
 
 .sticky ul li::before {
