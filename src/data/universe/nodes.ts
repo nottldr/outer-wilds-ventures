@@ -51,7 +51,7 @@ const nodes: MapNode[] = entries
       colour: colourForCuriosity(entry.curiousity),
       sizeClass,
       logs: entry.facts.explore.map((f) => f.text),
-      connections: entry.facts.rumor.map((f) => f.sourceId).filter(notEmpty),
+      connections: entry.facts.rumor.filter((c) => c.sourceId != null) as any,
       location: libraryEntry.cardPosition,
     };
   })

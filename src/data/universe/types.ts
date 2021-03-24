@@ -21,6 +21,12 @@ type Coordinate = {
   y: number;
 };
 
+type MapNodeConnection = {
+  id: NodeID;
+  sourceId: NodeID;
+  text: string;
+};
+
 export type MapNode = {
   id: NodeID;
   name: string;
@@ -28,7 +34,7 @@ export type MapNode = {
   colour: PlanetColour;
   sizeClass: MapNodeSize;
   logs: Log[];
-  connections: NodeID[];
+  connections: MapNodeConnection[];
   location: Coordinate;
 };
 

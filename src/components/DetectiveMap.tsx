@@ -141,7 +141,7 @@ const DetectiveMap: React.FC<Props> = ({
     return mappableNodes.reduce(
       (prev, mappableNode) => {
         const destinations = mappableNode.node.connections
-          .map((connection) => findById(connection))
+          .map((connection) => findById(connection.sourceId))
           .filter(notEmpty);
 
         for (const destination of destinations) {

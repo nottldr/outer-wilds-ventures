@@ -61,8 +61,14 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
       } else {
         setSelected({ connection });
         setLogs([
-          `log about ${connection.from.name}`,
-          `log about ${connection.to.name}`,
+          ...connection.from.connections
+            .filter((c) => c.sourceId === connection.to.id)
+            .map((c) => c.text),
+
+          // also, for reverse special case:
+          ...connection.to.connections
+            .filter((c) => c.sourceId === connection.from.id)
+            .map((c) => c.text),
         ]);
       }
     },
