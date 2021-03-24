@@ -83,8 +83,8 @@ class Rect {
 }
 
 const pointBetween = (p1: Point, p2: Point, percent = 0.5): Point => ({
-  x: p1.x / (1 / percent) + p2.x / (1 / (1 - percent)),
-  y: p1.y / (1 / percent) + p2.y / (1 / (1 - percent)),
+  x: percent * p1.x + (1 - percent) * p2.x,
+  y: percent * p1.y + (1 - percent) * p2.y,
 });
 
 type Props = {
