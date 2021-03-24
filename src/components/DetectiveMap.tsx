@@ -222,7 +222,7 @@ const DetectiveMap: React.FC<Props> = ({
           >
             <g
               transform={`translate(5.7 0) scale(${chevronShadowScale})`}
-              className="fill-current text-dark-bg"
+              className="fill-current text-page-bg"
             >
               <LinkChevron />
             </g>
