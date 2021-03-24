@@ -258,7 +258,7 @@ const DetectiveMap: React.FC<Props> = ({
             />
 
             {line.chevronsAt.map((chevronAt) => (
-              <g>
+              <g key={`chevron-${chevronAt.point.x}-${chevronAt.point.y}`}>
                 <g
                   transform={`translate(-${
                     (chevronSize.w / 2) * shadowScale
