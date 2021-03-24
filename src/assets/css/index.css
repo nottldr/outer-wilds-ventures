@@ -16,7 +16,11 @@ body {
 .loggo ul li {
   text-indent: -1.1em;
   line-height: 1.25em;
-  margin-bottom: 10px;
+  margin-bottom: 0.75em;
+}
+
+.loggo ul li:last-of-type {
+  margin-bottom: 0.25em;
 }
 
 .loggo ul li::before {
