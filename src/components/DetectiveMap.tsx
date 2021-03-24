@@ -88,6 +88,13 @@ const pointBetween = (p1: Point, p2: Point, percent = 0.5): Point => ({
   y: percent * p1.y + (1 - percent) * p2.y,
 });
 
+const lineWeight = 5;
+
+const chevronScale = 0.6;
+const chevronSelectedScale = 1.25;
+const chevronShadowScale = 1.65;
+const chevronSize = { w: 39, h: 29 };
+
 type Props = {
   boundingBox: BoundingBox;
   nodes: MapNode[];
@@ -184,9 +191,6 @@ const DetectiveMap: React.FC<Props> = ({
     );
   }, [mappableNodes]);
 
-  // todo: filter out connections that have duplicates!
-  // (or handle them better in general)
-
   const lines = React.useMemo(() => {
     return connections.map(({ source, destination, isReversible }) => {
       const from = source.frame.edgeIntersection(destination.frame.centre);
@@ -207,13 +211,6 @@ const DetectiveMap: React.FC<Props> = ({
       };
     });
   }, [connections, boundingBox]);
-
-  // const onSelectConnection = useCallback((connection: Connection))
-
-  const chevronScale = 0.8;
-  const chevronSelectedScale = 1.3;
-  const chevronShadowScale = 1.7;
-  const chevronSize = { w: 39, h: 29 };
 
   return (
     <g>
@@ -243,7 +240,7 @@ const DetectiveMap: React.FC<Props> = ({
               y1={`${line.from.y}`}
               x2={`${line.to.x}`}
               y2={`${line.to.y}`}
-              strokeWidth={32}
+              strokeWidth={lineWeight * 2}
               strokeLinecap="square"
               className="fill-current text-page-bg"
               stroke={theme.colors['page-bg']}
@@ -253,7 +250,7 @@ const DetectiveMap: React.FC<Props> = ({
               y1={`${line.from.y}`}
               x2={`${line.to.x}`}
               y2={`${line.to.y}`}
-              strokeWidth={8}
+              strokeWidth={lineWeight}
               strokeLinecap="square"
             />
 
@@ -273,7 +270,7 @@ const DetectiveMap: React.FC<Props> = ({
                   <g
                     stroke={theme.colors['page-bg']}
                     transform={`translate(${
-                      3.9 * shadowScale
+                      3.4 * shadowScale
                     } 0) scale(${shadowScale})`}
                     className="fill-current text-page-bg"
                   >
