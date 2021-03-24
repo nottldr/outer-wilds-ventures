@@ -8,18 +8,18 @@ body {
   font-variant-ligatures: none;
 }
 
-.sticky ul {
+.loggo ul {
   list-style: none;
   margin-left: 1.1em;
 }
 
-.sticky ul li {
+.loggo ul li {
   text-indent: -1.1em;
   line-height: 1.25em;
   margin-bottom: 10px;
 }
 
-.sticky ul li::before {
+.loggo ul li::before {
   content: '— ';
   color: rgba(88, 120, 182);
 }

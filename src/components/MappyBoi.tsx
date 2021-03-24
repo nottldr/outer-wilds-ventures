@@ -168,11 +168,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
           }
         </div>
       </div>
-      {(selected.node || selected.connection) && (
-        <div className="sticky bottom-0 w-full">
-          <Log logs={logs} />
-        </div>
-      )}
+      {(selected.node || selected.connection) && <Log logs={logs} />}
     </>
   );
 };
