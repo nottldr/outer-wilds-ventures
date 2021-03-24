@@ -2,6 +2,8 @@
 // https://tailwindcss.com/docs/configuration#referencing-in-java-script
 // but the TS/JS interplay is kinda weird, and the `preval` vs CRA is more trouble than it's worth
 
+const gameTheme = require('../data/assets/theme.json');
+
 const theme = {
   colors: {
     'page-bg': '#02101B',
@@ -29,8 +31,8 @@ const theme = {
     'card-orange-hover': '#FFC480',
     'card-orange-text': '#3E2F31',
 
-    'card-grey': '#848683',
-    'card-grey-hover': '#ECEDE7',
+    'card-grey': gameTheme.neutralColor.hex,
+    'card-grey-hover': gameTheme.neutralHighlight.hex,
     'card-grey-text': '#1B242B',
   },
 };

@@ -1,15 +1,183 @@
 {
-  "shipLogRumorColor": {
-    "red": 255,
-    "green": 145,
-    "blue": 51,
-    "hex": "#ff9133"
+  "menuBackgroundColorDisabled": {
+    "red": 56,
+    "green": 56,
+    "blue": 56,
+    "hex": "#383838"
   },
-  "shipLogSelectionColor": {
-    "red": 158,
-    "green": 250,
-    "blue": 167,
-    "hex": "#9efaa7"
+  "menuBackgroundColorIntermediateSelect": {
+    "red": 216,
+    "green": 111,
+    "blue": 46,
+    "hex": "#d86f2e"
+  },
+  "menuBackgroundColorNormal": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuBackgroundColorPressed": {
+    "red": 252,
+    "green": 220,
+    "blue": 196,
+    "hex": "#fcdcc4"
+  },
+  "menuBackgroundColorSelected": {
+    "red": 252,
+    "green": 220,
+    "blue": 196,
+    "hex": "#fcdcc4"
+  },
+  "menuButtonBackgroundColorDisabled": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuButtonBackgroundColorIntermediateSelect": {
+    "red": 247,
+    "green": 127,
+    "blue": 53,
+    "hex": "#f77f35"
+  },
+  "menuButtonBackgroundColorNormal": {
+    "red": 32,
+    "green": 32,
+    "blue": 32,
+    "hex": "#202020"
+  },
+  "menuButtonBackgroundColorPressed": {
+    "red": 252,
+    "green": 220,
+    "blue": 196,
+    "hex": "#fcdcc4"
+  },
+  "menuButtonBackgroundColorSelected": {
+    "red": 252,
+    "green": 220,
+    "blue": 196,
+    "hex": "#fcdcc4"
+  },
+  "menuButtonForegroundColorDisabled": {
+    "red": 247,
+    "green": 127,
+    "blue": 53,
+    "hex": "#f77f35"
+  },
+  "menuButtonForegroundColorIntermediateSelect": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuButtonForegroundColorNormal": {
+    "red": 247,
+    "green": 127,
+    "blue": 53,
+    "hex": "#f77f35"
+  },
+  "menuButtonForegroundColorPressed": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuButtonForegroundColorSelected": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuForegroundColorDisabled": {
+    "red": 56,
+    "green": 56,
+    "blue": 56,
+    "hex": "#383838"
+  },
+  "menuForegroundColorIntermediateSelect": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuForegroundColorNormal": {
+    "red": 247,
+    "green": 127,
+    "blue": 53,
+    "hex": "#f77f35"
+  },
+  "menuForegroundColorPressed": {
+    "red": 255,
+    "green": 255,
+    "blue": 255,
+    "hex": "#ffffff"
+  },
+  "menuForegroundColorSelected": {
+    "red": 252,
+    "green": 220,
+    "blue": 196,
+    "hex": "#fcdcc4"
+  },
+  "menuSecondaryBackgroundColorDisabled": {
+    "red": 56,
+    "green": 56,
+    "blue": 56,
+    "hex": "#383838"
+  },
+  "menuSecondaryBackgroundColorIntermediateSelect": {
+    "red": 247,
+    "green": 127,
+    "blue": 53,
+    "hex": "#f77f35"
+  },
+  "menuSecondaryBackgroundColorNormal": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuSecondaryBackgroundColorPressed": {
+    "red": 252,
+    "green": 220,
+    "blue": 196,
+    "hex": "#fcdcc4"
+  },
+  "menuSecondaryBackgroundColorSelected": {
+    "red": 252,
+    "green": 220,
+    "blue": 196,
+    "hex": "#fcdcc4"
+  },
+  "menuSecondaryForegroundColorDisabled": {
+    "red": 56,
+    "green": 56,
+    "blue": 56,
+    "hex": "#383838"
+  },
+  "menuSecondaryForegroundColorIntermediateSelect": {
+    "red": 247,
+    "green": 127,
+    "blue": 53,
+    "hex": "#f77f35"
+  },
+  "menuSecondaryForegroundColorNormal": {
+    "red": 247,
+    "green": 127,
+    "blue": 53,
+    "hex": "#f77f35"
+  },
+  "menuSecondaryForegroundColorPressed": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "menuSecondaryForegroundColorSelected": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
   },
   "neutralColor": {
     "red": 127,
@@ -23,6 +191,18 @@
     "blue": 218,
     "hex": "#e2e4da"
   },
+  "popupBlockerColor": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "primaryHighlightColor": {
+    "red": 255,
+    "green": 145,
+    "blue": 51,
+    "hex": "#ff9133"
+  },
   "quantumMoonColor": {
     "red": 69,
     "green": 44,
@@ -34,6 +214,24 @@
     "green": 79,
     "blue": 255,
     "hex": "#7d4fff"
+  },
+  "secondaryHighlightColor": {
+    "red": 147,
+    "green": 233,
+    "blue": 155,
+    "hex": "#93e99b"
+  },
+  "shipLogRumorColor": {
+    "red": 255,
+    "green": 145,
+    "blue": 51,
+    "hex": "#ff9133"
+  },
+  "shipLogSelectionColor": {
+    "red": 158,
+    "green": 250,
+    "blue": 167,
+    "hex": "#9efaa7"
   },
   "sunkenModuleColor": {
     "red": 43,
