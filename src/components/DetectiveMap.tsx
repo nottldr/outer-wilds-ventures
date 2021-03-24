@@ -192,7 +192,7 @@ const DetectiveMap: React.FC<Props> = ({
       const from = source.frame.edgeIntersection(destination.frame.centre);
       const to = destination.frame.edgeIntersection(source.frame.centre);
 
-      const offsets = isReversible ? [0.35, 0.65] : [0.5];
+      const offsets = isReversible ? [0.65, 0.35] : [0.5];
 
       return {
         from,
@@ -201,7 +201,7 @@ const DetectiveMap: React.FC<Props> = ({
         destination,
         chevronsAt: offsets.map((offset, idx) => ({
           point: pointBetween(from, to, offset),
-          rotation: 180 * (idx + 1),
+          rotation: 180 * idx,
         })),
         angle: boundingBox.angleBetween(from, to),
       };
