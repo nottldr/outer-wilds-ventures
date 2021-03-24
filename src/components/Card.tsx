@@ -45,6 +45,7 @@ const Card: React.FC<Props> = ({ onSelect, node, isSelected = false }) => {
         <div
           className="h-full w-full flex items-center justify-center content-center text-white text-6xl shadow-md bg-cover"
           style={{
+            imageRendering: 'pixelated',
             backgroundImage: `url(${node.image})`,
             textShadow:
               '0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black',
