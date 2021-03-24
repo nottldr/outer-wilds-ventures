@@ -129,6 +129,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                   nodes={normalised}
                   boundingBox={boundingBox}
                   onSelect={onSelect}
+                  selected={selected}
                 />
               </svg>
             </ReactSVGPanZoom>

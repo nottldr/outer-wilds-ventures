@@ -5,6 +5,87 @@ import dimensionsFrom from '../util/dimensions-from';
 import notEmpty from '../util/not-empty';
 import themeFrom from '../util/theme-from';
 import Card from './Card';
+import { ReactComponent as LinkChevron } from '../assets/images/link_chevron.svg';
+
+type Size = {
+  width: number;
+  height: number;
+};
+
+type Point = {
+  x: number;
+  y: number;
+};
+
+class Rect {
+  private _centre: Point;
+  private _size: Size;
+
+  constructor(centre: Point, size: Size) {
+    this._centre = centre;
+    this._size = size;
+  }
+
+  get centre() {
+    return this._centre;
+  }
+
+  get size() {
+    return this._size;
+  }
+
+  get topLeft(): Point {
+    return {
+      x: this.centre.x - this.size.width / 2,
+      y: this.centre.y - this.size.height / 2,
+    };
+  }
+
+  edgeIntersection(to: Point): Point {
+    const sign = (n: number): 1 | -1 => {
+      if (n >= 0) {
+        return 1;
+      }
+      return -1;
+    };
+
+    const scaled = {
+      x: to.x - this.centre.x,
+      y: to.y - this.centre.y,
+    };
+    const magnitude = Math.sqrt(scaled.x * scaled.x + scaled.y * scaled.y);
+    const normalised = {
+      x: scaled.x / magnitude,
+      y: scaled.y / magnitude,
+    };
+
+    const num1 = this.size.width * 0.5;
+    const num2 = this.size.height * 0.5;
+
+    if (Math.abs(normalised.y / normalised.x) < Math.abs(num2 / num1)) {
+      const x = sign(normalised.x) * num1;
+      const y = (normalised.y / normalised.x) * x;
+
+      return {
+        x: this.centre.x + x,
+        y: this.centre.y + y,
+      };
+    }
+
+    const y = sign(normalised.y) * num2;
+    const x = (normalised.x / normalised.y) * y;
+
+    return {
+      x: this.centre.x + x,
+      y: this.centre.y + y,
+    };
+  }
+}
+
+const pointBetween = (p1: Point, p2: Point, percent = 0.5): Point => ({
+  x: p1.x / (1 / percent) + p2.x / (1 / (1 - percent)),
+  y: p1.y / (1 / percent) + p2.y / (1 / (1 - percent)),
+});
 
 type Props = {
   boundingBox: BoundingBox;
@@ -19,142 +100,163 @@ const DetectiveMap: React.FC<Props> = ({
   selected,
   onSelect,
 }) => {
-  const sortedNodes = React.useMemo(() => {
-    return unsortedNodes.sort((a, b) => {
-      const da = dimensionsFrom(a.sizeClass);
-      const db = dimensionsFrom(b.sizeClass);
+  const mappableNodes = React.useMemo(() => {
+    return unsortedNodes
+      .sort((a, b) => {
+        const da = dimensionsFrom(a.sizeClass);
+        const db = dimensionsFrom(b.sizeClass);
 
-      if (da.width < db.width) {
-        return 1;
-      } else if (da.width > db.width) {
-        return -1;
-      }
+        if (da.width < db.width) {
+          return 1;
+        } else if (da.width > db.width) {
+          return -1;
+        }
 
-      const ya = a.location.y;
-      const yb = b.location.y;
+        const ya = a.location.y;
+        const yb = b.location.y;
 
-      if (ya < yb) {
-        return -1;
-      } else if (ya > yb) {
-        return 1;
-      }
+        if (ya < yb) {
+          return -1;
+        } else if (ya > yb) {
+          return 1;
+        }
 
-      return 0;
-    });
-  }, [unsortedNodes]);
+        return 0;
+      })
+      .map((node) => ({
+        node,
+        frame: new Rect(
+          boundingBox.pointFor(node.location),
+          dimensionsFrom(node.sizeClass)
+        ),
+      }));
+  }, [unsortedNodes, boundingBox]);
 
   const connections = React.useMemo(() => {
     const findById = (id: string) =>
-      unsortedNodes.find((node) => node.id === id);
+      mappableNodes.find(({ node }) => node.id === id);
 
-    return unsortedNodes.reduce((prev, node) => {
-      const destinations = node.connections
+    return mappableNodes.reduce((prev, mappableNode) => {
+      const destinations = mappableNode.node.connections
         .map((connection) => findById(connection))
         .filter(notEmpty);
 
       for (const destination of destinations) {
+        const duplicate = prev.find(
+          (v) =>
+            v.source.node.id === mappableNode.node.id &&
+            v.destination.node.id === destination.node.id
+        );
+
+        if (duplicate != null) {
+          continue;
+        }
+
+        const reverse = prev.find(
+          (v) =>
+            v.source.node.id === destination.node.id &&
+            v.destination.node.id === mappableNode.node.id
+        );
+
+        if (reverse != null) {
+          reverse.offset = 0.65;
+        }
+
         prev.push({
-          source: node,
+          source: mappableNode,
           destination,
+          offset: reverse == null ? 0.5 : reverse.offset,
         });
       }
 
       return prev;
-    }, [] as { source: MapNode; destination: MapNode }[]);
-  }, [unsortedNodes]);
+    }, [] as { source: typeof mappableNodes[0]; destination: typeof mappableNodes[0]; offset: number }[]);
+  }, [mappableNodes]);
+
+  // todo: filter out connections that have duplicates!
+  // (or handle them better in general)
+
+  const lines = React.useMemo(() => {
+    return connections.map(({ source, destination, offset }) => {
+      const from = source.frame.edgeIntersection(destination.frame.centre);
+      const to = destination.frame.edgeIntersection(source.frame.centre);
+
+      return {
+        from,
+        to,
+        chevronAt: pointBetween(from, to, offset),
+        angle: boundingBox.angleBetween(from, to),
+      };
+    });
+  }, [connections, boundingBox]);
+
+  const chevronScale = 0.8;
+  const chevronShadowScale = chevronScale * 1.7;
+  const chevronSize = { w: 39, h: 29 };
 
   return (
     <g>
-      {connections.length > 0 &&
-        connections.map((connection, idx) => (
-          <g key={idx}>
-            <line
-              key={`${connection.source.id}-to-${connection.destination.id}-${idx}`}
-              x1={`${boundingBox.pointFor(connection.source.location).x}`}
-              y1={`${boundingBox.pointFor(connection.source.location).y}`}
-              x2={`${boundingBox.pointFor(connection.destination.location).x}`}
-              y2={`${boundingBox.pointFor(connection.destination.location).y}`}
-              className="stroke-current text-card-grey"
-              strokeWidth={6}
-            />
+      {lines.map((line, idx) => (
+        <g key={`line-${idx}`}>
+          <line
+            x1={`${line.from.x}`}
+            y1={`${line.from.y}`}
+            x2={`${line.to.x}`}
+            y2={`${line.to.y}`}
+            className="stroke-current text-card-grey"
+            strokeWidth={8}
+            strokeLinecap="square"
+          />
+        </g>
+      ))}
+      {lines.map((line, idx) => (
+        <g key={`chevron-${idx}`}>
+          <g
+            transform={`translate(-${
+              (chevronSize.w / 2) * chevronShadowScale
+            } -${(chevronSize.h / 2) * chevronShadowScale}) translate(${
+              line.chevronAt.x
+            } ${line.chevronAt.y}) rotate(${line.angle} ${
+              (chevronSize.w / 2) * chevronShadowScale
+            } ${(chevronSize.h / 2) * chevronShadowScale})`}
+          >
             <g
-              transform={`translate(-${24 * 1.7} -${24 * 1.7}) translate(${
-                boundingBox.pointBetween(
-                  connection.source.location,
-                  connection.destination.location
-                ).x
-              } ${
-                boundingBox.pointBetween(
-                  connection.source.location,
-                  connection.destination.location
-                ).y
-              }) rotate(${
-                boundingBox.angleBetween(
-                  connection.source.location,
-                  connection.destination.location
-                ) + 180
-              } ${24 * 1.7} ${24 * 1.7})`}
+              transform={`translate(5.7 0) scale(${chevronShadowScale})`}
+              className="fill-current text-dark-bg"
             >
-              <path
-                className="fill-current text-page-bg"
-                d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
-                transform="scale(1.7)"
-              />
-            </g>
-            <g
-              className="fill-current text-card-grey"
-              transform={`translate(-24 -24) translate(${
-                boundingBox.pointBetween(
-                  connection.source.location,
-                  connection.destination.location
-                ).x
-              } ${
-                boundingBox.pointBetween(
-                  connection.source.location,
-                  connection.destination.location
-                ).y
-              }) rotate(${
-                boundingBox.angleBetween(
-                  connection.source.location,
-                  connection.destination.location
-                ) + 180
-              } 24 24)`}
-            >
-              <path
-                d="M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
-                transform="scale(1)"
-              />
+              <LinkChevron />
             </g>
           </g>
-        ))}
-      {sortedNodes.map((node) => {
-        const dimensions = dimensionsFrom(node.sizeClass);
-        const point = boundingBox.pointFor(node.location);
-
+          <g
+            className="fill-current text-card-grey"
+            transform={`translate(-${(chevronSize.w / 2) * chevronScale} -${
+              (chevronSize.h / 2) * chevronScale
+            }) translate(${line.chevronAt.x} ${line.chevronAt.y}) rotate(${
+              line.angle
+            } ${(chevronSize.w / 2) * chevronScale} ${
+              (chevronSize.h / 2) * chevronScale
+            })`}
+          >
+            <g transform={`scale(${chevronScale})`}>
+              <LinkChevron />
+            </g>
+          </g>
+        </g>
+      ))}
+      {mappableNodes.map(({ node, frame }) => {
         return (
           <foreignObject
             key={node.id}
-            x={point.x - dimensions.width / 2}
-            y={point.y - dimensions.height / 2}
-            width={dimensions.width}
-            height={dimensions.height}
+            x={frame.topLeft.x}
+            y={frame.topLeft.y}
+            width={frame.size.width}
+            height={frame.size.height}
           >
             <div
               // @ts-ignore
               xmlns="http://www.w3.org/1999/xhtml"
             >
-              <div
-                key={node.id}
-                // className={`absolute transform -translate-x-1/2 -translate-y-2/4 ${
-                //   node.id === selected?.id ? 'shadow-md' : ''
-                // }`}
-                style={
-                  {
-                    // left: `${boundingBox.pointFor(node.location).x}px`,
-                    // top: `${boundingBox.pointFor(node.location).y}px`,
-                  }
-                }
-              >
+              <div>
                 <Card
                   node={node}
                   onSelect={onSelect}
@@ -166,7 +268,7 @@ const DetectiveMap: React.FC<Props> = ({
         );
       })}
       {false &&
-        sortedNodes.map((node) => {
+        mappableNodes.map(({ node }) => {
           const theme = themeFrom(node.colour, node.id === selected?.id);
           const dimensions = dimensionsFrom(node.sizeClass);
 

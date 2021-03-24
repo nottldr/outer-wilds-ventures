@@ -31,7 +31,7 @@ const dimensionsFrom = (size: MapNodeSize): Dimensions => {
         width: BaseWidth * 2,
         height: BaseHeight * 2,
         titleFontSize: 'text-lg',
-        titleFontSizeA: '32px',
+        titleFontSizeA: '28px',
       };
     default:
     case MapNodeSize.MEDIUM:
