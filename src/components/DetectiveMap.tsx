@@ -211,85 +211,94 @@ const DetectiveMap: React.FC<Props> = ({
   // const onSelectConnection = useCallback((connection: Connection))
 
   const chevronScale = 0.8;
-  const chevronShadowScale = chevronScale * 1.7;
+  const chevronSelectedScale = 1.3;
+  const chevronShadowScale = 1.7;
   const chevronSize = { w: 39, h: 29 };
 
   return (
     <g>
-      {lines.map((line, idx) => (
-        <g
-          key={idx}
-          className={`stroke-current ${
-            selected?.connection?.from.id === line.source.node.id &&
-            selected?.connection?.to.id === line.destination.node.id
-              ? 'text-white'
-              : 'text-card-grey'
-          } hover:text-white cursor-pointer`}
-          onClick={() =>
-            onSelectConnection?.({
-              from: line.source.node,
-              to: line.destination.node,
-            })
-          }
-        >
-          <line
-            x1={`${line.from.x}`}
-            y1={`${line.from.y}`}
-            x2={`${line.to.x}`}
-            y2={`${line.to.y}`}
-            strokeWidth={32}
-            strokeLinecap="square"
-            className="fill-current text-page-bg"
-            stroke={theme.colors['page-bg']}
-          />
-          <line
-            x1={`${line.from.x}`}
-            y1={`${line.from.y}`}
-            x2={`${line.to.x}`}
-            y2={`${line.to.y}`}
-            strokeWidth={8}
-            strokeLinecap="square"
-          />
+      {lines.map((line, idx) => {
+        const lineIsSelected =
+          selected?.connection?.from.id === line.source.node.id &&
+          selected?.connection?.to.id === line.destination.node.id;
 
-          {line.chevronsAt.map((chevronAt) => (
-            <g>
-              <g
-                transform={`translate(-${
-                  (chevronSize.w / 2) * chevronShadowScale
-                } -${(chevronSize.h / 2) * chevronShadowScale}) translate(${
-                  chevronAt.point.x
-                } ${chevronAt.point.y}) rotate(${
-                  line.angle + chevronAt.rotation
-                } ${(chevronSize.w / 2) * chevronShadowScale} ${
-                  (chevronSize.h / 2) * chevronShadowScale
-                })`}
-              >
+        const baseScale =
+          chevronScale * (lineIsSelected ? chevronSelectedScale : 1);
+        const shadowScale = chevronShadowScale * baseScale;
+        return (
+          <g
+            key={idx}
+            className={`stroke-current ${
+              lineIsSelected ? 'text-white' : 'text-card-grey'
+            } hover:text-white cursor-pointer`}
+            onClick={() =>
+              onSelectConnection?.({
+                from: line.source.node,
+                to: line.destination.node,
+              })
+            }
+          >
+            <line
+              x1={`${line.from.x}`}
+              y1={`${line.from.y}`}
+              x2={`${line.to.x}`}
+              y2={`${line.to.y}`}
+              strokeWidth={32}
+              strokeLinecap="square"
+              className="fill-current text-page-bg"
+              stroke={theme.colors['page-bg']}
+            />
+            <line
+              x1={`${line.from.x}`}
+              y1={`${line.from.y}`}
+              x2={`${line.to.x}`}
+              y2={`${line.to.y}`}
+              strokeWidth={8}
+              strokeLinecap="square"
+            />
+
+            {line.chevronsAt.map((chevronAt) => (
+              <g>
                 <g
-                  stroke={theme.colors['page-bg']}
-                  transform={`translate(5.7 0) scale(${chevronShadowScale})`}
-                  className="fill-current text-page-bg"
+                  transform={`translate(-${
+                    (chevronSize.w / 2) * shadowScale
+                  } -${(chevronSize.h / 2) * shadowScale}) translate(${
+                    chevronAt.point.x
+                  } ${chevronAt.point.y}) rotate(${
+                    line.angle + chevronAt.rotation
+                  } ${(chevronSize.w / 2) * shadowScale} ${
+                    (chevronSize.h / 2) * shadowScale
+                  })`}
                 >
-                  <LinkChevron />
+                  <g
+                    stroke={theme.colors['page-bg']}
+                    transform={`translate(${
+                      3.9 * shadowScale
+                    } 0) scale(${shadowScale})`}
+                    className="fill-current text-page-bg"
+                  >
+                    <LinkChevron />
+                  </g>
+                </g>
+                <g
+                  className="fill-current"
+                  transform={`translate(-${(chevronSize.w / 2) * baseScale} -${
+                    (chevronSize.h / 2) * baseScale
+                  }) translate(${chevronAt.point.x} ${
+                    chevronAt.point.y
+                  }) rotate(${line.angle + chevronAt.rotation} ${
+                    (chevronSize.w / 2) * baseScale
+                  } ${(chevronSize.h / 2) * baseScale})`}
+                >
+                  <g transform={`scale(${baseScale})`}>
+                    <LinkChevron />
+                  </g>
                 </g>
               </g>
-              <g
-                className="fill-current"
-                transform={`translate(-${(chevronSize.w / 2) * chevronScale} -${
-                  (chevronSize.h / 2) * chevronScale
-                }) translate(${chevronAt.point.x} ${
-                  chevronAt.point.y
-                }) rotate(${line.angle + chevronAt.rotation} ${
-                  (chevronSize.w / 2) * chevronScale
-                } ${(chevronSize.h / 2) * chevronScale})`}
-              >
-                <g transform={`scale(${chevronScale})`}>
-                  <LinkChevron />
-                </g>
-              </g>
-            </g>
-          ))}
-        </g>
-      ))}
+            ))}
+          </g>
+        );
+      })}
       {mappableNodes.map(({ node, frame }) => (
         <foreignObject
           key={node.id}
