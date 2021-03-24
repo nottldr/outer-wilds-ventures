@@ -6,6 +6,7 @@ import notEmpty from '../util/not-empty';
 import themeFrom from '../util/theme-from';
 import Card from './Card';
 import { ReactComponent as LinkChevron } from '../assets/images/link_chevron.svg';
+import theme from '../util/theme';
 
 type Size = {
   width: number;
@@ -239,6 +240,7 @@ const DetectiveMap: React.FC<Props> = ({
             strokeWidth={32}
             strokeLinecap="square"
             className="fill-current text-page-bg"
+            stroke={theme.colors['page-bg']}
           />
           <line
             x1={`${line.from.x}`}
@@ -263,6 +265,7 @@ const DetectiveMap: React.FC<Props> = ({
                 })`}
               >
                 <g
+                  stroke={theme.colors['page-bg']}
                   transform={`translate(5.7 0) scale(${chevronShadowScale})`}
                   className="fill-current text-page-bg"
                 >
