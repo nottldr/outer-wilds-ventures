@@ -7,15 +7,21 @@ import List from './components/List';
 import MappyBoi from './components/MappyBoi';
 import universe from './data/universe';
 
-const App: React.FC = () => {
+type Props = {
+  className?: React.HTMLAttributes<HTMLElement>['className'];
+};
+
+const App: React.FC<Props> = ({ className }) => {
   return (
     <Router>
-      <div className="md:flex flex-col md:flex-row md:h-screen w-full">
+      <div
+        className={`${className} md:flex flex-col md:flex-row md:h-screen w-full`}
+      >
         <div className="flex flex-col w-full md:w-80 flex-shrink-0">
           <Sidebar />
         </div>
 
-        <div className="flex flex-col flex-1 overflow-scroll">
+        <div className="flex flex-col flex-1 overflow-scroll scrollbar-off">
           <Content>
             <Switch>
               <Route path="/list">

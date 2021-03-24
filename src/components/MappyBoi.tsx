@@ -103,7 +103,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
 
   return (
     <>
-      <div className="bg-page-bg relative max-w-full h-full overflow-scroll">
+      <div className="bg-page-bg relative max-w-full h-full overflow-scroll scrollbar-off">
         <div
           className="text-white absolute top-0 right-0"
           style={{ zIndex: 999 }}

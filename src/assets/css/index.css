@@ -27,3 +27,21 @@ body {
   content: '— ';
   color: rgba(88, 120, 182);
 }
+
+.scrollbar-off::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-off {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-on::-webkit-scrollbar {
+  display: block;
+}
+
+.scrollbar-on {
+  scrollbar-width: unset;
+  -ms-overflow-style: unset;
+}

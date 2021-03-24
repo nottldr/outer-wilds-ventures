@@ -5,7 +5,7 @@ import DiscordLogo from '../theme/DiscordLogo';
 import OuterWildsLogo from '../theme/OuterWildsLogo';
 
 const Sidebar: React.FC = () => (
-  <div className="bg-paper h-full overflow-scroll flex flex-col">
+  <div className="bg-paper h-full overflow-y-auto flex flex-col">
     <div className="px-8 py-4 flex flex-row items-center justify-between">
       <NavLink to="/" className="focus:outline-none focus:shadow-outline">
         <div className="flex flex-row justify-center">
@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => (
           </div>
         </div>
       </NavLink>
-      <button className="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline">
+      <button className="rounded-lg md:hidden focus:outline-none focus:shadow-outline">
         <svg fill="currentColor" viewBox="0 0 20 20" className="w-6 h-6">
           <path
             x-show="!open"
