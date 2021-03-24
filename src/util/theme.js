@@ -15,12 +15,12 @@ const theme = {
     'log-text': '#CFCFD1',
     white: '#FFFFFF',
 
-    'card-green': '#398E64',
-    'card-green-hover': '#73EFC8',
+    'card-green': gameTheme.sunkenModuleColor.hex,
+    'card-green-hover': gameTheme.sunkenModuleHighlight.hex,
     'card-green-text': '#0D2527',
 
-    'card-purple': '#5B4F9E',
-    'card-purple-hover': '#A88CFF',
+    'card-purple': gameTheme.quantumMoonColor.hex,
+    'card-purple-hover': gameTheme.quantumMoonHighlight.hex,
     'card-purple-text': '#161C31',
 
     'card-red': '#B85053',
