@@ -39,7 +39,7 @@ const dimensionsFrom = (size: MapNodeSize): Dimensions => {
         width: BaseWidth,
         height: BaseHeight,
         titleFontSize: 'text-base',
-        titleFontSizeA: '143x',
+        titleFontSizeA: '14px',
       };
   }
 };
