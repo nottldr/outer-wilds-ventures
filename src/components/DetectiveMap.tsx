@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapNode } from '../data/universe/types';
+import { Connection, MapNode } from '../data/universe/types';
 import BoundingBox from '../util/bounding-box';
 import dimensionsFrom from '../util/dimensions-from';
 import notEmpty from '../util/not-empty';
@@ -90,15 +90,17 @@ const pointBetween = (p1: Point, p2: Point, percent = 0.5): Point => ({
 type Props = {
   boundingBox: BoundingBox;
   nodes: MapNode[];
-  onSelect: (node: MapNode) => void;
-  selected?: MapNode;
+  onSelectNode: (node: MapNode) => void;
+  onSelectConnection: (connection: Connection) => void;
+  selected?: { node?: MapNode; connection?: Connection };
 };
 
 const DetectiveMap: React.FC<Props> = ({
   boundingBox,
   nodes: unsortedNodes,
   selected,
-  onSelect,
+  onSelectNode,
+  onSelectConnection,
 }) => {
   const mappableNodes = React.useMemo(() => {
     return unsortedNodes
@@ -136,59 +138,76 @@ const DetectiveMap: React.FC<Props> = ({
     const findById = (id: string) =>
       mappableNodes.find(({ node }) => node.id === id);
 
-    return mappableNodes.reduce((prev, mappableNode) => {
-      const destinations = mappableNode.node.connections
-        .map((connection) => findById(connection))
-        .filter(notEmpty);
+    return mappableNodes.reduce(
+      (prev, mappableNode) => {
+        const destinations = mappableNode.node.connections
+          .map((connection) => findById(connection))
+          .filter(notEmpty);
 
-      for (const destination of destinations) {
-        const duplicate = prev.find(
-          (v) =>
-            v.source.node.id === mappableNode.node.id &&
-            v.destination.node.id === destination.node.id
-        );
+        for (const destination of destinations) {
+          const duplicate = prev.find(
+            (v) =>
+              v.source.node.id === mappableNode.node.id &&
+              v.destination.node.id === destination.node.id
+          );
 
-        if (duplicate != null) {
-          continue;
+          if (duplicate != null) {
+            continue;
+          }
+
+          const reverse = prev.find(
+            (v) =>
+              v.source.node.id === destination.node.id &&
+              v.destination.node.id === mappableNode.node.id
+          );
+
+          if (reverse != null) {
+            reverse.isReversible = true;
+            continue;
+          }
+
+          prev.push({
+            source: mappableNode,
+            destination,
+            isReversible: false,
+          });
         }
 
-        const reverse = prev.find(
-          (v) =>
-            v.source.node.id === destination.node.id &&
-            v.destination.node.id === mappableNode.node.id
-        );
-
-        if (reverse != null) {
-          reverse.offset = 0.65;
-        }
-
-        prev.push({
-          source: mappableNode,
-          destination,
-          offset: reverse == null ? 0.5 : reverse.offset,
-        });
-      }
-
-      return prev;
-    }, [] as { source: typeof mappableNodes[0]; destination: typeof mappableNodes[0]; offset: number }[]);
+        return prev;
+      },
+      [] as {
+        source: typeof mappableNodes[0];
+        destination: typeof mappableNodes[0];
+        isReversible: boolean;
+      }[]
+    );
   }, [mappableNodes]);
 
   // todo: filter out connections that have duplicates!
   // (or handle them better in general)
 
   const lines = React.useMemo(() => {
-    return connections.map(({ source, destination, offset }) => {
+    return connections.map(({ source, destination, isReversible }) => {
       const from = source.frame.edgeIntersection(destination.frame.centre);
       const to = destination.frame.edgeIntersection(source.frame.centre);
+
+      const offsets = isReversible ? [0.35, 0.65] : [0.5];
 
       return {
         from,
         to,
-        chevronAt: pointBetween(from, to, offset),
+        source,
+        destination,
+        chevronsAt: offsets.map((offset, idx) => ({
+          point: pointBetween(from, to, offset),
+          rotation: 180 * (idx + 1),
+        })),
         angle: boundingBox.angleBetween(from, to),
       };
     });
   }, [connections, boundingBox]);
+
+  // const onSelectConnection = useCallback((connection: Connection))
 
   const chevronScale = 0.8;
   const chevronShadowScale = chevronScale * 1.7;
@@ -197,79 +216,102 @@ const DetectiveMap: React.FC<Props> = ({
   return (
     <g>
       {lines.map((line, idx) => (
-        <g key={`line-${idx}`}>
+        <g
+          key={idx}
+          className={`stroke-current ${
+            selected?.connection?.from.id === line.source.node.id &&
+            selected?.connection?.to.id === line.destination.node.id
+              ? 'text-white'
+              : 'text-card-grey'
+          } hover:text-white cursor-pointer`}
+          onClick={() =>
+            onSelectConnection?.({
+              from: line.source.node,
+              to: line.destination.node,
+            })
+          }
+        >
           <line
             x1={`${line.from.x}`}
             y1={`${line.from.y}`}
             x2={`${line.to.x}`}
             y2={`${line.to.y}`}
-            className="stroke-current text-card-grey"
+            strokeWidth={32}
+            strokeLinecap="square"
+            className="fill-current text-page-bg"
+          />
+          <line
+            x1={`${line.from.x}`}
+            y1={`${line.from.y}`}
+            x2={`${line.to.x}`}
+            y2={`${line.to.y}`}
             strokeWidth={8}
             strokeLinecap="square"
           />
+
+          {line.chevronsAt.map((chevronAt) => (
+            <g>
+              <g
+                transform={`translate(-${
+                  (chevronSize.w / 2) * chevronShadowScale
+                } -${(chevronSize.h / 2) * chevronShadowScale}) translate(${
+                  chevronAt.point.x
+                } ${chevronAt.point.y}) rotate(${
+                  line.angle + chevronAt.rotation
+                } ${(chevronSize.w / 2) * chevronShadowScale} ${
+                  (chevronSize.h / 2) * chevronShadowScale
+                })`}
+              >
+                <g
+                  transform={`translate(5.7 0) scale(${chevronShadowScale})`}
+                  className="fill-current text-page-bg"
+                >
+                  <LinkChevron />
+                </g>
+              </g>
+              <g
+                className="fill-current"
+                transform={`translate(-${(chevronSize.w / 2) * chevronScale} -${
+                  (chevronSize.h / 2) * chevronScale
+                }) translate(${chevronAt.point.x} ${
+                  chevronAt.point.y
+                }) rotate(${line.angle + chevronAt.rotation} ${
+                  (chevronSize.w / 2) * chevronScale
+                } ${(chevronSize.h / 2) * chevronScale})`}
+              >
+                <g transform={`scale(${chevronScale})`}>
+                  <LinkChevron />
+                </g>
+              </g>
+            </g>
+          ))}
         </g>
       ))}
-      {lines.map((line, idx) => (
-        <g key={`chevron-${idx}`}>
-          <g
-            transform={`translate(-${
-              (chevronSize.w / 2) * chevronShadowScale
-            } -${(chevronSize.h / 2) * chevronShadowScale}) translate(${
-              line.chevronAt.x
-            } ${line.chevronAt.y}) rotate(${line.angle} ${
-              (chevronSize.w / 2) * chevronShadowScale
-            } ${(chevronSize.h / 2) * chevronShadowScale})`}
+      {mappableNodes.map(({ node, frame }) => (
+        <foreignObject
+          key={node.id}
+          x={frame.topLeft.x}
+          y={frame.topLeft.y}
+          width={frame.size.width}
+          height={frame.size.height}
+        >
+          <div
+            // @ts-ignore
+            xmlns="http://www.w3.org/1999/xhtml"
           >
-            <g
-              transform={`translate(5.7 0) scale(${chevronShadowScale})`}
-              className="fill-current text-page-bg"
-            >
-              <LinkChevron />
-            </g>
-          </g>
-          <g
-            className="fill-current text-card-grey"
-            transform={`translate(-${(chevronSize.w / 2) * chevronScale} -${
-              (chevronSize.h / 2) * chevronScale
-            }) translate(${line.chevronAt.x} ${line.chevronAt.y}) rotate(${
-              line.angle
-            } ${(chevronSize.w / 2) * chevronScale} ${
-              (chevronSize.h / 2) * chevronScale
-            })`}
-          >
-            <g transform={`scale(${chevronScale})`}>
-              <LinkChevron />
-            </g>
-          </g>
-        </g>
-      ))}
-      {mappableNodes.map(({ node, frame }) => {
-        return (
-          <foreignObject
-            key={node.id}
-            x={frame.topLeft.x}
-            y={frame.topLeft.y}
-            width={frame.size.width}
-            height={frame.size.height}
-          >
-            <div
-              // @ts-ignore
-              xmlns="http://www.w3.org/1999/xhtml"
-            >
-              <div>
-                <Card
-                  node={node}
-                  onSelect={onSelect}
-                  isSelected={node.id === selected?.id}
-                />
-              </div>
+            <div>
+              <Card
+                node={node}
+                onSelect={onSelectNode}
+                isSelected={node.id === selected?.node?.id}
+              />
             </div>
-          </foreignObject>
-        );
-      })}
+          </div>
+        </foreignObject>
+      ))}
       {false &&
         mappableNodes.map(({ node }) => {
-          const theme = themeFrom(node.colour, node.id === selected?.id);
+          const theme = themeFrom(node.colour, node.id === selected?.node?.id);
           const dimensions = dimensionsFrom(node.sizeClass);
 
           return (

@@ -32,6 +32,11 @@ export type MapNode = {
   location: Coordinate;
 };
 
+export type Connection = {
+  from: MapNode;
+  to: MapNode;
+};
+
 export type Universe = {
   nodes: MapNode[];
 };

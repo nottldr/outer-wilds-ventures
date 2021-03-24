@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import useDimensions from 'react-cool-dimensions';
 import { ReactSVGPanZoom } from 'react-svg-pan-zoom';
-import { MapNode } from '../data/universe/types';
+import { Connection, MapNode } from '../data/universe/types';
 import BoundingBox from '../util/bounding-box';
 import theme from '../util/theme';
 import DetectiveMap from './DetectiveMap';
@@ -12,8 +12,12 @@ type Props = {
 };
 
 const MappyBoi: React.FC<Props> = ({ nodes }) => {
-  const [selected, setSelected] = React.useState<MapNode | undefined>();
+  const [selected, setSelected] = React.useState<{
+    node?: MapNode;
+    connection?: Connection;
+  }>({});
   const [isReady, setIsReady] = React.useState(false);
+  const [logs, setLogs] = React.useState<string[]>([]);
 
   const normalised = React.useMemo(
     () =>
@@ -33,15 +37,36 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
     return b;
   }, [normalised]);
 
-  const onSelect = React.useCallback(
+  const onSelectNode = React.useCallback(
     (node: MapNode) => {
-      if (selected?.id === node.id) {
-        setSelected(undefined);
+      if (selected.node?.id === node.id) {
+        setSelected({});
+        setLogs([]);
       } else {
-        setSelected(node);
+        setSelected({ node });
+        setLogs(node.logs);
       }
     },
-    [selected?.id]
+    [selected.node?.id]
+  );
+
+  const onSelectConnection = React.useCallback(
+    (connection: Connection) => {
+      if (
+        selected.connection?.from.id === connection.from.id &&
+        selected.connection?.to.id === connection.to.id
+      ) {
+        setSelected({});
+        setLogs([]);
+      } else {
+        setSelected({ connection });
+        setLogs([
+          `log about ${connection.from.name}`,
+          `log about ${connection.to.name}`,
+        ]);
+      }
+    },
+    [selected.connection?.from.id, selected.connection?.to.id]
   );
 
   const Viewer = React.useRef<ReactSVGPanZoom>(null);
@@ -128,7 +153,8 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                 <DetectiveMap
                   nodes={normalised}
                   boundingBox={boundingBox}
-                  onSelect={onSelect}
+                  onSelectNode={onSelectNode}
+                  onSelectConnection={onSelectConnection}
                   selected={selected}
                 />
               </svg>
@@ -136,9 +162,9 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
           }
         </div>
       </div>
-      {selected && (
+      {(selected.node || selected.connection) && (
         <div className="sticky bottom-0 w-full">
-          <Log logs={selected.logs} />
+          <Log logs={logs} />
         </div>
       )}
     </>
