@@ -1,6 +1,6 @@
 import React from 'react';
 import { Universe as UniverseType } from '../data/universe/types';
-import Location from './Location';
+// import Location from './Location';
 
 import theme from '../data/assets/theme.json';
 
@@ -10,7 +10,7 @@ const List: React.FC<Props> = ({ nodes }) => {
   return (
     <div>
       {Object.keys(theme).map((key) => (
-        <div>
+        <div key={key}>
           <p>
             {key} (<code>{(theme as any)[key].hex}</code>)
           </p>

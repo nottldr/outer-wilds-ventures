@@ -23,12 +23,12 @@ const theme = {
     'card-purple-hover': gameTheme.quantumMoonHighlight.hex,
     'card-purple-text': '#161C31',
 
-    'card-red': '#B85053',
-    'card-red-hover': '#FE8F86',
+    'card-red': gameTheme.vesselColor.hex,
+    'card-red-hover': gameTheme.vesselHighlight.hex,
     'card-red-text': '#3B1E23',
 
-    'card-orange': '#BD7E53',
-    'card-orange-hover': '#FFC480',
+    'card-orange': gameTheme.timeLoopColor.hex,
+    'card-orange-hover': gameTheme.timeLoopHighlight.hex,
     'card-orange-text': '#3E2F31',
 
     'card-grey': gameTheme.neutralColor.hex,
