@@ -148,14 +148,6 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                 width={boundingBox.size.width}
                 height={boundingBox.size.height}
               >
-                <image
-                  href="https://i.imgur.com/5ArNbVh.png"
-                  height="655"
-                  width="3129"
-                  transform="scale(0.4)"
-                  x={3400}
-                  y={400}
-                />
                 <DetectiveMap
                   nodes={normalised}
                   boundingBox={boundingBox}
