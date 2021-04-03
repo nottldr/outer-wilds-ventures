@@ -1,6 +1,6 @@
 import React from 'react';
-import { MapNode } from '../data/universe/types';
-import themeFrom from '../util/theme-from';
+import { MapNode } from '../../data/universe/types';
+import themeFrom from '../../util/theme-from';
 import Card from './Card';
 
 export type Props = MapNode;

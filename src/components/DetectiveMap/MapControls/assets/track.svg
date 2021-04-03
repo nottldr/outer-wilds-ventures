@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="125px" viewBox="0 0 8 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>track</title>
+    <g id="Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu-Closed" transform="translate(-1395.000000, -42.000000)" fill="#CFCFD1">
+            <g id="zoomscrubber" transform="translate(1387.000000, 27.000200)">
+                <g id="track" transform="translate(8.843600, 15.261000)">
+                    <polygon id="Fill-3" points="6.937 2.593 3.468 7.10542736e-15 4.04121181e-13 2.593 4.04121181e-13 47.072 3.468 43.604 6.937 47.072"></polygon>
+                    <polygon id="Fill-5" points="6.937 31.7387 3.468 38.5904165 -5.06261699e-14 31.7387 -5.06261699e-14 119.615718 3.468 124.7387 6.937 119.615718"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

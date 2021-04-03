@@ -1,12 +1,12 @@
 import React from 'react';
-import { Connection, MapNode } from '../data/universe/types';
-import BoundingBox from '../util/bounding-box';
-import dimensionsFrom from '../util/dimensions-from';
-import notEmpty from '../util/not-empty';
-import themeFrom from '../util/theme-from';
+import { Connection, MapNode } from '../../data/universe/types';
+import BoundingBox from '../../util/bounding-box';
+import dimensionsFrom from '../../util/dimensions-from';
+import notEmpty from '../../util/not-empty';
+import themeFrom from '../../util/theme-from';
 import Card from './Card';
-import { ReactComponent as LinkChevron } from '../assets/images/link_chevron.svg';
-import theme from '../util/theme';
+import { ReactComponent as LinkChevron } from '../../assets/images/link_chevron.svg';
+import theme from '../../util/theme';
 
 type Size = {
   width: number;

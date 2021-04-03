@@ -1,7 +1,7 @@
 import React from 'react';
-import { MapNode } from '../data/universe/types';
-import dimensionsFrom from '../util/dimensions-from';
-import themeFrom from '../util/theme-from';
+import { MapNode } from '../../data/universe/types';
+import dimensionsFrom from '../../util/dimensions-from';
+import themeFrom from '../../util/theme-from';
 
 export type Props = {
   onSelect?: (node: MapNode) => void;

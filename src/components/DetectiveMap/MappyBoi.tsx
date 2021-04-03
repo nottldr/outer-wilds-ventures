@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
 import useDimensions from 'react-cool-dimensions';
-import { ReactSVGPanZoom } from 'react-svg-pan-zoom';
-import { Connection, MapNode } from '../data/universe/types';
-import BoundingBox from '../util/bounding-box';
-import theme from '../util/theme';
-import DetectiveMap from './DetectiveMap';
-import Log from './Log';
+import { ReactSVGPanZoom, Value } from 'react-svg-pan-zoom';
+import { Connection, MapNode } from '../../data/universe/types';
+import BoundingBox from '../../util/bounding-box';
+import theme from '../../util/theme';
+import DetectiveMap from '.';
+import Log from '../Log';
+import MapControls from './MapControls';
 
 type Props = {
   nodes: MapNode[];
 };
+
+const scaleFactorMax = 1;
+const scaleFactorMin = 0.1;
 
 const MappyBoi: React.FC<Props> = ({ nodes }) => {
   const [selected, setSelected] = React.useState<{
@@ -81,10 +85,19 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
     Viewer.current?.fitToViewer();
   }, []);
 
-  const [value, onChangeValue] = React.useState({});
+  const [value, setValue] = React.useState<Value>();
+  const [scaleFactor, setScaleFactor] = React.useState(scaleFactorMax);
 
-  const _zoomIn = () => Viewer.current?.zoomOnViewerCenter(1.3);
-  const _zoomOut = () => Viewer.current?.zoomOnViewerCenter(1 / 1.3);
+  const onChangeValue = (value: Value) => {
+    setValue(value);
+  };
+
+  const onZoom = (value: any) => {
+    setScaleFactor(value.a);
+  };
+
+  const _zoomIn = () => Viewer.current?.zoomOnViewerCenter(1.2);
+  const _zoomOut = () => Viewer.current?.zoomOnViewerCenter(1 / 1.2);
   const _fitToViewer = () =>
     (Viewer.current?.fitToViewer as any)('center', 'center');
 
@@ -101,24 +114,14 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
     });
   }, [width, height]);
 
+  const level =
+    (scaleFactor - scaleFactorMin) / (scaleFactorMax - scaleFactorMin);
+
   return (
     <>
       <div className="bg-page-bg relative max-w-full h-full overflow-scroll scrollbar-off">
-        <div
-          className="text-white absolute top-0 right-0"
-          style={{ zIndex: 999 }}
-        >
-          <button className="btn" onClick={() => _zoomIn()}>
-            Zoom +
-          </button>
-          /
-          <button className="btn" onClick={() => _zoomOut()}>
-            Zoom -
-          </button>
-          /
-          <button className="btn" onClick={() => _fitToViewer()}>
-            Fit
-          </button>
+        <div className="absolute top-6 right-6" style={{ zIndex: 999 }}>
+          <MapControls onZoomIn={_zoomIn} onZoomOut={_zoomOut} level={level} />
         </div>
         <div
           ref={ref as any}
@@ -126,8 +129,9 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
         >
           {
             <ReactSVGPanZoom
-              value={value as any}
+              value={value ?? ({} as Value)}
               onChangeValue={onChangeValue}
+              onZoom={onZoom}
               tool="auto"
               background={theme.colors['page-bg']}
               SVGBackground={theme.colors['page-bg']}
@@ -143,6 +147,8 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
               width={width > 0 ? width : 500}
               height={height > 0 ? height : 500}
               detectAutoPan={false}
+              scaleFactorMax={scaleFactorMax}
+              scaleFactorMin={scaleFactorMin}
             >
               <svg
                 width={boundingBox.size.width}

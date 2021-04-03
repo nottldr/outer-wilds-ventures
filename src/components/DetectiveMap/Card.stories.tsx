@@ -3,7 +3,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import Card, { Props } from './Card';
-import { MapNodeSize, PlanetColour } from '../data/universe/types';
+import { MapNodeSize, PlanetColour } from '../../data/universe/types';
 
 export default {
   title: 'Card',

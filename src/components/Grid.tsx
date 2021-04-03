@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapNode, Universe as UniverseType } from '../data/universe/types';
-import Card from './Card';
+import Card from './DetectiveMap/Card';
 import Log from './Log';
 
 type Props = UniverseType;

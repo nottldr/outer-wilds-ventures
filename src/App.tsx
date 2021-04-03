@@ -4,7 +4,7 @@ import Grid from './components/Grid';
 import Content from './components/layout/Content';
 import Sidebar from './components/layout/Sidebar';
 import List from './components/List';
-import MappyBoi from './components/MappyBoi';
+import MappyBoi from './components/DetectiveMap/MappyBoi';
 import universe from './data/universe';
 
 type Props = {
