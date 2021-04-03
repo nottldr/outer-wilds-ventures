@@ -11,14 +11,41 @@ type Props = {
   className?: React.HTMLAttributes<HTMLElement>['className'];
 };
 
+enum SidebarState {
+  DEFAULT,
+  OPEN,
+  CLOSED,
+}
+
 const App: React.FC<Props> = ({ className }) => {
+  const [sidebarState, setSidebarState] = React.useState<SidebarState>(
+    SidebarState.DEFAULT
+  );
+
+  const isSidebarOpen = (() => {
+    if (sidebarState === SidebarState.DEFAULT) {
+      // XXX: check viewport size, and decide? defaulting to open for now...
+      return true;
+    }
+
+    return sidebarState === SidebarState.OPEN;
+  })();
+
+  const toggleSidebar = React.useCallback(() => {
+    setSidebarState(isSidebarOpen ? SidebarState.CLOSED : SidebarState.OPEN);
+  }, [isSidebarOpen]);
+
   return (
     <Router>
       <div
         className={`${className} md:flex flex-col md:flex-row md:h-screen w-full`}
       >
-        <div className="flex flex-col w-full md:w-80 flex-shrink-0">
-          <Sidebar />
+        <div
+          className={`flex ${
+            isSidebarOpen ? `md:w-80` : `md:w-20`
+          } flex-col w-full flex-shrink-0`}
+        >
+          <Sidebar toggle={toggleSidebar} isOpen={isSidebarOpen} />
         </div>
 
         <div className="flex flex-col flex-1 overflow-scroll scrollbar-off">
