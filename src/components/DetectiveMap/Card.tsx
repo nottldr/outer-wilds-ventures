@@ -1,9 +1,8 @@
+import { ResizeObserver } from '@juggle/resize-observer';
 import React from 'react';
+import useDimensions from 'react-cool-dimensions';
 import { MapNode } from '../../data/universe/types';
 import themeFrom from '../../util/theme-from';
-import useDimensions from 'react-cool-dimensions';
-
-import { ResizeObserver } from '@juggle/resize-observer';
 
 export type Props = {
   onSelect?: (node: MapNode) => void;
@@ -25,7 +24,7 @@ const Card: React.FC<Props> = ({
   node,
   isSelected = false,
 }) => {
-  const { id, name, colour, logs } = node;
+  const { id, name, curiosity, logs } = node;
 
   const { observe } = useDimensions({
     useBorderBoxSize: true,
@@ -38,7 +37,7 @@ const Card: React.FC<Props> = ({
     },
   });
 
-  const theme = themeFrom(colour, isSelected);
+  const theme = themeFrom(curiosity, isSelected);
 
   return (
     <div

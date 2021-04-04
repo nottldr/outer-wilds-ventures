@@ -1,19 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Curiousity } from '../../../data/universe/types';
 import DiscordLogo from '../../theme/DiscordLogo';
 import Logo from '../../theme/Logo';
 import OuterWildsLogo from '../../theme/OuterWildsLogo';
 import OpenSidebarButton from './Button/OpenSidebarButton';
 
 type Props = {
-  toggle: () => void;
+  toggleSidebar: () => void;
+  toggleLayer: (curiosity: Curiousity) => void;
 };
 
-const FullSidebar: React.FC<Props> = ({ toggle }) => {
+const FullSidebar: React.FC<Props> = ({ toggleSidebar, toggleLayer }) => {
   return (
     <>
       <div className="absolute top-4 left-4">
-        <OpenSidebarButton toggle={toggle} />
+        <OpenSidebarButton toggle={toggleSidebar} />
       </div>
 
       <div className="px-8 py-4 flex flex-row items-center justify-between">
@@ -79,10 +81,30 @@ const FullSidebar: React.FC<Props> = ({ toggle }) => {
           </div>
           <div className="mb-8">
             <ul className="list-disc list-outside mx-2 pl-2">
-              <li>The Orbital Cannon &amp; The Eye</li>
-              <li>The Quantum Moon &amp; related phenomena</li>
-              <li>The Vessel &amp; Nomai arrival</li>
-              <li>The Ash Twin Project</li>
+              <li>
+                <input type="checkbox" id="toggle-ORBITAL_PROBE_CANNON" />{' '}
+                <label htmlFor="toggle-ORBITAL_PROBE_CANNON">
+                  The Orbital Cannon &amp; The Eye
+                </label>
+              </li>
+              <li>
+                <input type="checkbox" id="toggle-QUANTUM_MOON" />{' '}
+                <label htmlFor="toggle-QUANTUM_MOON">
+                  The Quantum Moon &amp; related phenomena
+                </label>
+              </li>
+              <li>
+                <input type="checkbox" id="toggle-DB_VESSEL" />{' '}
+                <label htmlFor="toggle-DB_VESSEL">
+                  The Vessel &amp; Nomai arrival
+                </label>
+              </li>
+              <li>
+                <input type="checkbox" id="toggle-TT_TIME_LOOP_DEVICE" />{' '}
+                <label htmlFor="toggle-TT_TIME_LOOP_DEVICE">
+                  The Ash Twin Project
+                </label>
+              </li>
               <li>Other, including The Interloper and the fate of the Nomai</li>
             </ul>
           </div>

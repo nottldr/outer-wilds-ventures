@@ -6,9 +6,9 @@ import Card from './Card';
 export type Props = MapNode;
 
 const Location: React.FC<Props> = (props) => {
-  const { name, logs, colour } = props;
+  const { name, logs, curiosity } = props;
 
-  const theme = themeFrom(colour);
+  const theme = themeFrom(curiosity);
 
   return (
     <div>

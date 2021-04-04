@@ -6,6 +6,7 @@ import Sidebar from './components/layout/Sidebar';
 import List from './components/List';
 import MappyBoi from './components/DetectiveMap/MappyBoi';
 import universe from './data/universe';
+import { Curiousity } from './data/universe/types';
 
 type Props = {
   className?: React.HTMLAttributes<HTMLElement>['className'];
@@ -35,6 +36,10 @@ const App: React.FC<Props> = ({ className }) => {
     setSidebarState(isSidebarOpen ? SidebarState.CLOSED : SidebarState.OPEN);
   }, [isSidebarOpen]);
 
+  const toggleLayer = React.useCallback((curiosity: Curiousity) => {
+    console.log(curiosity);
+  }, []);
+
   return (
     <Router>
       <div
@@ -45,7 +50,11 @@ const App: React.FC<Props> = ({ className }) => {
             isSidebarOpen ? `md:w-80` : `md:w-20`
           } flex-col w-full flex-shrink-0`}
         >
-          <Sidebar toggle={toggleSidebar} isOpen={isSidebarOpen} />
+          <Sidebar
+            toggleSidebar={toggleSidebar}
+            toggleLayer={toggleLayer}
+            isOpen={isSidebarOpen}
+          />
         </div>
 
         <div className="flex flex-col flex-1 overflow-scroll scrollbar-off">

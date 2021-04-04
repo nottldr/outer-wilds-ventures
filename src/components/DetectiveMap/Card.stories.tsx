@@ -1,9 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
-
+import { Curiousity, MapNodeSize } from '../../data/universe/types';
 import Card, { Props } from './Card';
-import { MapNodeSize, PlanetColour } from '../../data/universe/types';
 
 export default {
   title: 'Card',
@@ -23,7 +22,7 @@ const args: Props = {
       'This results in slightly longer warp windows that last roughly several seconds.',
       'Anyone stepping onto the warp platform during the active window will be immediately warped.',
     ],
-    colour: PlanetColour.GREY,
+    curiosity: undefined,
     sizeClass: MapNodeSize.MEDIUM,
     connections: [],
     location: {
@@ -34,4 +33,7 @@ const args: Props = {
 };
 
 export const Standard = Template.bind({});
-Standard.args = { ...args, node: { ...args.node, colour: PlanetColour.RED } };
+Standard.args = {
+  ...args,
+  node: { ...args.node, curiosity: Curiousity.VESSEL },
+};

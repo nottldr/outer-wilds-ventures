@@ -1,6 +1,14 @@
 type Log = string;
 type NodeID = string;
 
+export enum Curiousity {
+  SUNKEN_MODULE,
+  VESSEL,
+  COMET_CORE,
+  QUANTUM_MOON,
+  TIME_LOOP,
+}
+
 export enum PlanetColour {
   PURPLE,
   GREEN,
@@ -31,7 +39,7 @@ export type MapNode = {
   id: NodeID;
   name: string;
   image: string;
-  colour: PlanetColour;
+  curiosity?: Curiousity;
   sizeClass: MapNodeSize;
   logs: Log[];
   connections: MapNodeConnection[];

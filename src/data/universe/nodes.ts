@@ -2,25 +2,27 @@ import notEmpty from '../../util/not-empty';
 import library from './library';
 import shipLogs, { ShipLog } from './ship-logs';
 import sprites from './sprites';
-import { MapNode, MapNodeSize, PlanetColour } from './types';
+import { Curiousity, MapNode, MapNodeSize } from './types';
 
 const entries: ShipLog['entries'] = shipLogs.flatMap((shipLog) => {
   return shipLog.entries;
 });
 
-const colourForCuriosity = (c: string | undefined): PlanetColour => {
-  switch (c) {
+const curiousityForString = (s: string): Curiousity => {
+  switch (s) {
     case 'QUANTUM_MOON':
-      return PlanetColour.PURPLE;
+      return Curiousity.QUANTUM_MOON;
     case 'SUNKEN_MODULE':
-      return PlanetColour.GREEN;
+      return Curiousity.SUNKEN_MODULE;
     case 'VESSEL':
-      return PlanetColour.RED;
+      return Curiousity.VESSEL;
     case 'TIME_LOOP':
-      return PlanetColour.ORANGE;
+      return Curiousity.TIME_LOOP;
+    case 'COMET_CORE':
+      return Curiousity.COMET_CORE;
   }
 
-  return PlanetColour.GREY;
+  throw new Error(`Unknown curiosity: ${s}`);
 };
 
 const nodes: MapNode[] = entries
@@ -44,11 +46,17 @@ const nodes: MapNode[] = entries
       sizeClass = MapNodeSize.LARGE;
     }
 
+    const curiousity: Curiousity | undefined = (() => {
+      if (entry.curiousity) {
+        return curiousityForString(entry.curiousity);
+      }
+    })();
+
     return {
       id: entry.id,
       name: entry.name,
       image: sprites[libraryEntry.spritePath.replace(/\.png/, '.jpg')],
-      colour: colourForCuriosity(entry.curiousity),
+      curiousity: curiousity,
       sizeClass,
       logs: entry.facts.explore.map((f) => f.text),
       connections: entry.facts.rumor.filter((c) => c.sourceId != null) as any,
