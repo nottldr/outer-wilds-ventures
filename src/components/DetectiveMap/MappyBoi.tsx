@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react';
 import useDimensions from 'react-cool-dimensions';
 import { ReactSVGPanZoom, Value } from 'react-svg-pan-zoom';
+import DetectiveMap from '.';
 import { Connection, MapNode } from '../../data/universe/types';
+import { MapLayer } from '../../types';
 import BoundingBox from '../../util/bounding-box';
 import theme from '../../util/theme';
-import DetectiveMap from '.';
 import Log from '../Log';
 import MapControls from './MapControls';
 
 type Props = {
   nodes: MapNode[];
+  visibleLayers: MapLayer[];
 };
 
 const scaleFactorMax = 2;
 const scaleFactorMin = 0.1;
 
-const MappyBoi: React.FC<Props> = ({ nodes }) => {
+const MappyBoi: React.FC<Props> = ({ nodes, visibleLayers }) => {
   const [selected, setSelected] = React.useState<{
     node?: MapNode;
     connection?: Connection;
@@ -160,6 +162,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
                   onSelectNode={onSelectNode}
                   onSelectConnection={onSelectConnection}
                   selected={selected}
+                  visibleLayers={visibleLayers}
                 />
               </svg>
             </ReactSVGPanZoom>

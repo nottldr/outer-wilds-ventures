@@ -1,15 +1,24 @@
 import React from 'react';
-import { Curiosity } from '../../../data/universe/types';
+import { MapLayer } from '../../../types';
 import CompactSidebar from './CompactSidebar';
 import FullSidebar from './FullSidebar';
 
-type Props = {
-  isOpen: boolean;
+export type SidebarProps = {
   toggleSidebar: () => void;
-  toggleLayer: (curiosity: Curiosity) => void;
+  toggleLayer: (mapLayer: MapLayer) => void;
+  visibleLayers: MapLayer[];
 };
 
-const Sidebar: React.FC<Props> = ({ toggleSidebar, toggleLayer, isOpen }) => {
+type Props = SidebarProps & {
+  isOpen: boolean;
+};
+
+const Sidebar: React.FC<Props> = ({
+  toggleSidebar,
+  toggleLayer,
+  visibleLayers,
+  isOpen,
+}) => {
   return (
     <div className={`bg-paper h-full overflow-y-auto flex flex-col`}>
       <div>
@@ -17,6 +26,7 @@ const Sidebar: React.FC<Props> = ({ toggleSidebar, toggleLayer, isOpen }) => {
           <FullSidebar
             toggleSidebar={toggleSidebar}
             toggleLayer={toggleLayer}
+            visibleLayers={visibleLayers}
           />
         )}
         {!isOpen && <CompactSidebar toggleSidebar={toggleSidebar} />}

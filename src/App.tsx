@@ -7,6 +7,7 @@ import List from './components/List';
 import MappyBoi from './components/DetectiveMap/MappyBoi';
 import universe from './data/universe';
 import { Curiosity } from './data/universe/types';
+import { MapLayer } from './types';
 
 type Props = {
   className?: React.HTMLAttributes<HTMLElement>['className'];
@@ -18,9 +19,20 @@ enum SidebarState {
   CLOSED,
 }
 
+const DefaultVisibleLayers: MapLayer[] = [
+  // Curiosity.QUANTUM_MOON,
+  // Curiosity.SUNKEN_MODULE,
+  MapLayer.TIME_LOOP,
+  MapLayer.VESSEL,
+];
+
 const App: React.FC<Props> = ({ className }) => {
   const [sidebarState, setSidebarState] = React.useState<SidebarState>(
     SidebarState.DEFAULT
+  );
+
+  const [visibleLayers, setVisibleLayers] = React.useState<MapLayer[]>(
+    DefaultVisibleLayers
   );
 
   const isSidebarOpen = (() => {
@@ -36,9 +48,16 @@ const App: React.FC<Props> = ({ className }) => {
     setSidebarState(isSidebarOpen ? SidebarState.CLOSED : SidebarState.OPEN);
   }, [isSidebarOpen]);
 
-  const toggleLayer = React.useCallback((curiosity: Curiosity) => {
-    console.log(curiosity);
-  }, []);
+  const toggleLayer = React.useCallback(
+    (mapLayer: MapLayer) => {
+      if (visibleLayers.includes(mapLayer)) {
+        setVisibleLayers(visibleLayers.filter((c) => c !== mapLayer));
+      } else {
+        setVisibleLayers([...visibleLayers, mapLayer]);
+      }
+    },
+    [visibleLayers]
+  );
 
   return (
     <Router>
@@ -53,6 +72,7 @@ const App: React.FC<Props> = ({ className }) => {
           <Sidebar
             toggleSidebar={toggleSidebar}
             toggleLayer={toggleLayer}
+            visibleLayers={visibleLayers}
             isOpen={isSidebarOpen}
           />
         </div>
@@ -67,7 +87,10 @@ const App: React.FC<Props> = ({ className }) => {
                 <Grid nodes={universe.nodes} />
               </Route>
               <Route path="/">
-                <MappyBoi nodes={universe.nodes} />
+                <MappyBoi
+                  nodes={universe.nodes}
+                  visibleLayers={visibleLayers}
+                />
               </Route>
             </Switch>
           </Content>

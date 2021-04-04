@@ -1,17 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { SidebarProps } from '.';
 import { Curiosity } from '../../../data/universe/types';
+import { MapLayer } from '../../../types';
 import DiscordLogo from '../../theme/DiscordLogo';
 import Logo from '../../theme/Logo';
 import OuterWildsLogo from '../../theme/OuterWildsLogo';
 import OpenSidebarButton from './Button/OpenSidebarButton';
 
-type Props = {
-  toggleSidebar: () => void;
-  toggleLayer: (curiosity: Curiosity) => void;
-};
+type Props = SidebarProps;
 
-const FullSidebar: React.FC<Props> = ({ toggleSidebar, toggleLayer }) => {
+const FullSidebar: React.FC<Props> = ({
+  toggleSidebar,
+  toggleLayer,
+  visibleLayers,
+}) => {
   return (
     <>
       <div className="absolute top-4 left-4">
@@ -82,30 +85,58 @@ const FullSidebar: React.FC<Props> = ({ toggleSidebar, toggleLayer }) => {
           <div className="mb-8">
             <ul className="list-disc list-outside mx-2 pl-2">
               <li>
-                <input type="checkbox" id="toggle-ORBITAL_PROBE_CANNON" />{' '}
-                <label htmlFor="toggle-ORBITAL_PROBE_CANNON">
+                <input
+                  type="checkbox"
+                  id="toggle-SUNKEN_MODULE"
+                  checked={visibleLayers.includes(MapLayer.SUNKEN_MODULE)}
+                  onChange={() => toggleLayer(MapLayer.SUNKEN_MODULE)}
+                />{' '}
+                <label htmlFor="toggle-SUNKEN_MODULE">
                   The Orbital Cannon &amp; The Eye
                 </label>
               </li>
               <li>
-                <input type="checkbox" id="toggle-QUANTUM_MOON" />{' '}
+                <input
+                  type="checkbox"
+                  id="toggle-QUANTUM_MOON"
+                  checked={visibleLayers.includes(MapLayer.QUANTUM_MOON)}
+                  onChange={() => toggleLayer(MapLayer.QUANTUM_MOON)}
+                />{' '}
                 <label htmlFor="toggle-QUANTUM_MOON">
                   The Quantum Moon &amp; related phenomena
                 </label>
               </li>
               <li>
-                <input type="checkbox" id="toggle-DB_VESSEL" />{' '}
-                <label htmlFor="toggle-DB_VESSEL">
+                <input
+                  type="checkbox"
+                  id="toggle-VESSEL"
+                  checked={visibleLayers.includes(MapLayer.VESSEL)}
+                  onChange={() => toggleLayer(MapLayer.VESSEL)}
+                />{' '}
+                <label htmlFor="toggle-VESSEL">
                   The Vessel &amp; Nomai arrival
                 </label>
               </li>
               <li>
-                <input type="checkbox" id="toggle-TT_TIME_LOOP_DEVICE" />{' '}
-                <label htmlFor="toggle-TT_TIME_LOOP_DEVICE">
-                  The Ash Twin Project
+                <input
+                  type="checkbox"
+                  id="toggle-TIME_LOOP"
+                  checked={visibleLayers.includes(MapLayer.TIME_LOOP)}
+                  onChange={() => toggleLayer(MapLayer.TIME_LOOP)}
+                />{' '}
+                <label htmlFor="toggle-TIME_LOOP">The Ash Twin Project</label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="toggle-OTHER"
+                  checked={visibleLayers.includes(MapLayer.OTHER)}
+                  onChange={() => toggleLayer(MapLayer.OTHER)}
+                />{' '}
+                <label htmlFor="toggle-OTHER">
+                  Other, including The Interloper and the fate of the Nomai
                 </label>
               </li>
-              <li>Other, including The Interloper and the fate of the Nomai</li>
             </ul>
           </div>
         </div>

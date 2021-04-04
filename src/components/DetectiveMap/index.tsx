@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReactComponent as LinkChevron } from '../../assets/images/link_chevron.svg';
-import { Connection, MapNode } from '../../data/universe/types';
+import { Connection, Curiosity, MapNode } from '../../data/universe/types';
+import { MapLayer } from '../../types';
 import BoundingBox from '../../util/bounding-box';
 import dimensionsFrom from '../../util/dimensions-from';
 import notEmpty from '../../util/not-empty';
@@ -109,6 +110,30 @@ type Props = {
   onSelectNode: (node: MapNode) => void;
   onSelectConnection: (connection: Connection) => void;
   selected?: { node?: MapNode; connection?: Connection };
+  visibleLayers: MapLayer[];
+};
+
+const curiosityIsInVisibleLayer = (
+  curiosity: Curiosity | undefined,
+  mapLayers: MapLayer[]
+): boolean => {
+  const mapLayer = (() => {
+    switch (curiosity) {
+      case Curiosity.QUANTUM_MOON:
+        return MapLayer.QUANTUM_MOON;
+      case Curiosity.SUNKEN_MODULE:
+        return MapLayer.SUNKEN_MODULE;
+      case Curiosity.TIME_LOOP:
+        return MapLayer.TIME_LOOP;
+      case Curiosity.VESSEL:
+        return MapLayer.VESSEL;
+      case Curiosity.COMET_CORE:
+      default:
+        return MapLayer.OTHER;
+    }
+  })();
+
+  return mapLayers.includes(mapLayer);
 };
 
 const DetectiveMap: React.FC<Props> = ({
@@ -117,6 +142,7 @@ const DetectiveMap: React.FC<Props> = ({
   selected,
   onSelectNode,
   onSelectConnection,
+  visibleLayers,
 }) => {
   const [sizes, setSizes] = React.useState<Record<MapNode['id'], Size>>({});
 
@@ -132,6 +158,9 @@ const DetectiveMap: React.FC<Props> = ({
 
   const mappableNodes = React.useMemo(() => {
     return unsortedNodes
+      .filter((node) =>
+        curiosityIsInVisibleLayer(node.curiosity, visibleLayers)
+      )
       .sort((a, b) => {
         const da = sizes[a.id];
         const db = sizes[b.id];
@@ -180,7 +209,7 @@ const DetectiveMap: React.FC<Props> = ({
           frame,
         };
       });
-  }, [unsortedNodes, boundingBox, sizes]);
+  }, [unsortedNodes, boundingBox, sizes, visibleLayers]);
 
   const connections = React.useMemo(() => {
     const findById = (id: string) =>
