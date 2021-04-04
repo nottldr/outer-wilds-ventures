@@ -132,7 +132,6 @@ const DetectiveMap: React.FC<Props> = ({
   );
 
   const mappableNodes = React.useMemo(() => {
-    console.log('mappables');
     return unsortedNodes
       .sort((a, b) => {
         const da = sizes[a.id];
@@ -148,10 +147,6 @@ const DetectiveMap: React.FC<Props> = ({
 
         if (db == null) {
           return -1;
-        }
-
-        if (a.id === 'QM_SHRINE' || b.id === 'QM_SHRINE') {
-          console.log({ a, b }, { da, db });
         }
 
         const ya = a.location.y;
