@@ -18,7 +18,7 @@ export type Props = {
 
 const BaseWidth = 110;
 const BaseHeight = BaseWidth * 1.4;
-const Padding = 2;
+const Padding = 4;
 
 const Card: React.FC<Props> = ({
   onSelect,
@@ -82,8 +82,12 @@ const Card: React.FC<Props> = ({
             WebkitTextStroke: '1px black',
           }}
         >
-          {!showLogCount && '?'}
-          {showLogCount && logs.length}
+          {showLogCount && (
+            <>
+              {spoilerFreeMode && '?'}
+              {!spoilerFreeMode && logs.length}
+            </>
+          )}
         </div>
       </div>
     </div>
