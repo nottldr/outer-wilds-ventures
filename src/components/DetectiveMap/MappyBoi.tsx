@@ -101,7 +101,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
   const _fitToViewer = () =>
     (Viewer.current?.fitToViewer as any)('center', 'center');
 
-  const { ref, width, height } = useDimensions();
+  const { observe, width, height } = useDimensions();
 
   useEffect(() => {
     if (width === 0 || height === 0) {
@@ -124,7 +124,7 @@ const MappyBoi: React.FC<Props> = ({ nodes }) => {
           <MapControls onZoomIn={_zoomIn} onZoomOut={_zoomOut} level={level} />
         </div>
         <div
-          ref={ref as any}
+          ref={observe as any}
           className={`${isReady ? 'visible' : 'invisible'} h-full`}
         >
           {

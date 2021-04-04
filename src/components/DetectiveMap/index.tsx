@@ -1,12 +1,12 @@
 import React from 'react';
 import { Connection, MapNode } from '../../data/universe/types';
 import BoundingBox from '../../util/bounding-box';
-import dimensionsFrom from '../../util/dimensions-from';
 import notEmpty from '../../util/not-empty';
 import themeFrom from '../../util/theme-from';
 import Card from './Card';
 import { ReactComponent as LinkChevron } from '../../assets/images/link_chevron.svg';
 import theme from '../../util/theme';
+import dimensionsFrom from '../../util/dimensions-from';
 
 type Size = {
   width: number;
@@ -21,18 +21,27 @@ type Point = {
 class Rect {
   private _centre: Point;
   private _size: Size;
+  scale: number = 1;
 
-  constructor(centre: Point, size: Size) {
+  constructor(centre: Point, size: Size, scale = 1) {
     this._centre = centre;
     this._size = size;
+    this.scale = scale;
   }
 
   get centre() {
     return this._centre;
   }
 
-  get size() {
+  get originalSize() {
     return this._size;
+  }
+
+  get size() {
+    return {
+      width: this._size.width * this.scale,
+      height: this._size.height * this.scale,
+    };
   }
 
   get topLeft(): Point {
@@ -110,20 +119,52 @@ const DetectiveMap: React.FC<Props> = ({
   onSelectNode,
   onSelectConnection,
 }) => {
+  const [sizes, setSizes] = React.useState<Record<MapNode['id'], Size>>({});
+
+  const onCardResize = React.useCallback(
+    (id: MapNode['id'], size: Size) => {
+      setSizes({
+        ...sizes,
+        [id]: size,
+      });
+    },
+    [sizes]
+  );
+
   const mappableNodes = React.useMemo(() => {
+    console.log('mappables');
     return unsortedNodes
       .sort((a, b) => {
-        const da = dimensionsFrom(a.sizeClass);
-        const db = dimensionsFrom(b.sizeClass);
+        const da = sizes[a.id];
+        const db = sizes[b.id];
 
-        if (da.width < db.width) {
+        if (da == null && db == null) {
+          return 0;
+        }
+
+        if (da == null) {
           return 1;
-        } else if (da.width > db.width) {
+        }
+
+        if (db == null) {
           return -1;
+        }
+
+        if (a.id === 'QM_SHRINE' || b.id === 'QM_SHRINE') {
+          console.log({ a, b }, { da, db });
         }
 
         const ya = a.location.y;
         const yb = b.location.y;
+
+        const sa = dimensionsFrom(a.sizeClass).scale;
+        const sb = dimensionsFrom(b.sizeClass).scale;
+
+        if (sa < sb) {
+          return 1;
+        } else if (sa > sb) {
+          return -1;
+        }
 
         if (ya < yb) {
           return -1;
@@ -133,14 +174,19 @@ const DetectiveMap: React.FC<Props> = ({
 
         return 0;
       })
-      .map((node) => ({
-        node,
-        frame: new Rect(
+      .map((node) => {
+        const frame = new Rect(
           boundingBox.pointFor(node.location),
-          dimensionsFrom(node.sizeClass)
-        ),
-      }));
-  }, [unsortedNodes, boundingBox]);
+          sizes[node.id] ?? { height: 0, width: 0 },
+          dimensionsFrom(node.sizeClass).scale
+        );
+
+        return {
+          node,
+          frame,
+        };
+      });
+  }, [unsortedNodes, boundingBox, sizes]);
 
   const connections = React.useMemo(() => {
     const findById = (id: string) =>
@@ -297,42 +343,39 @@ const DetectiveMap: React.FC<Props> = ({
         );
       })}
       {mappableNodes.map(({ node, frame }) => (
-        <foreignObject
+        <svg
           key={node.id}
           x={frame.topLeft.x}
           y={frame.topLeft.y}
           width={frame.size.width}
           height={frame.size.height}
         >
-          <div
-            // @ts-ignore
-            xmlns="http://www.w3.org/1999/xhtml"
+          <g
+            width={frame.size.width}
+            height={frame.size.height}
+            style={{
+              transform: `scale(${frame.scale})`,
+            }}
           >
-            <div>
-              <Card
-                node={node}
-                onSelect={onSelectNode}
-                isSelected={node.id === selected?.node?.id}
-              />
-            </div>
-          </div>
-        </foreignObject>
+            <foreignObject
+              width={frame.originalSize.width}
+              height={frame.originalSize.height}
+            >
+              <div
+                // @ts-ignore
+                xmlns="http://www.w3.org/1999/xhtml"
+              >
+                <Card
+                  node={node}
+                  onSelect={onSelectNode}
+                  onResize={onCardResize}
+                  isSelected={node.id === selected?.node?.id}
+                />
+              </div>
+            </foreignObject>
+          </g>
+        </svg>
       ))}
-      {false &&
-        mappableNodes.map(({ node }) => {
-          const theme = themeFrom(node.colour, node.id === selected?.node?.id);
-          const dimensions = dimensionsFrom(node.sizeClass);
-
-          return (
-            <circle
-              key={node.id}
-              className={`fill-current ${theme.bgtext}`}
-              cx={boundingBox.pointFor(node.location).x}
-              cy={boundingBox.pointFor(node.location).y}
-              r={dimensions.width / 4}
-            />
-          );
-        })}
     </g>
   );
 };
