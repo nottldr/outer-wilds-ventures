@@ -4,6 +4,8 @@ import useDimensions from 'react-cool-dimensions';
 import { MapNode } from '../../data/universe/types';
 import themeFrom from '../../util/theme-from';
 
+import defaultPhoto from '../../data/assets/sprites/jpg/DEFAULT_PHOTO.jpg';
+
 export type Props = {
   onSelect?: (node: MapNode) => void;
   node: MapNode;
@@ -12,6 +14,8 @@ export type Props = {
     id: MapNode['id'],
     size: { width: number; height: number }
   ) => void;
+  showLogCount: boolean;
+  spoilerFreeMode: boolean;
 };
 
 const BaseWidth = 110;
@@ -23,6 +27,8 @@ const Card: React.FC<Props> = ({
   onResize,
   node,
   isSelected = false,
+  showLogCount,
+  spoilerFreeMode,
 }) => {
   const { id, name, curiosity, logs } = node;
 
@@ -37,12 +43,14 @@ const Card: React.FC<Props> = ({
     },
   });
 
-  const theme = themeFrom(curiosity, isSelected);
+  const theme = themeFrom(spoilerFreeMode ? undefined : curiosity, isSelected);
 
   return (
     <div
       ref={observe as any}
-      className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer font-space-mono flex flex-col`}
+      className={`${theme.bg} ${theme.bghover} ${theme.text} cursor-pointer ${
+        spoilerFreeMode ? 'font-flow-block' : 'font-space-mono'
+      } flex flex-col`}
       style={{
         width: BaseWidth,
         maxWidth: BaseWidth,
@@ -69,15 +77,15 @@ const Card: React.FC<Props> = ({
         }}
       >
         <div
-          className="h-full w-full flex items-center justify-center content-center text-white text-6xl shadow-md bg-cover"
+          className={`h-full w-full flex items-center justify-center content-center text-6xl shadow-md bg-cover bg-page-bg font-space-mono text-white`}
           style={{
             imageRendering: 'pixelated',
-            backgroundImage: `url(${node.image})`,
-            textShadow:
-              '0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black',
+            backgroundImage: spoilerFreeMode ? undefined : `url(${node.image})`,
+            WebkitTextStroke: '1px black',
           }}
         >
-          {logs.length}
+          {!showLogCount && '?'}
+          {showLogCount && logs.length}
         </div>
       </div>
     </div>

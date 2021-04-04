@@ -32,6 +32,8 @@ const Grid: React.FC<Props> = ({ nodes }) => {
             node={node}
             onSelect={onSelect}
             isSelected={node.id === selected?.id}
+            showLogCount={true}
+            spoilerFreeMode={false}
           />
         </div>
       ))}

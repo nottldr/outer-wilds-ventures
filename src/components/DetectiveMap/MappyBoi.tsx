@@ -3,7 +3,7 @@ import useDimensions from 'react-cool-dimensions';
 import { ReactSVGPanZoom, Value } from 'react-svg-pan-zoom';
 import DetectiveMap from '.';
 import { Connection, MapNode } from '../../data/universe/types';
-import { MapLayer } from '../../types';
+import { MapLayer } from '../../util/map-layer';
 import BoundingBox from '../../util/bounding-box';
 import theme from '../../util/theme';
 import Log from '../Log';
@@ -12,12 +12,19 @@ import MapControls from './MapControls';
 type Props = {
   nodes: MapNode[];
   visibleLayers: MapLayer[];
+  showLogCounts: boolean;
+  spoilerFreeMode: boolean;
 };
 
 const scaleFactorMax = 2;
 const scaleFactorMin = 0.1;
 
-const MappyBoi: React.FC<Props> = ({ nodes, visibleLayers }) => {
+const MappyBoi: React.FC<Props> = ({
+  nodes,
+  visibleLayers,
+  showLogCounts,
+  spoilerFreeMode,
+}) => {
   const [selected, setSelected] = React.useState<{
     node?: MapNode;
     connection?: Connection;
@@ -163,6 +170,8 @@ const MappyBoi: React.FC<Props> = ({ nodes, visibleLayers }) => {
                   onSelectConnection={onSelectConnection}
                   selected={selected}
                   visibleLayers={visibleLayers}
+                  showLogCounts={showLogCounts}
+                  spoilerFreeMode={spoilerFreeMode}
                 />
               </svg>
             </ReactSVGPanZoom>

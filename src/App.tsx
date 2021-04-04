@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MappyBoi from './components/DetectiveMap/MappyBoi';
 import Grid from './components/Grid';
 import Content from './components/layout/Content';
 import Sidebar from './components/layout/Sidebar';
 import List from './components/List';
-import MappyBoi from './components/DetectiveMap/MappyBoi';
 import universe from './data/universe';
-import { Curiosity } from './data/universe/types';
-import { MapLayer } from './types';
+import { MapLayer } from './util/map-layer';
 
 type Props = {
   className?: React.HTMLAttributes<HTMLElement>['className'];
@@ -20,15 +19,27 @@ enum SidebarState {
 }
 
 const DefaultVisibleLayers: MapLayer[] = [
-  // Curiosity.QUANTUM_MOON,
-  // Curiosity.SUNKEN_MODULE,
-  MapLayer.TIME_LOOP,
+  MapLayer.SUNKEN_MODULE,
   MapLayer.VESSEL,
+  MapLayer.QUANTUM_MOON,
+  MapLayer.TIME_LOOP,
+  MapLayer.OTHER,
 ];
+
+const DefaultShowLogCounts = true;
+const DefaultSpoilerFreeMode = true;
 
 const App: React.FC<Props> = ({ className }) => {
   const [sidebarState, setSidebarState] = React.useState<SidebarState>(
     SidebarState.DEFAULT
+  );
+
+  const [showLogCounts, setShowLogCounts] = React.useState(
+    DefaultShowLogCounts
+  );
+
+  const [spoilerFreeMode, setSpoilerFreeMode] = React.useState(
+    DefaultSpoilerFreeMode
   );
 
   const [visibleLayers, setVisibleLayers] = React.useState<MapLayer[]>(
@@ -59,6 +70,14 @@ const App: React.FC<Props> = ({ className }) => {
     [visibleLayers]
   );
 
+  const toggleShowLogCounts = React.useCallback(() => {
+    setShowLogCounts(!showLogCounts);
+  }, [showLogCounts]);
+
+  const toggleSpoilerFreeMode = React.useCallback(() => {
+    setSpoilerFreeMode(!spoilerFreeMode);
+  }, [spoilerFreeMode]);
+
   return (
     <Router>
       <div
@@ -73,6 +92,10 @@ const App: React.FC<Props> = ({ className }) => {
             toggleSidebar={toggleSidebar}
             toggleLayer={toggleLayer}
             visibleLayers={visibleLayers}
+            toggleShowLogCounts={toggleShowLogCounts}
+            showLogCounts={showLogCounts}
+            toggleSpoilerFreeMode={toggleSpoilerFreeMode}
+            spoilerFreeMode={spoilerFreeMode}
             isOpen={isSidebarOpen}
           />
         </div>
@@ -90,6 +113,8 @@ const App: React.FC<Props> = ({ className }) => {
                 <MappyBoi
                   nodes={universe.nodes}
                   visibleLayers={visibleLayers}
+                  showLogCounts={showLogCounts}
+                  spoilerFreeMode={spoilerFreeMode}
                 />
               </Route>
             </Switch>

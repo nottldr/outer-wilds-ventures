@@ -17,7 +17,7 @@ const Location: React.FC<Props> = (props) => {
       >
         {name}
       </h1>
-      <Card node={props} />
+      <Card node={props} spoilerFreeMode={false} showLogCount={true} />
       <ul className="list-disc list-inside mx-4 font-space-mono">
         {logs.map((log, idx) => (
           <li key={idx}>{log}</li>

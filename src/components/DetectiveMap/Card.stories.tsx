@@ -30,6 +30,8 @@ const args: Props = {
       y: 0,
     },
   },
+  showLogCount: true,
+  spoilerFreeMode: false,
 };
 
 export const Standard = Template.bind({});

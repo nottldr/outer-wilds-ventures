@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as LinkChevron } from '../../assets/images/link_chevron.svg';
 import { Connection, Curiosity, MapNode } from '../../data/universe/types';
-import { MapLayer } from '../../types';
+import { MapLayer } from '../../util/map-layer';
 import BoundingBox from '../../util/bounding-box';
 import dimensionsFrom from '../../util/dimensions-from';
 import notEmpty from '../../util/not-empty';
@@ -111,6 +111,8 @@ type Props = {
   onSelectConnection: (connection: Connection) => void;
   selected?: { node?: MapNode; connection?: Connection };
   visibleLayers: MapLayer[];
+  showLogCounts: boolean;
+  spoilerFreeMode: boolean;
 };
 
 const curiosityIsInVisibleLayer = (
@@ -143,6 +145,8 @@ const DetectiveMap: React.FC<Props> = ({
   onSelectNode,
   onSelectConnection,
   visibleLayers,
+  showLogCounts,
+  spoilerFreeMode,
 }) => {
   const [sizes, setSizes] = React.useState<Record<MapNode['id'], Size>>({});
 
@@ -393,6 +397,8 @@ const DetectiveMap: React.FC<Props> = ({
                   onSelect={onSelectNode}
                   onResize={onCardResize}
                   isSelected={node.id === selected?.node?.id}
+                  showLogCount={showLogCounts}
+                  spoilerFreeMode={spoilerFreeMode}
                 />
               </div>
             </foreignObject>

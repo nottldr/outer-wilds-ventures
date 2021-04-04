@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { SidebarProps } from '.';
-import { Curiosity } from '../../../data/universe/types';
-import { MapLayer } from '../../../types';
+import { MapLayer } from '../../../util/map-layer';
 import DiscordLogo from '../../theme/DiscordLogo';
 import Logo from '../../theme/Logo';
 import OuterWildsLogo from '../../theme/OuterWildsLogo';
@@ -14,6 +13,10 @@ const FullSidebar: React.FC<Props> = ({
   toggleSidebar,
   toggleLayer,
   visibleLayers,
+  toggleShowLogCounts,
+  showLogCounts,
+  toggleSpoilerFreeMode,
+  spoilerFreeMode,
 }) => {
   return (
     <>
@@ -137,6 +140,46 @@ const FullSidebar: React.FC<Props> = ({
                   Other, including The Interloper and the fate of the Nomai
                 </label>
               </li>
+            </ul>
+          </div>
+          <div className="bg-orange text-white text-center px-4 py-2 font-serif my-8 text-base">
+            <h3>Layer Controls</h3>
+          </div>
+          <div className="mb-8">
+            <ul className="list-disc list-outside mx-2 pl-2">
+              <li>
+                <input
+                  type="checkbox"
+                  id="toggle-show-log-counts"
+                  checked={showLogCounts}
+                  onChange={() => toggleShowLogCounts()}
+                />{' '}
+                <label htmlFor="toggle-show-log-counts">
+                  Show Log entry counts
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="toggle-spoiler-free-mode"
+                  checked={spoilerFreeMode}
+                  onChange={() => toggleSpoilerFreeMode()}
+                />{' '}
+                <label htmlFor="toggle-spoiler-free-mode">
+                  Spoiler-free mode
+                </label>
+              </li>
+              {/* <li>
+                <input
+                  type="checkbox"
+                  id="toggle-spoiler-free-mode"
+                  checked={spoilerFreeMode}
+                  onChange={() => toggleSpoilerFreeMode}
+                />{' '}
+                <label htmlFor="button-reset-everything">
+                  Reset everything
+                </label>
+              </li> */}
             </ul>
           </div>
         </div>
