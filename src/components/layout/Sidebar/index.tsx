@@ -44,7 +44,18 @@ const Sidebar: React.FC<Props> = ({
             reset={reset}
           />
         )}
-        {!isOpen && <CompactSidebar toggleSidebar={toggleSidebar} />}
+        {!isOpen && (
+          <CompactSidebar
+            toggleSidebar={toggleSidebar}
+            toggleLayer={toggleLayer}
+            visibleLayers={visibleLayers}
+            toggleShowLogCounts={toggleShowLogCounts}
+            showLogCounts={showLogCounts}
+            toggleSpoilerFreeMode={toggleSpoilerFreeMode}
+            spoilerFreeMode={spoilerFreeMode}
+            reset={reset}
+          />
+        )}
       </div>
     </div>
   );

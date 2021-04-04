@@ -23,17 +23,19 @@ const FullSidebar: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <div className="px-8 py-4 flex flex-row items-center justify-between relative">
+      <div className="px-8 py-2 flex flex-row items-center justify-between relative">
         <div className="absolute top-4 left-4">
           <OpenSidebarButton toggle={toggleSidebar} />
         </div>
-        <NavLink to="/" className="focus:outline-none focus:shadow-outline">
-          <div className="flex flex-row justify-center">
-            <div className="w-2/3">
-              <Logo />
-            </div>
+        <div className="flex flex-row flex-grow">
+          <div className="flex flex-grow items-center justify-center">
+            <NavLink to="/" className="focus:outline-none focus:shadow-outline">
+              <div className="w-24 md:w-48">
+                <Logo />
+              </div>
+            </NavLink>
           </div>
-        </NavLink>
+        </div>
       </div>
 
       <div className="mx-4 flex-row">
@@ -71,7 +73,7 @@ const FullSidebar: React.FC<Props> = ({
         </nav> */}
 
         <div className="font-space-mono text-xs">
-          <div className="bg-darkblue text-white text-center px-4 py-2 font-serif my-8 text-base">
+          <div className="bg-darkblue text-white text-center px-4 py-2 font-serif mt-4 mb-8 md:my-8 text-base">
             <h1 className="uppercase">Outer Wilds Ventures</h1>
             <h2>Archaeologist Guide</h2>
           </div>
