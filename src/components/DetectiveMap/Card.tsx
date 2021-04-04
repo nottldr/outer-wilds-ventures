@@ -4,8 +4,6 @@ import useDimensions from 'react-cool-dimensions';
 import { MapNode } from '../../data/universe/types';
 import themeFrom from '../../util/theme-from';
 
-import defaultPhoto from '../../data/assets/sprites/jpg/DEFAULT_PHOTO.jpg';
-
 export type Props = {
   onSelect?: (node: MapNode) => void;
   node: MapNode;
