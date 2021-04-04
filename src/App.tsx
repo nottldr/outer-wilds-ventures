@@ -78,6 +78,12 @@ const App: React.FC<Props> = ({ className }) => {
     setSpoilerFreeMode(!spoilerFreeMode);
   }, [spoilerFreeMode]);
 
+  const reset = React.useCallback(() => {
+    setVisibleLayers(DefaultVisibleLayers);
+    setShowLogCounts(DefaultShowLogCounts);
+    setSpoilerFreeMode(DefaultSpoilerFreeMode);
+  }, []);
+
   return (
     <Router>
       <div
@@ -96,6 +102,7 @@ const App: React.FC<Props> = ({ className }) => {
             showLogCounts={showLogCounts}
             toggleSpoilerFreeMode={toggleSpoilerFreeMode}
             spoilerFreeMode={spoilerFreeMode}
+            reset={reset}
             isOpen={isSidebarOpen}
           />
         </div>

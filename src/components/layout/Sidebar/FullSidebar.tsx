@@ -6,6 +6,8 @@ import DiscordLogo from '../../theme/DiscordLogo';
 import Logo from '../../theme/Logo';
 import OuterWildsLogo from '../../theme/OuterWildsLogo';
 import OpenSidebarButton from './Button/OpenSidebarButton';
+import MapLayerCheckbox from './Checkbox/MapLayerConfig';
+import XCheckbox from './Checkbox/XCheckbox';
 
 type Props = SidebarProps;
 
@@ -17,14 +19,14 @@ const FullSidebar: React.FC<Props> = ({
   showLogCounts,
   toggleSpoilerFreeMode,
   spoilerFreeMode,
+  reset,
 }) => {
   return (
     <>
-      <div className="absolute top-4 left-4">
-        <OpenSidebarButton toggle={toggleSidebar} />
-      </div>
-
-      <div className="px-8 py-4 flex flex-row items-center justify-between">
+      <div className="px-8 py-4 flex flex-row items-center justify-between relative">
+        <div className="absolute top-4 left-4">
+          <OpenSidebarButton toggle={toggleSidebar} />
+        </div>
         <NavLink to="/" className="focus:outline-none focus:shadow-outline">
           <div className="flex flex-row justify-center">
             <div className="w-2/3">
@@ -86,57 +88,84 @@ const FullSidebar: React.FC<Props> = ({
             <h3>Ship Log Categories</h3>
           </div>
           <div className="mb-8">
-            <ul className="list-disc list-outside mx-2 pl-2">
+            <ul className="space-y-1">
               <li>
                 <input
                   type="checkbox"
+                  className="hidden"
                   id="toggle-SUNKEN_MODULE"
                   checked={visibleLayers.includes(MapLayer.SUNKEN_MODULE)}
                   onChange={() => toggleLayer(MapLayer.SUNKEN_MODULE)}
                 />{' '}
                 <label htmlFor="toggle-SUNKEN_MODULE">
+                  <MapLayerCheckbox
+                    checked={visibleLayers.includes(MapLayer.SUNKEN_MODULE)}
+                    mapLayer={MapLayer.SUNKEN_MODULE}
+                  />{' '}
                   The Orbital Cannon &amp; The Eye
                 </label>
               </li>
               <li>
                 <input
                   type="checkbox"
+                  className="hidden"
                   id="toggle-QUANTUM_MOON"
                   checked={visibleLayers.includes(MapLayer.QUANTUM_MOON)}
                   onChange={() => toggleLayer(MapLayer.QUANTUM_MOON)}
                 />{' '}
                 <label htmlFor="toggle-QUANTUM_MOON">
+                  <MapLayerCheckbox
+                    checked={visibleLayers.includes(MapLayer.QUANTUM_MOON)}
+                    mapLayer={MapLayer.QUANTUM_MOON}
+                  />{' '}
                   The Quantum Moon &amp; related phenomena
                 </label>
               </li>
               <li>
                 <input
                   type="checkbox"
+                  className="hidden"
                   id="toggle-VESSEL"
                   checked={visibleLayers.includes(MapLayer.VESSEL)}
                   onChange={() => toggleLayer(MapLayer.VESSEL)}
                 />{' '}
                 <label htmlFor="toggle-VESSEL">
+                  <MapLayerCheckbox
+                    checked={visibleLayers.includes(MapLayer.VESSEL)}
+                    mapLayer={MapLayer.VESSEL}
+                  />{' '}
                   The Vessel &amp; Nomai arrival
                 </label>
               </li>
               <li>
                 <input
                   type="checkbox"
+                  className="hidden"
                   id="toggle-TIME_LOOP"
                   checked={visibleLayers.includes(MapLayer.TIME_LOOP)}
                   onChange={() => toggleLayer(MapLayer.TIME_LOOP)}
                 />{' '}
-                <label htmlFor="toggle-TIME_LOOP">The Ash Twin Project</label>
+                <label htmlFor="toggle-TIME_LOOP">
+                  <MapLayerCheckbox
+                    checked={visibleLayers.includes(MapLayer.TIME_LOOP)}
+                    mapLayer={MapLayer.TIME_LOOP}
+                  />{' '}
+                  The Ash Twin Project
+                </label>
               </li>
               <li>
                 <input
                   type="checkbox"
+                  className="hidden"
                   id="toggle-OTHER"
                   checked={visibleLayers.includes(MapLayer.OTHER)}
                   onChange={() => toggleLayer(MapLayer.OTHER)}
                 />{' '}
                 <label htmlFor="toggle-OTHER">
+                  <MapLayerCheckbox
+                    checked={visibleLayers.includes(MapLayer.OTHER)}
+                    mapLayer={MapLayer.OTHER}
+                  />{' '}
                   Other, including The Interloper and the fate of the Nomai
                 </label>
               </li>
@@ -146,40 +175,37 @@ const FullSidebar: React.FC<Props> = ({
             <h3>Layer Controls</h3>
           </div>
           <div className="mb-8">
-            <ul className="list-disc list-outside mx-2 pl-2">
+            <ul className="space-y-1">
               <li>
                 <input
                   type="checkbox"
+                  className="hidden"
                   id="toggle-show-log-counts"
                   checked={showLogCounts}
                   onChange={() => toggleShowLogCounts()}
                 />{' '}
                 <label htmlFor="toggle-show-log-counts">
-                  Show Log entry counts
+                  <XCheckbox checked={showLogCounts} /> Show Log entry counts
                 </label>
               </li>
               <li>
                 <input
                   type="checkbox"
+                  className="hidden"
                   id="toggle-spoiler-free-mode"
                   checked={spoilerFreeMode}
                   onChange={() => toggleSpoilerFreeMode()}
                 />{' '}
                 <label htmlFor="toggle-spoiler-free-mode">
-                  Spoiler-free mode
+                  <XCheckbox checked={spoilerFreeMode} /> Spoiler-free mode
                 </label>
               </li>
-              {/* <li>
-                <input
-                  type="checkbox"
-                  id="toggle-spoiler-free-mode"
-                  checked={spoilerFreeMode}
-                  onChange={() => toggleSpoilerFreeMode}
-                />{' '}
-                <label htmlFor="button-reset-everything">
+              <li>
+                <div onClick={() => reset()} className="cursor-pointer">
+                  <div className="bg-card-red w-4 h-4 rounded-full inline-block align-middle" />{' '}
                   Reset everything
-                </label>
-              </li> */}
+                </div>
+              </li>
             </ul>
           </div>
         </div>

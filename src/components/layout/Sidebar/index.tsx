@@ -11,6 +11,7 @@ export type SidebarProps = {
   showLogCounts: boolean;
   toggleSpoilerFreeMode: () => void;
   spoilerFreeMode: boolean;
+  reset: () => void;
 };
 
 type Props = SidebarProps & {
@@ -25,6 +26,7 @@ const Sidebar: React.FC<Props> = ({
   showLogCounts,
   toggleSpoilerFreeMode,
   spoilerFreeMode,
+  reset,
   isOpen,
 }) => {
   return (
@@ -39,6 +41,7 @@ const Sidebar: React.FC<Props> = ({
             showLogCounts={showLogCounts}
             toggleSpoilerFreeMode={toggleSpoilerFreeMode}
             spoilerFreeMode={spoilerFreeMode}
+            reset={reset}
           />
         )}
         {!isOpen && <CompactSidebar toggleSidebar={toggleSidebar} />}

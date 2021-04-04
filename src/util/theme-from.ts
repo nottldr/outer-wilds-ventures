@@ -6,6 +6,7 @@ type LocationTheme = {
   text: string;
   bgtext: string;
   bghovertext: string;
+  bgborder: string;
 };
 
 const colourForCuriosity = (c: Curiosity | undefined): PlanetColour => {
@@ -37,6 +38,7 @@ const themeFrom = (
         text: 'text-card-green-text',
         bgtext: isSelected ? 'text-card-green-hover' : 'text-card-green',
         bghovertext: 'hover:text-card-green-hover',
+        bgborder: isSelected ? 'border-card-green-hover' : 'border-card-green',
       };
     case PlanetColour.ORANGE:
       return {
@@ -45,6 +47,9 @@ const themeFrom = (
         text: 'text-card-orange-text',
         bgtext: isSelected ? 'text-card-orange-hover' : 'text-card-orange',
         bghovertext: 'hover:text-card-orange-hover',
+        bgborder: isSelected
+          ? 'border-card-orange-hover'
+          : 'border-card-orange',
       };
     case PlanetColour.RED:
       return {
@@ -53,6 +58,7 @@ const themeFrom = (
         text: 'text-card-red-text',
         bgtext: isSelected ? 'text-card-red-hover' : 'text-card-red',
         bghovertext: 'hover:text-card-red-hover',
+        bgborder: isSelected ? 'border-card-red-hover' : 'border-card-red',
       };
     case PlanetColour.PURPLE:
       return {
@@ -61,6 +67,9 @@ const themeFrom = (
         text: 'text-card-purple-text',
         bgtext: isSelected ? 'text-card-purple-hover' : 'text-card-purple',
         bghovertext: 'hover:text-card-purple-hover',
+        bgborder: isSelected
+          ? 'border-card-purple-hover'
+          : 'border-card-purple',
       };
     default:
     case PlanetColour.GREY:
@@ -70,6 +79,7 @@ const themeFrom = (
         text: 'text-card-grey-text',
         bgtext: isSelected ? 'text-card-grey-hover' : 'text-card-grey',
         bghovertext: 'hover:text-card-grey-hover',
+        bgborder: isSelected ? 'border-card-grey-hover' : 'border-card-grey',
       };
   }
 };
