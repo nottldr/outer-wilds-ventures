@@ -47,7 +47,7 @@ const nodes: MapNode[] = entries
     return {
       id: entry.id,
       name: entry.name,
-      image: sprites[libraryEntry.spritePath],
+      image: sprites[libraryEntry.spritePath.replace(/\.png/, '.jpg')],
       colour: colourForCuriosity(entry.curiousity),
       sizeClass,
       logs: entry.facts.explore.map((f) => f.text),
