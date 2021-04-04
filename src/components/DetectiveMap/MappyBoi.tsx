@@ -12,7 +12,7 @@ type Props = {
   nodes: MapNode[];
 };
 
-const scaleFactorMax = 1;
+const scaleFactorMax = 2;
 const scaleFactorMin = 0.1;
 
 const MappyBoi: React.FC<Props> = ({ nodes }) => {
