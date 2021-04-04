@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import { Curiousity, MapNodeSize } from '../../data/universe/types';
+import { Curiosity, MapNodeSize } from '../../data/universe/types';
 import Card, { Props } from './Card';
 
 export default {
@@ -35,5 +35,5 @@ const args: Props = {
 export const Standard = Template.bind({});
 Standard.args = {
   ...args,
-  node: { ...args.node, curiosity: Curiousity.VESSEL },
+  node: { ...args.node, curiosity: Curiosity.VESSEL },
 };

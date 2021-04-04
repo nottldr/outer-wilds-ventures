@@ -6,7 +6,7 @@ import Sidebar from './components/layout/Sidebar';
 import List from './components/List';
 import MappyBoi from './components/DetectiveMap/MappyBoi';
 import universe from './data/universe';
-import { Curiousity } from './data/universe/types';
+import { Curiosity } from './data/universe/types';
 
 type Props = {
   className?: React.HTMLAttributes<HTMLElement>['className'];
@@ -36,7 +36,7 @@ const App: React.FC<Props> = ({ className }) => {
     setSidebarState(isSidebarOpen ? SidebarState.CLOSED : SidebarState.OPEN);
   }, [isSidebarOpen]);
 
-  const toggleLayer = React.useCallback((curiosity: Curiousity) => {
+  const toggleLayer = React.useCallback((curiosity: Curiosity) => {
     console.log(curiosity);
   }, []);
 

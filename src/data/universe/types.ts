@@ -1,7 +1,7 @@
 type Log = string;
 type NodeID = string;
 
-export enum Curiousity {
+export enum Curiosity {
   SUNKEN_MODULE,
   VESSEL,
   COMET_CORE,
@@ -39,7 +39,7 @@ export type MapNode = {
   id: NodeID;
   name: string;
   image: string;
-  curiosity?: Curiousity;
+  curiosity?: Curiosity;
   sizeClass: MapNodeSize;
   logs: Log[];
   connections: MapNodeConnection[];

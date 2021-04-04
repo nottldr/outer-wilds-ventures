@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Curiousity } from '../../../data/universe/types';
+import { Curiosity } from '../../../data/universe/types';
 import DiscordLogo from '../../theme/DiscordLogo';
 import Logo from '../../theme/Logo';
 import OuterWildsLogo from '../../theme/OuterWildsLogo';
@@ -8,7 +8,7 @@ import OpenSidebarButton from './Button/OpenSidebarButton';
 
 type Props = {
   toggleSidebar: () => void;
-  toggleLayer: (curiosity: Curiousity) => void;
+  toggleLayer: (curiosity: Curiosity) => void;
 };
 
 const FullSidebar: React.FC<Props> = ({ toggleSidebar, toggleLayer }) => {

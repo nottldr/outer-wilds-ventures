@@ -1,4 +1,4 @@
-import { Curiousity, PlanetColour } from '../data/universe/types';
+import { Curiosity, PlanetColour } from '../data/universe/types';
 
 type LocationTheme = {
   bg: string;
@@ -8,15 +8,15 @@ type LocationTheme = {
   bghovertext: string;
 };
 
-const colourForCuriosity = (c: Curiousity | undefined): PlanetColour => {
+const colourForCuriosity = (c: Curiosity | undefined): PlanetColour => {
   switch (c) {
-    case Curiousity.QUANTUM_MOON:
+    case Curiosity.QUANTUM_MOON:
       return PlanetColour.PURPLE;
-    case Curiousity.SUNKEN_MODULE:
+    case Curiosity.SUNKEN_MODULE:
       return PlanetColour.GREEN;
-    case Curiousity.VESSEL:
+    case Curiosity.VESSEL:
       return PlanetColour.RED;
-    case Curiousity.TIME_LOOP:
+    case Curiosity.TIME_LOOP:
       return PlanetColour.ORANGE;
   }
 
@@ -24,7 +24,7 @@ const colourForCuriosity = (c: Curiousity | undefined): PlanetColour => {
 };
 
 const themeFrom = (
-  curiosity: Curiousity | undefined,
+  curiosity: Curiosity | undefined,
   isSelected = false
 ): LocationTheme => {
   const colour = colourForCuriosity(curiosity);
