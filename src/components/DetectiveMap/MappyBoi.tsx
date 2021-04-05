@@ -3,11 +3,12 @@ import useDimensions from 'react-cool-dimensions';
 import { ReactSVGPanZoom, Value } from 'react-svg-pan-zoom';
 import DetectiveMap from '.';
 import { Connection, MapNode } from '../../data/universe/types';
-import { MapLayer } from '../../util/map-layer';
 import BoundingBox from '../../util/bounding-box';
+import { MapLayer } from '../../util/map-layer';
 import theme from '../../util/theme';
 import Log from '../Log';
 import MapControls from './MapControls';
+import { zoomToScaleOnViewerCenter } from './util/zoom';
 
 type Props = {
   nodes: MapNode[];
@@ -105,8 +106,24 @@ const MappyBoi: React.FC<Props> = ({
     setScaleFactor(value.a);
   };
 
-  const _zoomIn = () => Viewer.current?.zoomOnViewerCenter(1.2);
-  const _zoomOut = () => Viewer.current?.zoomOnViewerCenter(1 / 1.2);
+  const _zoomIn = () =>
+    _zoomToScaleFactor(scaleFactor + (scaleFactorMax - scaleFactorMin) / 10);
+  const _zoomOut = () =>
+    _zoomToScaleFactor(scaleFactor - (scaleFactorMax - scaleFactorMin) / 10);
+  const _zoomToLevel = (level: number) => {
+    _zoomToScaleFactor(
+      level * (scaleFactorMax - scaleFactorMin) + scaleFactorMin
+    );
+  };
+  const _zoomToScaleFactor = (scaleFactor: number) => {
+    if (Viewer.current == null) {
+      return;
+    }
+
+    Viewer.current.setValue(
+      zoomToScaleOnViewerCenter(Viewer.current.getValue(), scaleFactor)
+    );
+  };
   const _fitToViewer = () =>
     (Viewer.current?.fitToViewer as any)('center', 'center');
 
@@ -129,8 +146,13 @@ const MappyBoi: React.FC<Props> = ({
   return (
     <>
       <div className="bg-page-bg relative max-w-full h-full overflow-scroll scrollbar-off">
-        <div className="absolute top-6 right-6" style={{ zIndex: 999 }}>
-          <MapControls onZoomIn={_zoomIn} onZoomOut={_zoomOut} level={level} />
+        <div className="absolute top-4 right-4" style={{ zIndex: 999 }}>
+          <MapControls
+            onZoomIn={_zoomIn}
+            onZoomOut={_zoomOut}
+            onZoom={_zoomToLevel}
+            level={level}
+          />
         </div>
         <div
           ref={observe as any}

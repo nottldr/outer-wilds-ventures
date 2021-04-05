@@ -39,6 +39,7 @@
     "react": "^17.0.1",
     "react-cool-dimensions": "^2.0.0",
     "react-dom": "^17.0.1",
+    "react-draggable": "^4.4.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-svg-pan-zoom": "^3.10.0",
