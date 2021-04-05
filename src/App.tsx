@@ -87,7 +87,9 @@ const App: React.FC<Props> = ({ className }) => {
   return (
     <Router>
       <div
-        className={`${className} md:flex flex-col md:flex-row md:h-screen w-full`}
+        className={`${
+          className ?? ''
+        } md:flex flex-col md:flex-row md:h-screen w-full`}
       >
         <div
           className={`flex ${
