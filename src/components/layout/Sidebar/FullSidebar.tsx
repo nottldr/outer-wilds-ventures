@@ -30,7 +30,7 @@ const FullSidebar: React.FC<Props> = ({
         <div className="flex flex-row flex-grow">
           <div className="flex flex-grow items-center justify-center">
             <NavLink to="/" className="focus:outline-none focus:shadow-outline">
-              <div className="w-24 md:w-48">
+              <div className="w-24 md:mt-4">
                 <Logo />
               </div>
             </NavLink>
@@ -73,20 +73,19 @@ const FullSidebar: React.FC<Props> = ({
         </nav> */}
 
         <div className="font-space-mono text-xs">
-          <div className="bg-darkblue text-white text-center px-4 py-2 font-serif mt-4 mb-8 md:my-8 text-base">
+          <div className="bg-darkblue text-white text-center px-4 py-2 font-serif mt-4 mb-6 text-base">
             <h1 className="uppercase">Outer Wilds Ventures</h1>
             <h2>Archaeologist Guide</h2>
           </div>
           <div className="mb-8">
-            <ul className="list-disc list-outside mx-2 pl-2">
-              <li>Numbers indicate how many entries per Log card</li>
+            <ul>
               <li>
                 Links (rumours) indicate Log sources, which may be found at
                 either side and are not required for Archaeologist
               </li>
             </ul>
           </div>
-          <div className="bg-orange text-white text-center px-4 py-2 font-serif my-8 text-base">
+          <div className="bg-orange text-white text-center px-4 py-2 font-serif my-6 text-base">
             <h3>Ship Log Categories</h3>
           </div>
           <div className="mb-8">
@@ -173,7 +172,7 @@ const FullSidebar: React.FC<Props> = ({
               </li>
             </ul>
           </div>
-          <div className="bg-orange text-white text-center px-4 py-2 font-serif my-8 text-base">
+          <div className="bg-orange text-white text-center px-4 py-2 font-serif my-6 text-base">
             <h3>Layer Controls</h3>
           </div>
           <div className="mb-8">
@@ -212,11 +211,11 @@ const FullSidebar: React.FC<Props> = ({
           </div>
         </div>
       </div>
-      <div className="flex-row md:sticky md:bottom-0 mx-auto pt-8 pb-8 flex-1 flex-grow bg-paper flex">
+      <div className="flex-row md:sticky md:bottom-0 mx-auto py-4 flex-1 flex-grow bg-paper flex">
         <div className="flex items-end">
-          <div className="mx-auto w-2/3">
+          <div className="mx-auto w-1/2">
             <a href="https://discord.com/">
-              <DiscordLogo className="m-auto mb-6" />
+              <DiscordLogo className="m-auto mb-3 w-1/6" />
             </a>
             <div className="px-4">
               <OuterWildsLogo className="m-auto max-h-48" />
