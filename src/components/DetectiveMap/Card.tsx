@@ -18,7 +18,7 @@ export type Props = {
 
 const BaseWidth = 110;
 const BaseHeight = BaseWidth * 1.4;
-const Padding = 4;
+const Padding = 2;
 
 const Card: React.FC<Props> = ({
   onSelect,
@@ -56,7 +56,17 @@ const Card: React.FC<Props> = ({
         minHeight: BaseHeight,
         padding: Padding,
       }}
-      onClick={() => onSelect?.(node)}
+      onMouseUp={(e) => {
+        onSelect?.(node);
+        e.preventDefault();
+        e.stopPropagation();
+      }}
+      onTouchEnd={(e) => {
+        // SVGs squash onClick in mobile safari (apparently a bug?), so we're using this instead
+        onSelect?.(node);
+        e.preventDefault();
+        e.stopPropagation();
+      }}
     >
       <h1
         className={`text-base font-bold text-center leading-tight pb-1 flex-1 flex justify-center items-center`}
