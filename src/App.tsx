@@ -164,7 +164,6 @@ const App: React.FC<Props> = ({ className }) => {
 
   const agreeToPopUp: FirstRunModalProps['onComplete'] = React.useCallback(
     (agreeMode) => {
-      console.log(agreeMode);
       switch (agreeMode) {
         case 'full':
           setSpoilerFreeMode(false);

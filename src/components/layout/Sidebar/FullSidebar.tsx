@@ -214,11 +214,13 @@ const FullSidebar: React.FC<Props> = ({
       <div className="flex-row md:sticky md:bottom-0 mx-auto py-4 flex-1 flex-grow bg-paper flex">
         <div className="flex items-end">
           <div className="mx-auto w-1/2">
-            <a href="https://discord.com/">
+            <a href="https://discord.gg/csKYR3w">
               <DiscordLogo className="m-auto mb-3 w-1/6" />
             </a>
             <div className="px-4">
-              <OuterWildsLogo className="m-auto max-h-48" />
+              <a href="https://www.mobiusdigitalgames.com/outer-wilds.html">
+                <OuterWildsLogo className="m-auto max-h-48" />
+              </a>
             </div>
           </div>
         </div>
