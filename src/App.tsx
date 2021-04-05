@@ -96,6 +96,8 @@ const App: React.FC<Props> = ({ className }) => {
     cookie2boolean(cookies[HasAgreedToPopUpCookiesName], false)
   );
 
+  const [resetAt, setResetAt] = React.useState<number>();
+
   const isSidebarOpen = (() => {
     if (sidebarState === SidebarState.DEFAULT) {
       // XXX: check viewport size, and decide? defaulting to open for now...
@@ -160,6 +162,7 @@ const App: React.FC<Props> = ({ className }) => {
     setVisibleLayers(DefaultVisibleLayers);
     setShowLogCounts(DefaultShowLogCounts);
     setSpoilerFreeMode(DefaultSpoilerFreeMode);
+    setResetAt(new Date().getMilliseconds());
   }, []);
 
   const agreeToPopUp: FirstRunModalProps['onComplete'] = React.useCallback(
@@ -220,6 +223,7 @@ const App: React.FC<Props> = ({ className }) => {
                   visibleLayers={visibleLayers}
                   showLogCounts={showLogCounts}
                   spoilerFreeMode={spoilerFreeMode}
+                  resetAt={resetAt}
                 />
               </Route>
             </Switch>

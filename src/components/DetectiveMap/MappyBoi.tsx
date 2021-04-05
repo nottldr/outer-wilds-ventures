@@ -15,6 +15,7 @@ type Props = {
   visibleLayers: MapLayer[];
   showLogCounts: boolean;
   spoilerFreeMode: boolean;
+  resetAt?: number;
 };
 
 const scaleFactorMax = 3;
@@ -26,6 +27,7 @@ const MappyBoi: React.FC<Props> = ({
   visibleLayers,
   showLogCounts,
   spoilerFreeMode,
+  resetAt,
 }) => {
   const [selected, setSelected] = React.useState<{
     node?: MapNode;
@@ -45,6 +47,13 @@ const MappyBoi: React.FC<Props> = ({
       })),
     [nodes]
   );
+
+  React.useEffect(() => {
+    if (resetAt != null) {
+      setSelected({});
+      _fitToViewer();
+    }
+  }, [resetAt]);
 
   const boundingBox = React.useMemo(() => {
     const b = new BoundingBox(normalised.map((n) => n.location));
