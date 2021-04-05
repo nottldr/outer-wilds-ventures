@@ -37,6 +37,7 @@
     "autoprefixer": "^9",
     "postcss": "^7",
     "react": "^17.0.1",
+    "react-cookie": "^4.0.3",
     "react-cool-dimensions": "^2.0.0",
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.3",

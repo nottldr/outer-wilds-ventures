@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCookies } from 'react-cookie';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MappyBoi from './components/DetectiveMap/MappyBoi';
 import Grid from './components/Grid';
@@ -6,7 +7,7 @@ import Content from './components/layout/Content';
 import Sidebar from './components/layout/Sidebar';
 import List from './components/List';
 import universe from './data/universe';
-import { MapLayer } from './util/map-layer';
+import { AllMapLayers, MapLayer } from './util/map-layer';
 
 type Props = {
   className?: React.HTMLAttributes<HTMLElement>['className'];
@@ -29,21 +30,62 @@ const DefaultVisibleLayers: MapLayer[] = [
 const DefaultShowLogCounts = true;
 const DefaultSpoilerFreeMode = true;
 
+const SpoilerFreeModeCookieName = 'spoiler-free-mode';
+const ShowLogCountsCookieName = 'show-log-counts';
+const VisibleLayersCookieName = 'visible-layers';
+
+const cookie2boolean = (s: unknown, defaultValue: boolean): boolean => {
+  if (s === 'true') {
+    return true;
+  }
+
+  if (s === 'false') {
+    return false;
+  }
+
+  return defaultValue;
+};
+
+const boolean2string = (b: boolean): 'true' | 'false' => {
+  return b ? 'true' : 'false';
+};
+
+const cookie2VisibleLayers = (
+  cookieValue: unknown,
+  defaultValue: MapLayer[]
+): MapLayer[] => {
+  if (typeof cookieValue === 'string') {
+    const array = cookieValue.split(',').map((v) => parseInt(v, 10));
+    const filtered = (array.filter((ml) =>
+      AllMapLayers.includes(ml)
+    ) as unknown) as MapLayer[];
+    return filtered;
+  }
+
+  return defaultValue;
+};
+
+const visibleLayers2string = (visibleLayers: MapLayer[]): string => {
+  return visibleLayers.join(',');
+};
+
 const App: React.FC<Props> = ({ className }) => {
+  const [cookies, setCookie] = useCookies(['outerwilds-ventures']);
+
   const [sidebarState, setSidebarState] = React.useState<SidebarState>(
     SidebarState.DEFAULT
   );
 
-  const [showLogCounts, setShowLogCounts] = React.useState(
-    DefaultShowLogCounts
+  const [showLogCounts, setShowLogCounts] = React.useState<boolean>(
+    cookie2boolean(cookies[ShowLogCountsCookieName], DefaultShowLogCounts)
   );
 
-  const [spoilerFreeMode, setSpoilerFreeMode] = React.useState(
-    DefaultSpoilerFreeMode
+  const [spoilerFreeMode, setSpoilerFreeMode] = React.useState<boolean>(
+    cookie2boolean(cookies[SpoilerFreeModeCookieName], DefaultSpoilerFreeMode)
   );
 
   const [visibleLayers, setVisibleLayers] = React.useState<MapLayer[]>(
-    DefaultVisibleLayers
+    cookie2VisibleLayers(cookies[VisibleLayersCookieName], DefaultVisibleLayers)
   );
 
   const isSidebarOpen = (() => {
@@ -77,6 +119,27 @@ const App: React.FC<Props> = ({ className }) => {
   const toggleSpoilerFreeMode = React.useCallback(() => {
     setSpoilerFreeMode(!spoilerFreeMode);
   }, [spoilerFreeMode]);
+
+  React.useEffect(() => {
+    setCookie(ShowLogCountsCookieName, boolean2string(showLogCounts), {
+      path: '/',
+      sameSite: 'lax',
+    });
+  }, [showLogCounts, setCookie]);
+
+  React.useEffect(() => {
+    setCookie(SpoilerFreeModeCookieName, boolean2string(spoilerFreeMode), {
+      path: '/',
+      sameSite: 'lax',
+    });
+  }, [spoilerFreeMode, setCookie]);
+
+  React.useEffect(() => {
+    setCookie(VisibleLayersCookieName, visibleLayers2string(visibleLayers), {
+      path: '/',
+      sameSite: 'lax',
+    });
+  }, [visibleLayers, setCookie]);
 
   const reset = React.useCallback(() => {
     setVisibleLayers(DefaultVisibleLayers);
