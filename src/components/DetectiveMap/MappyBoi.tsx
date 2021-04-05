@@ -17,8 +17,9 @@ type Props = {
   spoilerFreeMode: boolean;
 };
 
-const scaleFactorMax = 2;
+const scaleFactorMax = 3;
 const scaleFactorMin = 0.1;
+const scaleSteps = 20;
 
 const MappyBoi: React.FC<Props> = ({
   nodes,
@@ -100,16 +101,17 @@ const MappyBoi: React.FC<Props> = ({
 
   const onChangeValue = (value: Value) => {
     setValue(value);
-  };
-
-  const onZoom = (value: any) => {
     setScaleFactor(value.a);
   };
 
   const _zoomIn = () =>
-    _zoomToScaleFactor(scaleFactor + (scaleFactorMax - scaleFactorMin) / 10);
+    _zoomToScaleFactor(
+      scaleFactor + (scaleFactorMax - scaleFactorMin) / scaleSteps
+    );
   const _zoomOut = () =>
-    _zoomToScaleFactor(scaleFactor - (scaleFactorMax - scaleFactorMin) / 10);
+    _zoomToScaleFactor(
+      scaleFactor - (scaleFactorMax - scaleFactorMin) / scaleSteps
+    );
   const _zoomToLevel = (level: number) => {
     _zoomToScaleFactor(
       level * (scaleFactorMax - scaleFactorMin) + scaleFactorMin
@@ -162,7 +164,6 @@ const MappyBoi: React.FC<Props> = ({
             <ReactSVGPanZoom
               value={value ?? ({} as Value)}
               onChangeValue={onChangeValue}
-              onZoom={onZoom}
               tool="auto"
               background={theme.colors['page-bg']}
               SVGBackground={theme.colors['page-bg']}
