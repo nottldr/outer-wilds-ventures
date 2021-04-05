@@ -178,7 +178,9 @@ const MappyBoi: React.FC<Props> = ({
           }
         </div>
       </div>
-      {(selected.node || selected.connection) && <Log logs={logs} />}
+      {(selected.node || selected.connection) && (
+        <Log logs={logs} spoilerFreeMode={spoilerFreeMode} />
+      )}
     </>
   );
 };

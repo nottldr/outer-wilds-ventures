@@ -39,7 +39,7 @@ const Grid: React.FC<Props> = ({ nodes }) => {
       ))}
       {selected && (
         <div className="sticky bottom-0 w-full">
-          <Log logs={selected.logs} />
+          <Log logs={selected.logs} spoilerFreeMode={false} />
         </div>
       )}
     </div>
