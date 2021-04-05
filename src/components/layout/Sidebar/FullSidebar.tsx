@@ -212,8 +212,8 @@ const FullSidebar: React.FC<Props> = ({
         </div>
       </div>
       <div className="flex-row md:sticky md:bottom-0 mx-auto py-4 flex-1 flex-grow bg-paper flex">
-        <div className="flex items-end">
-          <div className="mx-auto w-1/2">
+        <div className="flex flex-1 items-end">
+          <div className="mx-auto w-1/3 md:w-1/2">
             <a href="https://discord.gg/csKYR3w">
               <DiscordLogo className="m-auto mb-3 w-1/6" />
             </a>

@@ -188,7 +188,7 @@ const App: React.FC<Props> = ({ className }) => {
       <div
         className={`${
           className ?? ''
-        } md:flex flex-col md:flex-row md:h-screen w-full`}
+        } flex flex-col md:flex-row w-full min-h-screen h-full md:h-auto`}
       >
         <div
           className={`flex ${
@@ -208,7 +208,12 @@ const App: React.FC<Props> = ({ className }) => {
           />
         </div>
 
-        <div className="flex flex-col flex-1 overflow-scroll scrollbar-off">
+        <div
+          className="flex flex-col md:flex-1 overflow-scroll scrollbar-off"
+          style={{
+            minHeight: 400,
+          }}
+        >
           <Content>
             <Switch>
               <Route path="/list">

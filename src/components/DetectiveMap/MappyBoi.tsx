@@ -156,7 +156,7 @@ const MappyBoi: React.FC<Props> = ({
 
   return (
     <>
-      <div className="bg-page-bg relative max-w-full h-full overflow-scroll scrollbar-off">
+      <div className="bg-page-bg relative max-w-full overflow-scroll scrollbar-off flex-row flex-1">
         <div className="absolute top-4 right-4" style={{ zIndex: 999 }}>
           <MapControls
             onZoomIn={_zoomIn}
