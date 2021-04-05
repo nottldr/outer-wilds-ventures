@@ -2,6 +2,9 @@ import React from 'react';
 import { useCookies } from 'react-cookie';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MappyBoi from './components/DetectiveMap/MappyBoi';
+import FirstRunModal, {
+  Props as FirstRunModalProps,
+} from './components/FirstRunModal';
 import Grid from './components/Grid';
 import Content from './components/layout/Content';
 import Sidebar from './components/layout/Sidebar';
@@ -30,6 +33,7 @@ const DefaultVisibleLayers: MapLayer[] = [
 const DefaultShowLogCounts = true;
 const DefaultSpoilerFreeMode = true;
 
+const HasAgreedToPopUpCookiesName = 'has-agreed-to-pop-up';
 const SpoilerFreeModeCookieName = 'spoiler-free-mode';
 const ShowLogCountsCookieName = 'show-log-counts';
 const VisibleLayersCookieName = 'visible-layers';
@@ -88,6 +92,10 @@ const App: React.FC<Props> = ({ className }) => {
     cookie2VisibleLayers(cookies[VisibleLayersCookieName], DefaultVisibleLayers)
   );
 
+  const [hasAgreedToPopUp, setHasAgreedToPopUp] = React.useState<boolean>(
+    cookie2boolean(cookies[HasAgreedToPopUpCookiesName], false)
+  );
+
   const isSidebarOpen = (() => {
     if (sidebarState === SidebarState.DEFAULT) {
       // XXX: check viewport size, and decide? defaulting to open for now...
@@ -141,11 +149,37 @@ const App: React.FC<Props> = ({ className }) => {
     });
   }, [visibleLayers, setCookie]);
 
+  React.useEffect(() => {
+    setCookie(HasAgreedToPopUpCookiesName, boolean2string(hasAgreedToPopUp), {
+      path: '/',
+      sameSite: 'lax',
+    });
+  }, [hasAgreedToPopUp, setCookie]);
+
   const reset = React.useCallback(() => {
     setVisibleLayers(DefaultVisibleLayers);
     setShowLogCounts(DefaultShowLogCounts);
     setSpoilerFreeMode(DefaultSpoilerFreeMode);
   }, []);
+
+  const agreeToPopUp: FirstRunModalProps['onComplete'] = React.useCallback(
+    (agreeMode) => {
+      console.log(agreeMode);
+      switch (agreeMode) {
+        case 'full':
+          setSpoilerFreeMode(false);
+          setShowLogCounts(true);
+          break;
+        case 'hide-spoilers':
+          setSpoilerFreeMode(true);
+          setShowLogCounts(true);
+          break;
+      }
+
+      setHasAgreedToPopUp(true);
+    },
+    []
+  );
 
   return (
     <Router>
@@ -192,6 +226,8 @@ const App: React.FC<Props> = ({ className }) => {
             </Switch>
           </Content>
         </div>
+
+        {!hasAgreedToPopUp && <FirstRunModal onComplete={agreeToPopUp} />}
       </div>
     </Router>
   );

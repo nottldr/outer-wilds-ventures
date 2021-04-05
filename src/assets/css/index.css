@@ -45,3 +45,16 @@ body {
   scrollbar-width: unset;
   -ms-overflow-style: unset;
 }
+
+.backdrop-blur {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+@supports (
+  (-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))
+) {
+  .backdrop-blur {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0.5em);
+  }
+}
