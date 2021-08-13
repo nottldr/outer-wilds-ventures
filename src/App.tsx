@@ -60,9 +60,9 @@ const cookie2VisibleLayers = (
 ): MapLayer[] => {
   if (typeof cookieValue === 'string') {
     const array = cookieValue.split(',').map((v) => parseInt(v, 10));
-    const filtered = (array.filter((ml) =>
+    const filtered = array.filter((ml) =>
       AllMapLayers.includes(ml)
-    ) as unknown) as MapLayer[];
+    ) as unknown as MapLayer[];
     return filtered;
   }
 
@@ -74,7 +74,12 @@ const visibleLayers2string = (visibleLayers: MapLayer[]): string => {
 };
 
 const App: React.FC<Props> = ({ className }) => {
-  const [cookies, setCookie] = useCookies(['outerwilds-ventures']);
+  const [cookies, setCookie] = useCookies([
+    ShowLogCountsCookieName,
+    SpoilerFreeModeCookieName,
+    VisibleLayersCookieName,
+    HasAgreedToPopUpCookiesName,
+  ]);
 
   const [sidebarState, setSidebarState] = React.useState<SidebarState>(
     SidebarState.DEFAULT
