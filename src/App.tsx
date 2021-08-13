@@ -193,7 +193,7 @@ const App: React.FC<Props> = ({ className }) => {
       <div
         className={`${
           className ?? ''
-        } flex flex-col md:flex-row w-full min-h-screen h-full md:h-auto`}
+        } flex flex-col md:flex-row w-full min-h-screen h-full md:max-h-screen md:h-auto`}
       >
         <div
           className={`flex ${
