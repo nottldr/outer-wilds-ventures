@@ -11,6 +11,8 @@ type Props = {
 const MapLayerCheckbox: React.FC<Props> = ({ checked, mapLayer }) => {
   const curiosity = (() => {
     switch (mapLayer) {
+      case MapLayer.INVISIBLE_PLANET:
+        return Curiosity.INVISIBLE_PLANET;
       case MapLayer.QUANTUM_MOON:
         return Curiosity.QUANTUM_MOON;
       case MapLayer.SUNKEN_MODULE:

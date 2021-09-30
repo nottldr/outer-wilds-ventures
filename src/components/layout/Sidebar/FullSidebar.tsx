@@ -158,6 +158,22 @@ const FullSidebar: React.FC<Props> = ({
                 <input
                   type="checkbox"
                   className="hidden"
+                  id="toggle-INVISIBLE_PLANET"
+                  checked={visibleLayers.includes(MapLayer.INVISIBLE_PLANET)}
+                  onChange={() => toggleLayer(MapLayer.INVISIBLE_PLANET)}
+                />{' '}
+                <label htmlFor="toggle-INVISIBLE_PLANET">
+                  <MapLayerCheckbox
+                    checked={visibleLayers.includes(MapLayer.INVISIBLE_PLANET)}
+                    mapLayer={MapLayer.INVISIBLE_PLANET}
+                  />{' '}
+                  The Stranger
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  className="hidden"
                   id="toggle-OTHER"
                   checked={visibleLayers.includes(MapLayer.OTHER)}
                   onChange={() => toggleLayer(MapLayer.OTHER)}

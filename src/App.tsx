@@ -27,6 +27,7 @@ const DefaultVisibleLayers: MapLayer[] = [
   MapLayer.VESSEL,
   MapLayer.QUANTUM_MOON,
   MapLayer.TIME_LOOP,
+  MapLayer.INVISIBLE_PLANET,
   MapLayer.OTHER,
 ];
 

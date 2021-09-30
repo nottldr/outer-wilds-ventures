@@ -3,6 +3,7 @@ export enum MapLayer {
   VESSEL,
   QUANTUM_MOON,
   TIME_LOOP,
+  INVISIBLE_PLANET,
 
   OTHER,
 }
@@ -12,5 +13,6 @@ export const AllMapLayers = [
   MapLayer.VESSEL,
   MapLayer.QUANTUM_MOON,
   MapLayer.TIME_LOOP,
+  MapLayer.INVISIBLE_PLANET,
   MapLayer.OTHER,
 ];
