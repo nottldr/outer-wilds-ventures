@@ -590,6 +590,21 @@
             }
           ]
         }
+      },
+      {
+        "id": "TH_RADIO_TOWER",
+        "name": "Radio Tower",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "TH_RADIO_TOWER_X1",
+              "text": "A radio tower designed to receive photos taken by the deep space satellite. There are several photos of the entire solar system hanging on the walls. Hornfels noticed something strange in one of the photos, but concluded equipment malfunction was the only sensible explanation."
+            }
+          ],
+          "rumor": []
+        }
       }
     ]
   },
@@ -1060,7 +1075,7 @@
             },
             {
               "id": "BH_OBSERVATORY_R2",
-              "text": "There is a path beneath the surface that leads to the observatory. The trailhead starts at Brittle Hollow's equator.",
+              "text": "There are two paths beneath Brittle Hollow's surface that lead to the observatory. One starts at the gravity cannon, and the other starts at the Tower of Quantum Knowledge.",
               "sourceId": "GD_CONSTRUCTION_YARD"
             },
             {
@@ -1475,7 +1490,7 @@
             },
             {
               "id": "OPC_SUNKEN_MODULE_X3",
-              "text": "The Probe Tracking Module automatically records each probe's trajectory and transmits the data to the Ash Twin Project."
+              "text": "The statue in the Probe Tracking Module automatically records each probe's trajectory and transmits the data to the Ash Twin Project."
             },
             {
               "id": "OPC_EYE_COORDINATES_X1",
@@ -1539,7 +1554,7 @@
             },
             {
               "id": "DB_FELDSPAR_R2",
-              "text": "When I launch my scout into the seed that crashed on Timber Hearth, it ends up somewhere in Dark Bramble.",
+              "text": "When I launch my scout into the seed that crashed on Timber Hearth, it ends up in a much bigger space filled with fog and thorny vines.",
               "sourceId": "TH_IMPACT_CRATER"
             }
           ]
@@ -1676,7 +1691,7 @@
           "rumor": [
             {
               "id": "DB_VESSEL_R1",
-              "text": "The Nomai warped to this solar system in a spaceship called the Vessel. They were attempting to follow a signal from the Eye of the Universe."
+              "text": "The Nomai warped to this solar system in a spaceship called the Vessel. They were attempting to follow a signal from the Eye of the universe."
             },
             {
               "id": "DB_VESSEL_R2",
@@ -1966,6 +1981,725 @@
               "id": "QM_SIXTH_LOCATION_R3",
               "text": "To explore the sixth location, the shrine on the Quantum Moon must be on the moon’s north pole.",
               "sourceId": "BH_QUANTUM_RESEARCH_TOWER"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "INVISIBLE_PLANET",
+    "entries": [
+      {
+        "id": "IP_RING_WORLD",
+        "name": "The Stranger",
+        "isCuriousity": {},
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_RING_WORLD_X1",
+              "text": "A massive artificial ring world hidden within some sort of cloaking field. It does not appear to be Hearthian or Nomaian in origin."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_1",
+        "name": "River Lowlands",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_1_X1",
+              "text": "A low-lying region near the entrance to the Stranger. There are wooden buildings along the banks of the river."
+            },
+            {
+              "id": "IP_ZONE_1_X2",
+              "text": "I found several ornate metal artifacts inside a workshop surrounded by ghost matter."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_1_STORY",
+        "name": "Burned Slide Reel",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_1",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_1_STORY_X1",
+              "text": "A slide reel that shows the origin of the Stranger and its inhabitants."
+            },
+            {
+              "id": "IP_ZONE_1_STORY_X2",
+              "text": "Several slides have been burned and cannot be viewed."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_1_SECRET",
+        "name": "Slide Burning Room",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_1",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_1_SECRET_X2",
+              "text": "A room full of burned slide reels piled next to a strange device."
+            },
+            {
+              "id": "IP_ZONE_1_SECRET_X1",
+              "text": "I found a hidden slide reel that shows a container marked with a glowing symbol being handed to a shadowy figure. The figure follows a procession of green lights through a forest to a candlelit building, where they carry the container into a secret passage behind a roaring fireplace."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_ZONE_1_SECRET_R1",
+              "text": "A map I found in the Abandoned Temple reveals a secret location somewhere within the Stranger.",
+              "sourceId": "IP_MAP_PROJECTION_1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_ZONE_2",
+        "name": "Cinder Isles",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_2_X1",
+              "text": "A pair of small rocky islands connected by a village of stilt houses."
+            },
+            {
+              "id": "IP_ZONE_2_X2",
+              "text": "I found a large metal symbol inside a burned-out building that closely resembles the Nomai symbol for the Eye of the universe."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_2_STORY",
+        "name": "Burned Slide Reel",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_2",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_2_STORY_X1",
+              "text": "A slide reel that shows the Stranger's inhabitants analyzing an anomaly that closely resembles the Nomai symbol for the Eye of the universe."
+            },
+            {
+              "id": "IP_ZONE_2_STORY_X2",
+              "text": "Several slides have been burned and cannot be viewed."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_2_SECRET",
+        "name": "Slide Burning Room",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_2",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_2_SECRET_X2",
+              "text": "A room full of burned slide reels piled next to a strange device."
+            },
+            {
+              "id": "IP_ZONE_2_SECRET_X1",
+              "text": "I found a hidden slide reel that shows a container marked with a glowing symbol being handed to a shadowy figure. The lights are extinguished, and the figure carries the container down into a dark well."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_ZONE_2_SECRET_R1",
+              "text": "A map I found in the Abandoned Temple reveals a secret location somewhere within the Stranger.",
+              "sourceId": "IP_MAP_PROJECTION_2"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_ZONE_2_LIGHTHOUSE",
+        "name": "Island Tower",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_2_LIGHTHOUSE_X2",
+              "text": "A tower that sits atop one of the Cinder Isles. The upper floors can only be reached from a second entrance at the back of the tower."
+            },
+            {
+              "id": "IP_ZONE_2_LIGHTHOUSE_X1",
+              "text": "I found a slide reel that shows the Stranger's inhabitants opening a secret passage in a round room filled with lanterns and murals. The inhabitants are shown filing into three of these rooms throughout the Stranger."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_ZONE_2_LIGHTHOUSE_R1",
+              "text": "I found a projection that reveals a cave entrance at the base of a rocky island with a tall tower.",
+              "sourceId": "IP_ZONE_2"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_ZONE_2_CODE",
+        "name": "Symbol Room",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_2_LIGHTHOUSE",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_2_CODE_X1",
+              "text": "A secret room filled with wooden containers marked with different symbols."
+            },
+            {
+              "id": "IP_ZONE_2_CODE_X2",
+              "text": "Three of the containers are marked with glowing vault seals, but their contents have been burned away."
+            },
+            {
+              "id": "IP_ZONE_2_CODE_X3",
+              "text": "I opened the container marked with the symbol of a burning slide reel and found a vertical sequence of symbols inside."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_ZONE_2_CODE_R1",
+              "text": "The light coming out of the vault gave me a vision of climbing a spiral staircase to a room near the top of a tower. One of the Stranger's inhabitants pointed at a mural of the tower beneath a nighttime sky, then picked up an artifact and left the room. Some time later, the lamps next to the mural went dark, revealing a secret passage.",
+              "sourceId": "IP_DREAM_LAKE"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_ZONE_3",
+        "name": "Hidden Gorge",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_3_X1",
+              "text": "A narrow gorge along the rightmost branch of the river. There are dwellings built into both cliff faces high above."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_3_STORY",
+        "name": "Burned Slide Reel",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_3",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_3_STORY_X1",
+              "text": "A slide reel that shows the Stranger's inhabitants congregating around a strange green fire."
+            },
+            {
+              "id": "IP_ZONE_3_STORY_X2",
+              "text": "Several slides have been burned and cannot be viewed."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_3_SECRET",
+        "name": "Slide Burning Room",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_3",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_3_SECRET_X2",
+              "text": "A room full of burned slide reels piled next to a strange device."
+            },
+            {
+              "id": "IP_ZONE_3_SECRET_X1",
+              "text": "I found a hidden slide reel that shows a container marked with a glowing symbol being handed to a shadowy figure. The lights are extinguished, and the figure carries the container into a secret passage behind a mural of a large tree."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_ZONE_3_SECRET_R1",
+              "text": "A map I found in the Abandoned Temple reveals a secret location somewhere within the Stranger.",
+              "sourceId": "IP_MAP_PROJECTION_3"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_ZONE_3_ENTRANCE",
+        "name": "Damaged Laboratory",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_3",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_3_ENTRANCE_X1",
+              "text": "A laboratory with three test chambers. The second chamber is badly damaged and can be entered through a hull breach in the side of the Stranger."
+            },
+            {
+              "id": "IP_ZONE_3_ENTRANCE_X2",
+              "text": "I saw a vision-like recording of someone picking up an artifact and going to sleep in front of a green fire. The rest of the vision was distorted and difficult to make out, but a flame seemed to appear inside the artifact."
+            },
+            {
+              "id": "IP_ZONE_3_ENTRANCE_X3",
+              "text": "I found a slide reel that shows three experiments conducted with three different artifacts. The third experiment appears to have been a success."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_ZONE_3_ENTRANCE_R1",
+              "text": "I found a slide reel in the Hidden Gorge that shows an explosion blowing a hole in the side of the Stranger."
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_ZONE_3_LAB",
+        "name": "Abandoned Temple",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_3_LAB_X1",
+              "text": "An abandoned temple marked with the symbol of a burning slide reel. It can be accessed from a passage in the Hidden Gorge."
+            },
+            {
+              "id": "IP_ZONE_3_LAB_X3",
+              "text": "There is an interface upstairs that can be used to line up symbols in a vertical sequence."
+            },
+            {
+              "id": "IP_ZONE_3_LAB_X4",
+              "text": "Entering the correct sequence opens the path to a secret room beneath the temple."
+            },
+            {
+              "id": "IP_ZONE_3_LAB_X2",
+              "text": "I found a slide reel that shows the Stranger's inhabitants removing all of the slide reels from their shelves, scanning each reel with a device, and incinerating specific slides as well as entire reels."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_ZONE_3_LAB_R1",
+              "text": "I saw a building marked with a unique symbol recessed into one of the canyon walls, but the bridge that used to lead to it has rotted away."
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_MAP_PROJECTION_1",
+        "name": "Map Projection 1",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_3_LAB",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_MAP_PROJECTION_1_X1",
+              "text": "A projection that seems to reveal a secret location somewhere within the Stranger."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_MAP_PROJECTION_2",
+        "name": "Map Projection 2",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_3_LAB",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_MAP_PROJECTION_2_X1",
+              "text": "A projection that seems to reveal a secret location somewhere within the Stranger."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_MAP_PROJECTION_3",
+        "name": "Map Projection 3",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_3_LAB",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_MAP_PROJECTION_3_X1",
+              "text": "A projection that seems to reveal a secret location somewhere within the Stranger."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_4",
+        "name": "Reservoir",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_4_X2",
+              "text": "An enormous reservoir with wooden piers and buildings on both shores."
+            },
+            {
+              "id": "IP_ZONE_4_X3",
+              "text": "I found a room with a burned control interface and a projection that seems to indicate a broken connection between the Stranger and another craft."
+            },
+            {
+              "id": "IP_ZONE_4_X4",
+              "text": "I found a projection that shows the Stranger moving beyond the reach of the supernova."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_ZONE_4_STORY",
+        "name": "Burned Slide Reel",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_4",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_4_STORY_X1",
+              "text": "A slide reel that shows a strange vault being encased in a large metal structure and lowered underwater."
+            },
+            {
+              "id": "IP_ZONE_4_STORY_X2",
+              "text": "Nearly all of the slides have been burned and cannot be viewed."
+            }
+          ],
+          "rumor": []
+        }
+      },
+      {
+        "id": "IP_PRISON",
+        "name": "Submerged Structure",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_PRISON_X1",
+              "text": "A large metal structure suspended by chains. It can be entered by swimming from below."
+            },
+            {
+              "id": "IP_PRISON_X2",
+              "text": "There is a sealed vault illuminated by a green fire inside the structure."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_PRISON_R1",
+              "text": "According to a slide reel, a strange vault was encased in a large metal structure and lowered underwater.",
+              "sourceId": "IP_ZONE_4_STORY"
+            },
+            {
+              "id": "IP_PRISON_R2",
+              "text": "I found a diagram of a hollow metal structure suspended by chains. There is a round hole underneath that appears to be the only entrance.",
+              "sourceId": "IP_ZONE_4"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_DREAM_LAKE",
+        "name": "Subterranean Lake",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_PRISON",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_DREAM_LAKE_X1",
+              "text": "I discovered a vast subterranean lake beneath the submerged structure. The sealed vault is resting on the shore of the lake. There are three interfaces, each marked with one of the three symbols from the vault."
+            },
+            {
+              "id": "IP_DREAM_LAKE_X2",
+              "text": "I rotated the mechanism in front of the vault, causing it to strain against the chains holding it shut. Moments later rays of green light spilled out of the vault."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_DREAM_LAKE_R1",
+              "text": "I looked through a peephole in the side of a large metal structure suspended by chains and saw a green fire burning inside."
+            },
+            {
+              "id": "IP_DREAM_LAKE_R2",
+              "text": "I saw a vision-like recording of two figures and a strange vault materializing next to a green fire. The two figures picked up the vault and carried it down a stairwell."
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_SARCOPHAGUS",
+        "name": "Sealed Vault",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_PRISON",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_SARCOPHAGUS_X2",
+              "text": "I met one of the Stranger's inhabitants who was imprisoned within the vault!"
+            },
+            {
+              "id": "IP_SARCOPHAGUS_X3",
+              "text": "The Prisoner showed me a vision revealing the actions they took that resulted in their eternal confinement."
+            },
+            {
+              "id": "IP_SARCOPHAGUS_X4",
+              "text": "I used the vision torch to share my knowledge of the solar system's history with the Prisoner."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_SARCOPHAGUS_R4",
+              "text": "I found a strange vault wrapped in chains and marked with three glowing symbols."
+            },
+            {
+              "id": "IP_SARCOPHAGUS_R1",
+              "text": "A slide reel from the River Lowlands showed a strange vault being closed and sealed with chains and a glowing symbol.",
+              "sourceId": "IP_ZONE_1"
+            },
+            {
+              "id": "IP_SARCOPHAGUS_R2",
+              "text": "A slide reel from the Cinder Isles showed a glowing symbol and chains appear around a strange vault.",
+              "sourceId": "IP_ZONE_2"
+            },
+            {
+              "id": "IP_SARCOPHAGUS_R3",
+              "text": "A slide reel from the Hidden Gorge showed a glowing symbol and chains appear around a strange vault.",
+              "sourceId": "IP_ZONE_3"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_DREAM_ZONE_1",
+        "name": "Shrouded Woodlands",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_DREAM_ZONE_1_X1",
+              "text": "A dense forest along the banks of a river."
+            },
+            {
+              "id": "IP_DREAM_ZONE_1_X2",
+              "text": "I heard music coming from a candlelit building across the water."
+            },
+            {
+              "id": "IP_DREAM_ZONE_1_X3",
+              "text": "I found a covered bridge leading into the darkest part of the forest."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_DREAM_ZONE_1_R1",
+              "text": "I rode a raft through a densely wooded stretch of river. I can see buildings along the banks of the river."
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_DREAM_LIBRARY_1",
+        "name": "Forbidden Archive",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_DREAM_ZONE_1",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_DREAM_LIBRARY_1_X1",
+              "text": "A library full of intact slide reels hidden deep underground."
+            },
+            {
+              "id": "IP_DREAM_LIBRARY_1_X2",
+              "text": "There is a container marked with one of the vault seals, but its contents have been destroyed."
+            },
+            {
+              "id": "IP_DREAM_1_STORY_X1",
+              "text": "I found a slide reel that shows the origin of the Stranger and its inhabitants."
+            },
+            {
+              "id": "IP_DREAM_1_STORY_X2",
+              "text": "Intact slides reveal the sacrifice that was made to build the Stranger."
+            },
+            {
+              "id": "IP_DREAM_1_RULE_X1",
+              "text": "I found a slide reel that appears to be some sort of error report. It shows one of the Stranger's inhabitants jumping off a raft during a transition between areas and falling below the world."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_DREAM_LIBRARY_1_R1",
+              "text": "I found a hidden slide reel that shows a container marked with a glowing symbol being handed to a shadowy figure. The figure follows a procession of lights through a forest to a candlelit building, where they carry the container into a secret passage behind a roaring fireplace.",
+              "sourceId": "IP_ZONE_1_SECRET"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_DREAM_ZONE_2",
+        "name": "Starlit Cove",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_DREAM_ZONE_2_X1",
+              "text": "A secluded village nestled within a cove. A candlelit tower sits atop a nearby island."
+            },
+            {
+              "id": "IP_DREAM_ZONE_2_X2",
+              "text": "The well at the bottom of the village is guarded by a statue that activates an alarm bell when it sees me."
+            },
+            {
+              "id": "IP_DREAM_ZONE_2_X3",
+              "text": "I found the remains of a burned-out building on the outskirts of the village."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_DREAM_ZONE_2_R1",
+              "text": "I rode a raft past an island with a tall candlelit tower."
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_DREAM_LIBRARY_2",
+        "name": "Forbidden Archive",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_DREAM_ZONE_2",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_DREAM_LIBRARY_2_X1",
+              "text": "A library full of intact slide reels hidden deep underground."
+            },
+            {
+              "id": "IP_DREAM_LIBRARY_2_X2",
+              "text": "There is a container marked with one of the vault seals, but its contents have been destroyed."
+            },
+            {
+              "id": "IP_DREAM_2_STORY_X1",
+              "text": "I found a slide reel that shows the Stranger's inhabitants analyzing an anomaly that closely resembles the Nomai symbol for the Eye of the universe."
+            },
+            {
+              "id": "IP_DREAM_2_STORY_X2",
+              "text": "Intact slides reveal the construction and launch of a spacecraft designed to block the Eye's signal."
+            },
+            {
+              "id": "IP_DREAM_2_RULE_X1",
+              "text": "I found a slide reel that shows two artifacts being lit near a green fire. The first artifact lights after its bearer falls asleep, and the second artifact lights after its bearer dies."
+            },
+            {
+              "id": "IP_DREAM_2_RULE_X2",
+              "text": "I found a slide reel that appears to be some sort of error report. It shows an alarm bell failing to wake up one of the Stranger's inhabitants."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_DREAM_LIBRARY_2_R1",
+              "text": "The reel I found in the slide burning room shows a container marked with a glowing symbol being handed to a shadowy figure. The lights are extinguished, and the figure carries the container down into a dark well.",
+              "sourceId": "IP_ZONE_2_SECRET"
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_DREAM_ZONE_3",
+        "name": "Endless Canyon",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_DREAM_ZONE_3_X1",
+              "text": "A massive canyon that stretches into the distance. A candlelit lodge is built into the far cliff face."
+            },
+            {
+              "id": "IP_DREAM_ZONE_3_X2",
+              "text": "I found a mural of a large tree on the bottom floor of the lodge."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_DREAM_ZONE_3_R1",
+              "text": "I rode a raft through the bottom of a massive canyon. It looks like there are buildings set into the cliff face high above."
+            }
+          ]
+        }
+      },
+      {
+        "id": "IP_DREAM_LIBRARY_3",
+        "name": "Forbidden Archive",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_DREAM_ZONE_3",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_DREAM_LIBRARY_3_X1",
+              "text": "A library full of intact slide reels hidden deep underground."
+            },
+            {
+              "id": "IP_DREAM_LIBRARY_3_X2",
+              "text": "There is a container marked with one of the vault seals, but its contents have been destroyed."
+            },
+            {
+              "id": "IP_DREAM_3_STORY_X1",
+              "text": "I found a slide reel that shows the Stranger's inhabitants congregating around a strange green fire."
+            },
+            {
+              "id": "IP_DREAM_3_STORY_X2",
+              "text": "Intact slides reveal the creation of a simulated reality modeled after their home moon."
+            },
+            {
+              "id": "IP_DREAM_3_RULE_X1",
+              "text": "I found a slide reel that appears to be some sort of error report. It shows one of the Stranger's inhabitants dropping their artifact on the ground and walking beyond its projection radius."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "IP_DREAM_LIBRARY_3_R1",
+              "text": "The reel I found in the slide burning room shows a container marked with a glowing symbol being handed to a shadowy figure. The lights are extinguished, and the figure carries the container into a secret passage behind a mural of a large tree.",
+              "sourceId": "IP_ZONE_3_SECRET"
             }
           ]
         }

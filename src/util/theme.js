@@ -31,6 +31,10 @@ const theme = {
     'card-orange-hover': gameTheme.timeLoopHighlight.hex,
     'card-orange-text': '#3E2F31',
 
+    'card-blue': gameTheme.invisiblePlanetColor.hex,
+    'card-blue-hover': gameTheme.invisiblePlanetHighlight.hex,
+    'card-blue-text': '#3E2F31',
+
     'card-grey': gameTheme.neutralColor.hex,
     'card-grey-hover': gameTheme.neutralHighlight.hex,
     'card-grey-text': '#1B242B',

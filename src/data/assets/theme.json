@@ -1,4 +1,16 @@
 {
+  "invisiblePlanetColor": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
+  "invisiblePlanetHighlight": {
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "hex": "#000000"
+  },
   "menuBackgroundColorDisabled": {
     "red": 56,
     "green": 56,

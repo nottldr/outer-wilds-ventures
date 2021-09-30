@@ -20,6 +20,8 @@ const curiosityForString = (s: string): Curiosity => {
       return Curiosity.TIME_LOOP;
     case 'COMET_CORE':
       return Curiosity.COMET_CORE;
+    case 'INVISIBLE_PLANET':
+      return Curiosity.INVISIBLE_PLANET;
   }
 
   throw new Error(`Unknown curiosity: ${s}`);
