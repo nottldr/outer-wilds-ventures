@@ -7,6 +7,7 @@ export enum Curiosity {
   COMET_CORE,
   QUANTUM_MOON,
   TIME_LOOP,
+  INVISIBLE_PLANET,
 }
 
 export enum PlanetColour {
@@ -15,6 +16,7 @@ export enum PlanetColour {
   ORANGE,
   GREY,
   RED,
+  BLUE,
 }
 
 export enum MapNodeSize {

@@ -1,4 +1,16 @@
 {
+  "invisiblePlanetColor": {
+    "red": 29,
+    "green": 74,
+    "blue": 148,
+    "hex": "#1d4a94"
+  },
+  "invisiblePlanetHighlight": {
+    "red": 50,
+    "green": 128,
+    "blue": 255,
+    "hex": "#3280ff"
+  },
   "menuBackgroundColorDisabled": {
     "red": 56,
     "green": 56,
@@ -204,16 +216,16 @@
     "hex": "#ff9133"
   },
   "quantumMoonColor": {
-    "red": 69,
-    "green": 44,
+    "red": 79,
+    "green": 58,
     "blue": 141,
-    "hex": "#452c8d"
+    "hex": "#4f3a8d"
   },
   "quantumMoonHighlight": {
-    "red": 125,
-    "green": 79,
+    "red": 144,
+    "green": 104,
     "blue": 255,
-    "hex": "#7d4fff"
+    "hex": "#9068ff"
   },
   "secondaryHighlightColor": {
     "red": 147,
@@ -234,39 +246,39 @@
     "hex": "#9efaa7"
   },
   "sunkenModuleColor": {
-    "red": 43,
+    "red": 56,
     "green": 138,
-    "blue": 86,
-    "hex": "#2b8a56"
+    "blue": 93,
+    "hex": "#388a5d"
   },
   "sunkenModuleHighlight": {
-    "red": 79,
+    "red": 104,
     "green": 255,
-    "blue": 158,
-    "hex": "#4fff9e"
+    "blue": 172,
+    "hex": "#68ffac"
   },
   "timeLoopColor": {
     "red": 180,
-    "green": 108,
-    "blue": 57,
-    "hex": "#b46c39"
+    "green": 118,
+    "blue": 74,
+    "hex": "#b4764a"
   },
   "timeLoopHighlight": {
     "red": 255,
-    "green": 153,
-    "blue": 80,
-    "hex": "#ff9950"
+    "green": 167,
+    "blue": 104,
+    "hex": "#ffa768"
   },
   "vesselColor": {
     "red": 180,
-    "green": 57,
-    "blue": 87,
-    "hex": "#b43957"
+    "green": 74,
+    "blue": 74,
+    "hex": "#b44a4a"
   },
   "vesselHighlight": {
     "red": 255,
-    "green": 80,
-    "blue": 124,
-    "hex": "#ff507c"
+    "green": 104,
+    "blue": 104,
+    "hex": "#ff6868"
   }
 }

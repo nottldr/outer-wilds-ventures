@@ -1,7 +1,9 @@
 // we semi-automatically generate this file
 
 // cd ./src/data/assets/sprites
-// ls -p | grep -v / | sed -E 's/(.*)/"\1": require("..\/assets\/sprites\/\1"),/' | pbcopy
+// magick mogrify -resize 200x200 -quality 80 -format jpg -path ./jpg *.png
+// cd ./src/data/assets/sprites/jpg
+// ls -p | grep -v / | sed -E 's/(.*)/"\1": require("..\/assets\/sprites\/jpg\/\1"),/' | pbcopy
 
 const sprites = {
   'BH_BLACK_HOLE_FORGE.jpg': require('../assets/sprites/jpg/BH_BLACK_HOLE_FORGE.jpg'),
@@ -41,10 +43,38 @@ const sprites = {
   'GD_BRAMBLE_ISLAND.jpg': require('../assets/sprites/jpg/GD_BRAMBLE_ISLAND.jpg'),
   'GD_CONSTRUCTION_YARD.jpg': require('../assets/sprites/jpg/GD_CONSTRUCTION_YARD.jpg'),
   'GD_GABBRO_ISLAND.jpg': require('../assets/sprites/jpg/GD_GABBRO_ISLAND.jpg'),
-  'GD_OCEAN.jpg': require('../assets/sprites/GD_OCEAN.png'),
+  'GD_OCEAN.jpg': require('../assets/sprites/jpg/GD_OCEAN.jpg'),
   'GD_QUANTUM_TOWER.jpg': require('../assets/sprites/jpg/GD_QUANTUM_TOWER.jpg'),
   'GD_STATUE_ISLAND.jpg': require('../assets/sprites/jpg/GD_STATUE_ISLAND.jpg'),
   'GD_STATUE_WORKSHOP.jpg': require('../assets/sprites/jpg/GD_STATUE_WORKSHOP.jpg'),
+  'IP_DREAM_LAKE.jpg': require('../assets/sprites/jpg/IP_DREAM_LAKE.jpg'),
+  'IP_DREAM_LIBRARY_1.jpg': require('../assets/sprites/jpg/IP_DREAM_LIBRARY_1.jpg'),
+  'IP_DREAM_LIBRARY_2.jpg': require('../assets/sprites/jpg/IP_DREAM_LIBRARY_2.jpg'),
+  'IP_DREAM_LIBRARY_3.jpg': require('../assets/sprites/jpg/IP_DREAM_LIBRARY_3.jpg'),
+  'IP_DREAM_ZONE_1.jpg': require('../assets/sprites/jpg/IP_DREAM_ZONE_1.jpg'),
+  'IP_DREAM_ZONE_2.jpg': require('../assets/sprites/jpg/IP_DREAM_ZONE_2.jpg'),
+  'IP_DREAM_ZONE_3.jpg': require('../assets/sprites/jpg/IP_DREAM_ZONE_3.jpg'),
+  'IP_MAP_PROJECTION_1.jpg': require('../assets/sprites/jpg/IP_MAP_PROJECTION_1.jpg'),
+  'IP_MAP_PROJECTION_2.jpg': require('../assets/sprites/jpg/IP_MAP_PROJECTION_2.jpg'),
+  'IP_MAP_PROJECTION_3.jpg': require('../assets/sprites/jpg/IP_MAP_PROJECTION_3.jpg'),
+  'IP_PRISON.jpg': require('../assets/sprites/jpg/IP_PRISON.jpg'),
+  'IP_RING_WORLD.jpg': require('../assets/sprites/jpg/IP_RING_WORLD.jpg'),
+  'IP_SARCOPHAGUS.jpg': require('../assets/sprites/jpg/IP_SARCOPHAGUS.jpg'),
+  'IP_ZONE_1.jpg': require('../assets/sprites/jpg/IP_ZONE_1.jpg'),
+  'IP_ZONE_1_SECRET.jpg': require('../assets/sprites/jpg/IP_ZONE_1_SECRET.jpg'),
+  'IP_ZONE_1_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_1_STORY.jpg'),
+  'IP_ZONE_2.jpg': require('../assets/sprites/jpg/IP_ZONE_2.jpg'),
+  'IP_ZONE_2_CODE.jpg': require('../assets/sprites/jpg/IP_ZONE_2_CODE.jpg'),
+  'IP_ZONE_2_LIGHTHOUSE.jpg': require('../assets/sprites/jpg/IP_ZONE_2_LIGHTHOUSE.jpg'),
+  'IP_ZONE_2_SECRET.jpg': require('../assets/sprites/jpg/IP_ZONE_2_SECRET.jpg'),
+  'IP_ZONE_2_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_2_STORY.jpg'),
+  'IP_ZONE_3.jpg': require('../assets/sprites/jpg/IP_ZONE_3.jpg'),
+  'IP_ZONE_3_ENTRANCE.jpg': require('../assets/sprites/jpg/IP_ZONE_3_ENTRANCE.jpg'),
+  'IP_ZONE_3_LAB.jpg': require('../assets/sprites/jpg/IP_ZONE_3_LAB.jpg'),
+  'IP_ZONE_3_SECRET.jpg': require('../assets/sprites/jpg/IP_ZONE_3_SECRET.jpg'),
+  'IP_ZONE_3_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_3_STORY.jpg'),
+  'IP_ZONE_4.jpg': require('../assets/sprites/jpg/IP_ZONE_4.jpg'),
+  'IP_ZONE_4_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_4_STORY.jpg'),
   'OPC_BROKEN_MODULE.jpg': require('../assets/sprites/jpg/OPC_BROKEN_MODULE.jpg'),
   'OPC_EYE_COORDINATES.jpg': require('../assets/sprites/jpg/OPC_EYE_COORDINATES.jpg'),
   'OPC_INTACT_MODULE.jpg': require('../assets/sprites/jpg/OPC_INTACT_MODULE.jpg'),
@@ -59,6 +89,7 @@ const sprites = {
   'TH_IMPACT_CRATER.jpg': require('../assets/sprites/jpg/TH_IMPACT_CRATER.jpg'),
   'TH_NOMAI_MINE.jpg': require('../assets/sprites/jpg/TH_NOMAI_MINE.jpg'),
   'TH_QUANTUM_SHARD.jpg': require('../assets/sprites/jpg/TH_QUANTUM_SHARD.jpg'),
+  'TH_RADIO_TOWER.jpg': require('../assets/sprites/jpg/TH_RADIO_TOWER.jpg'),
   'TH_VILLAGE.jpg': require('../assets/sprites/jpg/TH_VILLAGE.jpg'),
   'TH_ZERO_G_CAVE.jpg': require('../assets/sprites/jpg/TH_ZERO_G_CAVE.jpg'),
   'TM_ESKER.jpg': require('../assets/sprites/jpg/TM_ESKER.jpg'),

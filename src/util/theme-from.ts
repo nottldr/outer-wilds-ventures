@@ -19,6 +19,8 @@ const colourForCuriosity = (c: Curiosity | undefined): PlanetColour => {
       return PlanetColour.RED;
     case Curiosity.TIME_LOOP:
       return PlanetColour.ORANGE;
+    case Curiosity.INVISIBLE_PLANET:
+      return PlanetColour.BLUE;
   }
 
   return PlanetColour.GREY;
@@ -70,6 +72,15 @@ const themeFrom = (
         bgborder: isSelected
           ? 'border-card-purple-hover'
           : 'border-card-purple',
+      };
+    case PlanetColour.BLUE:
+      return {
+        bg: isSelected ? 'bg-card-blue-hover' : 'bg-card-blue',
+        bghover: 'hover:bg-card-blue-hover',
+        text: 'text-card-blue-text',
+        bgtext: isSelected ? 'text-card-blue-hover' : 'text-card-blue',
+        bghovertext: 'hover:text-card-blue-hover',
+        bgborder: isSelected ? 'border-card-blue-hover' : 'border-card-blue',
       };
     default:
     case PlanetColour.GREY:

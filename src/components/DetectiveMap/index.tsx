@@ -129,6 +129,8 @@ const curiosityIsInVisibleLayer = (
         return MapLayer.TIME_LOOP;
       case Curiosity.VESSEL:
         return MapLayer.VESSEL;
+      case Curiosity.INVISIBLE_PLANET:
+        return MapLayer.INVISIBLE_PLANET;
       case Curiosity.COMET_CORE:
       default:
         return MapLayer.OTHER;

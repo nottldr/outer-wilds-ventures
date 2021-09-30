@@ -29,8 +29,8 @@
       "id": "CT_GRAVITY_CANNON",
       "spritePath": "CT_GRAVITY_CANNON.png",
       "cardPosition": {
-        "x": 2023,
-        "y": -567
+        "x": 1871.99878,
+        "y": -644.998047
       }
     },
     {
@@ -143,6 +143,14 @@
       "cardPosition": {
         "x": -878,
         "y": 1087
+      }
+    },
+    {
+      "id": "TH_RADIO_TOWER",
+      "spritePath": "TH_RADIO_TOWER.png",
+      "cardPosition": {
+        "x": 2275,
+        "y": -266
       }
     },
     {
@@ -439,16 +447,16 @@
       "spritePath": "COMET_SHUTTLE.png",
       "altSpritePath": "COMET_SHUTTLE_ALT.png",
       "cardPosition": {
-        "x": 1743,
-        "y": -712
+        "x": 1592,
+        "y": -790
       }
     },
     {
       "id": "COMET_INTERIOR",
       "spritePath": "COMET_INTERIOR.png",
       "cardPosition": {
-        "x": 1391.00244,
-        "y": -713.0087
+        "x": 1240.00122,
+        "y": -791.0067
       }
     },
     {
@@ -482,6 +490,230 @@
       "cardPosition": {
         "x": -368.0744,
         "y": 1262.39429
+      }
+    },
+    {
+      "id": "IP_RING_WORLD",
+      "spritePath": "IP_RING_WORLD.png",
+      "cardPosition": {
+        "x": 2488.80249,
+        "y": -418.000031
+      }
+    },
+    {
+      "id": "IP_ZONE_1",
+      "spritePath": "IP_ZONE_1.png",
+      "cardPosition": {
+        "x": 3274.10254,
+        "y": -855
+      }
+    },
+    {
+      "id": "IP_ZONE_1_STORY",
+      "spritePath": "IP_ZONE_1_STORY.png",
+      "cardPosition": {
+        "x": 3312.3,
+        "y": -962.6
+      }
+    },
+    {
+      "id": "IP_ZONE_1_SECRET",
+      "spritePath": "IP_ZONE_1_SECRET.png",
+      "cardPosition": {
+        "x": 3224.30078,
+        "y": -962.3
+      }
+    },
+    {
+      "id": "IP_ZONE_2",
+      "spritePath": "IP_ZONE_2.png",
+      "cardPosition": {
+        "x": 2855.00244,
+        "y": -1227.99817
+      }
+    },
+    {
+      "id": "IP_ZONE_2_STORY",
+      "spritePath": "IP_ZONE_2_STORY.png",
+      "cardPosition": {
+        "x": 2888.8,
+        "y": -1331.1
+      }
+    },
+    {
+      "id": "IP_ZONE_2_SECRET",
+      "spritePath": "IP_ZONE_2_SECRET.png",
+      "cardPosition": {
+        "x": 2802.10254,
+        "y": -1331.001
+      }
+    },
+    {
+      "id": "IP_ZONE_2_LIGHTHOUSE",
+      "spritePath": "IP_ZONE_2_LIGHTHOUSE.png",
+      "cardPosition": {
+        "x": 3073,
+        "y": -1225
+      }
+    },
+    {
+      "id": "IP_ZONE_2_CODE",
+      "spritePath": "IP_ZONE_2_CODE.png",
+      "cardPosition": {
+        "x": 3036.50269,
+        "y": -1112.89917
+      }
+    },
+    {
+      "id": "IP_ZONE_3",
+      "spritePath": "IP_ZONE_3.png",
+      "cardPosition": {
+        "x": 2447,
+        "y": -855
+      }
+    },
+    {
+      "id": "IP_ZONE_3_STORY",
+      "spritePath": "IP_ZONE_3_STORY.png",
+      "cardPosition": {
+        "x": 2390.5,
+        "y": -966.7
+      }
+    },
+    {
+      "id": "IP_ZONE_3_SECRET",
+      "spritePath": "IP_ZONE_3_SECRET.png",
+      "cardPosition": {
+        "x": 2477.40063,
+        "y": -966.7
+      }
+    },
+    {
+      "id": "IP_ZONE_3_ENTRANCE",
+      "spritePath": "IP_ZONE_3_ENTRANCE.png",
+      "cardPosition": {
+        "x": 2389.90259,
+        "y": -741.7
+      }
+    },
+    {
+      "id": "IP_ZONE_3_LAB",
+      "spritePath": "IP_ZONE_3_LAB.png",
+      "cardPosition": {
+        "x": 2654.80249,
+        "y": -982
+      }
+    },
+    {
+      "id": "IP_MAP_PROJECTION_1",
+      "spritePath": "IP_MAP_PROJECTION_1.png",
+      "cardPosition": {
+        "x": 2736.10254,
+        "y": -1098.20007
+      }
+    },
+    {
+      "id": "IP_MAP_PROJECTION_2",
+      "spritePath": "IP_MAP_PROJECTION_2.png",
+      "cardPosition": {
+        "x": 2655.90283,
+        "y": -1098.8
+      }
+    },
+    {
+      "id": "IP_MAP_PROJECTION_3",
+      "spritePath": "IP_MAP_PROJECTION_3.png",
+      "cardPosition": {
+        "x": 2576.40332,
+        "y": -1097.79968
+      }
+    },
+    {
+      "id": "IP_ZONE_4",
+      "spritePath": "IP_ZONE_4.png",
+      "cardPosition": {
+        "x": 2854.80249,
+        "y": -447.000031
+      }
+    },
+    {
+      "id": "IP_ZONE_4_STORY",
+      "spritePath": "IP_ZONE_4_STORY.png",
+      "cardPosition": {
+        "x": 2908.28,
+        "y": -543.000061
+      }
+    },
+    {
+      "id": "IP_PRISON",
+      "spritePath": "IP_PRISON.png",
+      "cardPosition": {
+        "x": 2854.80249,
+        "y": -750
+      }
+    },
+    {
+      "id": "IP_SARCOPHAGUS",
+      "spritePath": "IP_SARCOPHAGUS.png",
+      "cardPosition": {
+        "x": 2854.80249,
+        "y": -854.0012
+      }
+    },
+    {
+      "id": "IP_DREAM_LAKE",
+      "spritePath": "IP_DREAM_LAKE.png",
+      "cardPosition": {
+        "x": 2935.80249,
+        "y": -754.0012
+      }
+    },
+    {
+      "id": "IP_DREAM_ZONE_1",
+      "spritePath": "IP_DREAM_ZONE_1.png",
+      "cardPosition": {
+        "x": 3341.80054,
+        "y": -1394.59949
+      }
+    },
+    {
+      "id": "IP_DREAM_LIBRARY_1",
+      "spritePath": "IP_DREAM_LIBRARY_1.png",
+      "cardPosition": {
+        "x": 3266,
+        "y": -1344.99976
+      }
+    },
+    {
+      "id": "IP_DREAM_ZONE_2",
+      "spritePath": "IP_DREAM_ZONE_2.png",
+      "cardPosition": {
+        "x": 2855.002,
+        "y": -1577
+      }
+    },
+    {
+      "id": "IP_DREAM_LIBRARY_2",
+      "spritePath": "IP_DREAM_LIBRARY_2.png",
+      "cardPosition": {
+        "x": 2778.7,
+        "y": -1523.99976
+      }
+    },
+    {
+      "id": "IP_DREAM_ZONE_3",
+      "spritePath": "IP_DREAM_ZONE_3.png",
+      "cardPosition": {
+        "x": 2375.09814,
+        "y": -1394.59949
+      }
+    },
+    {
+      "id": "IP_DREAM_LIBRARY_3",
+      "spritePath": "IP_DREAM_LIBRARY_3.png",
+      "cardPosition": {
+        "x": 2295,
+        "y": -1345
       }
     }
   ]
