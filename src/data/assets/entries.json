@@ -880,16 +880,16 @@
         }
       },
       {
-        "id": "BH_MURAL_1",
-        "name": "Mural (Panel 1)",
+        "id": "BH_MURAL_3",
+        "name": "Mural (Panel 3)",
         "isCuriousity": false,
         "curiousity": "VESSEL",
         "parentId": "BH_OLD_SETTLEMENT",
         "facts": {
           "explore": [
             {
-              "id": "BH_MURAL_1_X1",
-              "text": "A mural of a Nomai vessel encountering a signal."
+              "id": "BH_MURAL_3_X1",
+              "text": "A mural of three escape pods evacuating the Nomai vessel."
             }
           ],
           "rumor": []
@@ -912,16 +912,16 @@
         }
       },
       {
-        "id": "BH_MURAL_3",
-        "name": "Mural (Panel 3)",
+        "id": "BH_MURAL_1",
+        "name": "Mural (Panel 1)",
         "isCuriousity": false,
         "curiousity": "VESSEL",
         "parentId": "BH_OLD_SETTLEMENT",
         "facts": {
           "explore": [
             {
-              "id": "BH_MURAL_3_X1",
-              "text": "A mural of three escape pods evacuating the Nomai vessel."
+              "id": "BH_MURAL_1_X1",
+              "text": "A mural of a Nomai vessel encountering a signal."
             }
           ],
           "rumor": []
@@ -1410,68 +1410,6 @@
         }
       },
       {
-        "id": "OPC_INTACT_MODULE",
-        "name": "Control Module",
-        "isCuriousity": false,
-        "curiousity": "SUNKEN_MODULE",
-        "parentId": "ORBITAL_PROBE_CANNON",
-        "facts": {
-          "explore": [
-            {
-              "id": "OPC_INTACT_MODULE_X1",
-              "text": "The Control Module (recently) received a request from the Ash Twin Project to launch the probe. The cannon was aligned with a randomly selected probe trajectory."
-            },
-            {
-              "id": "OPC_INTACT_MODULE_X2",
-              "text": "The probe was successfully launched, but the cannon's structural integrity was compromised in the process. Damage is detected in multiple modules."
-            }
-          ],
-          "rumor": [
-            {
-              "id": "OPC_INTACT_MODULE_R1",
-              "text": "One of the Orbital Probe Cannon’s three modules."
-            }
-          ]
-        }
-      },
-      {
-        "id": "OPC_BROKEN_MODULE",
-        "name": "Launch Module",
-        "isCuriousity": false,
-        "curiousity": "SUNKEN_MODULE",
-        "parentId": "ORBITAL_PROBE_CANNON",
-        "facts": {
-          "explore": [
-            {
-              "id": "OPC_BROKEN_MODULE_X1",
-              "text": "The Launch Module is badly damaged, but its projection pool is still intact."
-            },
-            {
-              "id": "OPC_BROKEN_MODULE_X2",
-              "text": "A Nomai named Mallow argued that it wouldn't matter if the cannon's structural integrity was compromised, since they only needed to fire the probe once."
-            },
-            {
-              "id": "OPC_BROKEN_MODULE_X3",
-              "text": "A Nomai named Privet countered that they wouldn't be capable of receiving the probe's data if the Probe Tracking Module was destroyed."
-            }
-          ],
-          "rumor": [
-            {
-              "id": "OPC_BROKEN_MODULE_R1",
-              "text": "One of the Orbital Probe Cannon’s three modules."
-            },
-            {
-              "id": "OPC_BROKEN_MODULE_R2",
-              "text": "The Launch Module looks heavily damaged. There’s a huge breach in the glass viewport."
-            },
-            {
-              "id": "OPC_BROKEN_MODULE_R3",
-              "text": "The Launch Module's viewport window is fractured, exposing it to the vacuum of space."
-            }
-          ]
-        }
-      },
-      {
         "id": "OPC_SUNKEN_MODULE",
         "name": "Probe Tracking Module",
         "isCuriousity": false,
@@ -1517,6 +1455,68 @@
             {
               "id": "OPC_SUNKEN_MODULE_R3",
               "text": "I saw the Probe Tracking Module through a Nomai projection pool. It looks like the module is underwater. I could see purple electricity outside the viewport."
+            }
+          ]
+        }
+      },
+      {
+        "id": "OPC_BROKEN_MODULE",
+        "name": "Launch Module",
+        "isCuriousity": false,
+        "curiousity": "SUNKEN_MODULE",
+        "parentId": "ORBITAL_PROBE_CANNON",
+        "facts": {
+          "explore": [
+            {
+              "id": "OPC_BROKEN_MODULE_X1",
+              "text": "The Launch Module is badly damaged, but its projection pool is still intact."
+            },
+            {
+              "id": "OPC_BROKEN_MODULE_X2",
+              "text": "A Nomai named Mallow argued that it wouldn't matter if the cannon's structural integrity was compromised, since they only needed to fire the probe once."
+            },
+            {
+              "id": "OPC_BROKEN_MODULE_X3",
+              "text": "A Nomai named Privet countered that they wouldn't be capable of receiving the probe's data if the Probe Tracking Module was destroyed."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "OPC_BROKEN_MODULE_R1",
+              "text": "One of the Orbital Probe Cannon’s three modules."
+            },
+            {
+              "id": "OPC_BROKEN_MODULE_R2",
+              "text": "The Launch Module looks heavily damaged. There’s a huge breach in the glass viewport."
+            },
+            {
+              "id": "OPC_BROKEN_MODULE_R3",
+              "text": "The Launch Module's viewport window is fractured, exposing it to the vacuum of space."
+            }
+          ]
+        }
+      },
+      {
+        "id": "OPC_INTACT_MODULE",
+        "name": "Control Module",
+        "isCuriousity": false,
+        "curiousity": "SUNKEN_MODULE",
+        "parentId": "ORBITAL_PROBE_CANNON",
+        "facts": {
+          "explore": [
+            {
+              "id": "OPC_INTACT_MODULE_X1",
+              "text": "The Control Module (recently) received a request from the Ash Twin Project to launch the probe. The cannon was aligned with a randomly selected probe trajectory."
+            },
+            {
+              "id": "OPC_INTACT_MODULE_X2",
+              "text": "The probe was successfully launched, but the cannon's structural integrity was compromised in the process. Damage is detected in multiple modules."
+            }
+          ],
+          "rumor": [
+            {
+              "id": "OPC_INTACT_MODULE_R1",
+              "text": "One of the Orbital Probe Cannon’s three modules."
             }
           ]
         }
@@ -2165,6 +2165,7 @@
         "name": "Symbol Room",
         "isCuriousity": false,
         "curiousity": "INVISIBLE_PLANET",
+        "altPhotoCondition": "IP_ZONE_2_CODE_X3",
         "parentId": "IP_ZONE_2_LIGHTHOUSE",
         "facts": {
           "explore": [
@@ -2184,7 +2185,12 @@
           "rumor": [
             {
               "id": "IP_ZONE_2_CODE_R1",
-              "text": "The light coming out of the vault gave me a vision of climbing a spiral staircase to a room near the top of a tower. One of the Stranger's inhabitants pointed at a mural of the tower beneath a nighttime sky, then picked up an artifact and left the room. Some time later, the lamps next to the mural went dark, revealing a secret passage.",
+              "text": "The light coming out of the vault gave me a vision of climbing a spiral staircase to a room near the top of a tower. One of the Stranger's inhabitants pointed at a mural of an identical tower beneath a ringed planet, then picked up an artifact and carried it downstairs to a room with a green fire. Some time later, two of the lamps in the mural room turned off, plunging the mural into darkness and revealing a secret passage.",
+              "sourceId": "IP_DREAM_LAKE"
+            },
+            {
+              "id": "IP_ZONE_2_CODE_R2",
+              "text": "The passage lead to three wooden containers, each marked with a glowing vault seal.",
               "sourceId": "IP_DREAM_LAKE"
             }
           ]
@@ -2200,26 +2206,6 @@
             {
               "id": "IP_ZONE_3_X1",
               "text": "A narrow gorge along the rightmost branch of the river. There are dwellings built into both cliff faces high above."
-            }
-          ],
-          "rumor": []
-        }
-      },
-      {
-        "id": "IP_ZONE_3_STORY",
-        "name": "Burned Slide Reel",
-        "isCuriousity": false,
-        "curiousity": "INVISIBLE_PLANET",
-        "parentId": "IP_ZONE_3",
-        "facts": {
-          "explore": [
-            {
-              "id": "IP_ZONE_3_STORY_X1",
-              "text": "A slide reel that shows the Stranger's inhabitants congregating around a strange green fire."
-            },
-            {
-              "id": "IP_ZONE_3_STORY_X2",
-              "text": "Several slides have been burned and cannot be viewed."
             }
           ],
           "rumor": []
@@ -2249,6 +2235,26 @@
               "sourceId": "IP_MAP_PROJECTION_3"
             }
           ]
+        }
+      },
+      {
+        "id": "IP_ZONE_3_STORY",
+        "name": "Burned Slide Reel",
+        "isCuriousity": false,
+        "curiousity": "INVISIBLE_PLANET",
+        "parentId": "IP_ZONE_3",
+        "facts": {
+          "explore": [
+            {
+              "id": "IP_ZONE_3_STORY_X1",
+              "text": "A slide reel that shows the Stranger's inhabitants congregating around a strange green fire."
+            },
+            {
+              "id": "IP_ZONE_3_STORY_X2",
+              "text": "Several slides have been burned and cannot be viewed."
+            }
+          ],
+          "rumor": []
         }
       },
       {
@@ -2377,7 +2383,7 @@
             },
             {
               "id": "IP_ZONE_4_X4",
-              "text": "I found a projection that shows the Stranger moving beyond the reach of the supernova."
+              "text": "I found a projection showing the Stranger's current trajectory and the sun's predicted supernova radius."
             }
           ],
           "rumor": []
@@ -2438,6 +2444,7 @@
         "name": "Subterranean Lake",
         "isCuriousity": false,
         "curiousity": "INVISIBLE_PLANET",
+        "altPhotoCondition": "IP_DREAM_LAKE_X2",
         "parentId": "IP_PRISON",
         "facts": {
           "explore": [
@@ -2453,11 +2460,11 @@
           "rumor": [
             {
               "id": "IP_DREAM_LAKE_R1",
-              "text": "I looked through a peephole in the side of a large metal structure suspended by chains and saw a green fire burning inside."
+              "text": "I looked through a peephole in the side of a large metal structure suspended by chains. Inside is another green fire and a staircase leading farther below."
             },
             {
               "id": "IP_DREAM_LAKE_R2",
-              "text": "I saw a vision-like recording of two figures and a strange vault materializing next to a green fire. The two figures picked up the vault and carried it down a stairwell."
+              "text": "I saw a vision-like recording of two figures taking artifacts into a large metal structure suspended by chains and going to sleep at the green fire in front of the sealed vault. Upon waking up with lit artifacts, the two figures picked up the vault and carried it down a staircase to somewhere farther below."
             }
           ]
         }
@@ -2481,6 +2488,10 @@
             {
               "id": "IP_SARCOPHAGUS_X4",
               "text": "I used the vision torch to share my knowledge of the solar system's history with the Prisoner."
+            },
+            {
+              "id": "IP_SARCOPHAGUS_X5",
+              "text": "The Prisoner left one final vision for me by the water's edge as a farewell."
             }
           ],
           "rumor": [
@@ -2590,6 +2601,10 @@
             {
               "id": "IP_DREAM_ZONE_2_X3",
               "text": "I found the remains of a burned-out building on the outskirts of the village."
+            },
+            {
+              "id": "IP_DREAM_ZONE_2_X4",
+              "text": "I reached the tower's upper floors by projecting a path to a second entrance at the back of the tower."
             }
           ],
           "rumor": [
