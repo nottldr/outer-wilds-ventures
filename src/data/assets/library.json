@@ -29,8 +29,8 @@
       "id": "CT_GRAVITY_CANNON",
       "spritePath": "CT_GRAVITY_CANNON.png",
       "cardPosition": {
-        "x": 1871.99878,
-        "y": -644.998047
+        "x": 1871.9988,
+        "y": -644.99805
       }
     },
     {
@@ -117,7 +117,7 @@
       "id": "TH_ZERO_G_CAVE",
       "spritePath": "TH_ZERO_G_CAVE.png",
       "cardPosition": {
-        "x": 1547.00659,
+        "x": 1547.0066,
         "y": 821.9953
       }
     },
@@ -206,7 +206,7 @@
       "spritePath": "BH_QUANTUM_SHARD.png",
       "cardPosition": {
         "x": -667.9691,
-        "y": 1288.12549
+        "y": 1288.1255
       }
     },
     {
@@ -245,7 +245,7 @@
       "id": "BH_MURAL_2",
       "spritePath": "BH_MURAL_2.png",
       "cardPosition": {
-        "x": -234.028778,
+        "x": -234.02878,
         "y": -562.1994
       }
     },
@@ -253,7 +253,7 @@
       "id": "BH_MURAL_3",
       "spritePath": "BH_MURAL_3.png",
       "cardPosition": {
-        "x": -155.728775,
+        "x": -155.72878,
         "y": -562.1994
       }
     },
@@ -293,8 +293,8 @@
       "id": "BH_TORNADO_SIMULATION",
       "spritePath": "BH_TORNADO_SIMULATION.png",
       "cardPosition": {
-        "x": 2491.00049,
-        "y": 755.002136
+        "x": 2491.0005,
+        "y": 755.00214
       }
     },
     {
@@ -317,8 +317,8 @@
       "id": "GD_GABBRO_ISLAND",
       "spritePath": "GD_GABBRO_ISLAND.png",
       "cardPosition": {
-        "x": 1377.99731,
-        "y": 562.995361
+        "x": 1377.9973,
+        "y": 562.99536
       }
     },
     {
@@ -350,7 +350,7 @@
       "spritePath": "GD_STATUE_WORKSHOP.png",
       "cardPosition": {
         "x": 915.973,
-        "y": 474.019318
+        "y": 474.01932
       }
     },
     {
@@ -365,7 +365,7 @@
       "id": "ORBITAL_PROBE_CANNON",
       "spritePath": "ORBITAL_PROBE_CANNON.png",
       "cardPosition": {
-        "x": 1940.99634,
+        "x": 1940.9963,
         "y": 610.0005
       }
     },
@@ -373,16 +373,16 @@
       "id": "OPC_INTACT_MODULE",
       "spritePath": "OPC_INTACT_MODULE.png",
       "cardPosition": {
-        "x": 1818.99719,
-        "y": 448.006348
+        "x": 1818.9972,
+        "y": 448.00635
       }
     },
     {
       "id": "OPC_BROKEN_MODULE",
       "spritePath": "OPC_BROKEN_MODULE.png",
       "cardPosition": {
-        "x": 1937.99731,
-        "y": 445.995361
+        "x": 1937.9973,
+        "y": 445.99536
       }
     },
     {
@@ -390,7 +390,7 @@
       "spritePath": "OPC_SUNKEN_MODULE.png",
       "altSpritePath": "OPC_EYE_COORDINATES.png",
       "cardPosition": {
-        "x": 2056.99756,
+        "x": 2056.9976,
         "y": 446.0063
       }
     },
@@ -455,7 +455,7 @@
       "id": "COMET_INTERIOR",
       "spritePath": "COMET_INTERIOR.png",
       "cardPosition": {
-        "x": 1240.00122,
+        "x": 1240.0012,
         "y": -791.0067
       }
     },
@@ -489,22 +489,22 @@
       "spritePath": "QM_SIXTH_LOCATION.png",
       "cardPosition": {
         "x": -368.0744,
-        "y": 1262.39429
+        "y": 1262.3943
       }
     },
     {
       "id": "IP_RING_WORLD",
       "spritePath": "IP_RING_WORLD.png",
       "cardPosition": {
-        "x": 2488.80249,
-        "y": -418.000031
+        "x": 2488.8025,
+        "y": -418.00003
       }
     },
     {
       "id": "IP_ZONE_1",
       "spritePath": "IP_ZONE_1.png",
       "cardPosition": {
-        "x": 3274.10254,
+        "x": 3274.1025,
         "y": -855
       }
     },
@@ -520,7 +520,7 @@
       "id": "IP_ZONE_1_SECRET",
       "spritePath": "IP_ZONE_1_SECRET.png",
       "cardPosition": {
-        "x": 3224.30078,
+        "x": 3224.3008,
         "y": -962.3
       }
     },
@@ -528,8 +528,8 @@
       "id": "IP_ZONE_2",
       "spritePath": "IP_ZONE_2.png",
       "cardPosition": {
-        "x": 2855.00244,
-        "y": -1227.99817
+        "x": 2855.0024,
+        "y": -1227.9982
       }
     },
     {
@@ -544,7 +544,7 @@
       "id": "IP_ZONE_2_SECRET",
       "spritePath": "IP_ZONE_2_SECRET.png",
       "cardPosition": {
-        "x": 2802.10254,
+        "x": 2802.1025,
         "y": -1331.001
       }
     },
@@ -558,10 +558,11 @@
     },
     {
       "id": "IP_ZONE_2_CODE",
-      "spritePath": "IP_ZONE_2_CODE.png",
+      "spritePath": "IP_ZONE_2_CODE_ROOM.png",
+      "altSpritePath": "IP_ZONE_2_CODE.png",
       "cardPosition": {
-        "x": 3036.50269,
-        "y": -1112.89917
+        "x": 3036.5027,
+        "y": -1112.8992
       }
     },
     {
@@ -584,7 +585,7 @@
       "id": "IP_ZONE_3_SECRET",
       "spritePath": "IP_ZONE_3_SECRET.png",
       "cardPosition": {
-        "x": 2477.40063,
+        "x": 2477.4006,
         "y": -966.7
       }
     },
@@ -592,7 +593,7 @@
       "id": "IP_ZONE_3_ENTRANCE",
       "spritePath": "IP_ZONE_3_ENTRANCE.png",
       "cardPosition": {
-        "x": 2389.90259,
+        "x": 2389.9026,
         "y": -741.7
       }
     },
@@ -600,7 +601,7 @@
       "id": "IP_ZONE_3_LAB",
       "spritePath": "IP_ZONE_3_LAB.png",
       "cardPosition": {
-        "x": 2654.80249,
+        "x": 2654.8025,
         "y": -982
       }
     },
@@ -608,15 +609,15 @@
       "id": "IP_MAP_PROJECTION_1",
       "spritePath": "IP_MAP_PROJECTION_1.png",
       "cardPosition": {
-        "x": 2736.10254,
-        "y": -1098.20007
+        "x": 2736.1025,
+        "y": -1098.2001
       }
     },
     {
       "id": "IP_MAP_PROJECTION_2",
       "spritePath": "IP_MAP_PROJECTION_2.png",
       "cardPosition": {
-        "x": 2655.90283,
+        "x": 2655.9028,
         "y": -1098.8
       }
     },
@@ -624,16 +625,16 @@
       "id": "IP_MAP_PROJECTION_3",
       "spritePath": "IP_MAP_PROJECTION_3.png",
       "cardPosition": {
-        "x": 2576.40332,
-        "y": -1097.79968
+        "x": 2576.4033,
+        "y": -1097.7997
       }
     },
     {
       "id": "IP_ZONE_4",
       "spritePath": "IP_ZONE_4.png",
       "cardPosition": {
-        "x": 2854.80249,
-        "y": -447.000031
+        "x": 2854.8025,
+        "y": -447.00003
       }
     },
     {
@@ -641,14 +642,14 @@
       "spritePath": "IP_ZONE_4_STORY.png",
       "cardPosition": {
         "x": 2908.28,
-        "y": -543.000061
+        "y": -543.00006
       }
     },
     {
       "id": "IP_PRISON",
       "spritePath": "IP_PRISON.png",
       "cardPosition": {
-        "x": 2854.80249,
+        "x": 2854.8025,
         "y": -750
       }
     },
@@ -656,15 +657,16 @@
       "id": "IP_SARCOPHAGUS",
       "spritePath": "IP_SARCOPHAGUS.png",
       "cardPosition": {
-        "x": 2854.80249,
+        "x": 2854.8025,
         "y": -854.0012
       }
     },
     {
       "id": "IP_DREAM_LAKE",
-      "spritePath": "IP_DREAM_LAKE.png",
+      "spritePath": "IP_DREAM_LAKE_ALT.png",
+      "altSpritePath": "IP_DREAM_LAKE_ALT_OPEN.png",
       "cardPosition": {
-        "x": 2935.80249,
+        "x": 2935.8025,
         "y": -754.0012
       }
     },
@@ -672,8 +674,8 @@
       "id": "IP_DREAM_ZONE_1",
       "spritePath": "IP_DREAM_ZONE_1.png",
       "cardPosition": {
-        "x": 3341.80054,
-        "y": -1394.59949
+        "x": 3341.8005,
+        "y": -1394.5995
       }
     },
     {
@@ -681,7 +683,7 @@
       "spritePath": "IP_DREAM_LIBRARY_1.png",
       "cardPosition": {
         "x": 3266,
-        "y": -1344.99976
+        "y": -1344.9998
       }
     },
     {
@@ -696,16 +698,16 @@
       "id": "IP_DREAM_LIBRARY_2",
       "spritePath": "IP_DREAM_LIBRARY_2.png",
       "cardPosition": {
-        "x": 2778.7,
-        "y": -1523.99976
+        "x": 2770,
+        "y": -1523.9998
       }
     },
     {
       "id": "IP_DREAM_ZONE_3",
       "spritePath": "IP_DREAM_ZONE_3.png",
       "cardPosition": {
-        "x": 2375.09814,
-        "y": -1394.59949
+        "x": 2375.0981,
+        "y": -1394.5995
       }
     },
     {
