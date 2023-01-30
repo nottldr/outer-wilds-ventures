@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCookies } from 'react-cookie';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MappyBoi from './components/DetectiveMap/MappyBoi';
 import FirstRunModal, {
   Props as FirstRunModalProps,
@@ -221,23 +221,22 @@ const App: React.FC<Props> = ({ className }) => {
           }}
         >
           <Content>
-            <Switch>
-              <Route path="/list">
-                <List nodes={universe.nodes} />
-              </Route>
-              <Route path="/grid">
-                <Grid nodes={universe.nodes} />
-              </Route>
-              <Route path="/">
-                <MappyBoi
-                  nodes={universe.nodes}
-                  visibleLayers={visibleLayers}
-                  showLogCounts={showLogCounts}
-                  spoilerFreeMode={spoilerFreeMode}
-                  resetAt={resetAt}
-                />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route path="/list" element={<List nodes={universe.nodes} />} />
+              <Route path="/grid" element={<Grid nodes={universe.nodes} />} />
+              <Route
+                path="/"
+                element={
+                  <MappyBoi
+                    nodes={universe.nodes}
+                    visibleLayers={visibleLayers}
+                    showLogCounts={showLogCounts}
+                    spoilerFreeMode={spoilerFreeMode}
+                    resetAt={resetAt}
+                  />
+                }
+              />
+            </Routes>
           </Content>
         </div>
 

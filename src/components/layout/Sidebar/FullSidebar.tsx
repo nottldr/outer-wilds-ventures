@@ -39,39 +39,6 @@ const FullSidebar: React.FC<Props> = ({
       </div>
 
       <div className="mx-4 flex-row">
-        {/* <nav>
-          <div>
-            <NavLink
-              to="/"
-              activeClassName="font-bold"
-              className="block px-4 py-2 mt-2 text-sm text-page-bg bg-white rounded-lg focus:outline-none focus:shadow-outline"
-              exact
-            >
-              Map
-            </NavLink>
-          </div>
-          <div>
-            <NavLink
-              to="/grid"
-              activeClassName="font-bold"
-              className="block px-4 py-2 mt-2 text-sm text-page-bg bg-white rounded-lg focus:outline-none focus:shadow-outline"
-              exact
-            >
-              Grid
-            </NavLink>
-          </div>
-          <div>
-            <NavLink
-              to="/list"
-              activeClassName="font-bold"
-              className="block px-4 py-2 mt-2 text-sm text-page-bg bg-white rounded-lg focus:outline-none focus:shadow-outline"
-              exact
-            >
-              List
-            </NavLink>
-          </div>
-        </nav> */}
-
         <div className="font-space-mono text-xs">
           <div className="bg-darkblue text-white text-center px-4 py-2 font-serif mt-4 mb-6 text-base">
             <h1 className="uppercase">Outer Wilds Ventures</h1>
