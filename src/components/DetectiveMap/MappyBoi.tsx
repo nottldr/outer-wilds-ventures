@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useDimensions from 'react-cool-dimensions';
-import { ReactSVGPanZoom, Value } from 'react-svg-pan-zoom';
+import { ALIGN_CENTER, ReactSVGPanZoom, Value } from 'react-svg-pan-zoom';
 import DetectiveMap from '.';
 import { Connection, MapNode } from '../../data/universe/types';
 import BoundingBox from '../../util/bounding-box';
@@ -9,6 +9,13 @@ import theme from '../../util/theme';
 import Log from '../Log';
 import MapControls from './MapControls';
 import { zoomToScaleOnViewerCenter } from './util/zoom';
+
+// idk why, but the types don't allow for arguments
+declare module 'react-svg-pan-zoom' {
+  export interface ReactSVGPanZoom {
+    fitToViewer(SVGAlignX: string, SVGAlignY: string): void;
+  }
+}
 
 type Props = {
   nodes: MapNode[];
@@ -135,8 +142,13 @@ const MappyBoi: React.FC<Props> = ({
       zoomToScaleOnViewerCenter(Viewer.current.getValue(), scaleFactor)
     );
   };
-  const _fitToViewer = () =>
-    (Viewer.current?.fitToViewer as any)('center', 'center');
+  const _fitToViewer = () => {
+    if (Viewer.current?.fitToViewer == null) {
+      return;
+    }
+
+    Viewer.current.fitToViewer(ALIGN_CENTER, ALIGN_CENTER);
+  };
 
   const { observe, width, height } = useDimensions();
 
@@ -166,12 +178,12 @@ const MappyBoi: React.FC<Props> = ({
           />
         </div>
         <div
-          ref={observe as any}
+          ref={observe}
           className={`${isReady ? 'visible' : 'invisible'} h-full`}
         >
           {
             <ReactSVGPanZoom
-              value={value ?? ({} as Value)}
+              value={value ?? null}
               onChangeValue={onChangeValue}
               tool="auto"
               background={theme.colors['page-bg']}

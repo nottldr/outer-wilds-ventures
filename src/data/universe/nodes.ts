@@ -54,6 +54,10 @@ const nodes: MapNode[] = entries
       }
     })();
 
+    const connections = entry.facts.rumor.filter(
+      (c): c is MapNode['connections'][number] => c.sourceId != null
+    );
+
     return {
       id: entry.id,
       name: entry.name,
@@ -61,7 +65,7 @@ const nodes: MapNode[] = entries
       curiosity,
       sizeClass,
       logs: entry.facts.explore.map((f) => f.text),
-      connections: entry.facts.rumor.filter((c) => c.sourceId != null) as any,
+      connections,
       location: libraryEntry.cardPosition,
     };
   })

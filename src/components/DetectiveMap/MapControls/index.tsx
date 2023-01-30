@@ -34,7 +34,7 @@ const MapControls: React.FC<Props> = ({
   const y = yForLevel(level);
   const [isDragging, setIsDragging] = React.useState(false);
 
-  const draggy = React.useRef<HTMLElement>(null);
+  const draggy = React.useRef<HTMLDivElement>(null);
 
   const onStart = React.useCallback(() => {
     setIsDragging(true);
@@ -82,7 +82,7 @@ const MapControls: React.FC<Props> = ({
           position={{ x: 0, y }}
         >
           <div
-            ref={draggy as any}
+            ref={draggy}
             className="absolute left-1/2"
             style={{
               cursor: isDragging ? 'grabbing' : 'grab',

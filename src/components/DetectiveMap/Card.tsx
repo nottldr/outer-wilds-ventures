@@ -45,7 +45,7 @@ const Card: React.FC<Props> = ({
 
   return (
     <div
-      ref={observe as any}
+      ref={observe}
       className={`${theme.bg} ${theme.bghover} text-page-bg cursor-pointer ${
         spoilerFreeMode ? 'font-flow-block' : 'font-space-mono'
       } flex flex-col`}
