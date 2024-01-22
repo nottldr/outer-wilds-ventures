@@ -7,10 +7,10 @@
     "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "check": "check:types && check:prettier && check:lint",
-    "check:types": "tsc --noEmit",
-    "check:prettier": "prettier --check .",
-    "check:lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "ci": "yarn ci:types && yarn ci:prettier && yarn ci:lint",
+    "ci:types": "tsc --noEmit",
+    "ci:prettier": "prettier --check .",
+    "ci:lint": "eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "browserslist": {
     "production": [
@@ -57,6 +57,7 @@
     "webpack-bundle-analyzer": "^4.10.1"
   },
   "resolutions": {
-    "@types/node": "^20.0.0"
+    "@types/node": "^20.0.0",
+    "sucrase": "3.34.0"
   }
 }
