@@ -24,6 +24,7 @@
       "last 1 safari version"
     ]
   },
+  "packageManager": "yarn@1.22.21",
   "dependencies": {
     "@juggle/resize-observer": "^3.4.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
