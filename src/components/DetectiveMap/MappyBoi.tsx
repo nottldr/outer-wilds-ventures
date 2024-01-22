@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import useDimensions from 'react-cool-dimensions';
-import { ALIGN_CENTER, ReactSVGPanZoom, Value } from 'react-svg-pan-zoom';
+import {
+  ALIGN_CENTER,
+  INITIAL_VALUE,
+  TOOL_AUTO,
+  ReactSVGPanZoom,
+  Value,
+} from 'react-svg-pan-zoom';
 import DetectiveMap from '.';
 import { Connection, MapNode } from '../../data/universe/types';
 import BoundingBox from '../../util/bounding-box';
@@ -12,6 +18,8 @@ import { zoomToScaleOnViewerCenter } from './util/zoom';
 
 // idk why, but the types don't allow for arguments
 declare module 'react-svg-pan-zoom' {
+  export const INITIAL_VALUE: Value;
+
   export interface ReactSVGPanZoom {
     fitToViewer(SVGAlignX: string, SVGAlignY: string): void;
   }
@@ -120,6 +128,8 @@ const MappyBoi: React.FC<Props> = ({
     setScaleFactor(value.a);
   };
 
+  const onChangeTool = () => {};
+
   const _zoomIn = () =>
     _zoomToScaleFactor(
       scaleFactor + (scaleFactorMax - scaleFactorMin) / scaleSteps
@@ -183,12 +193,12 @@ const MappyBoi: React.FC<Props> = ({
         >
           {
             <ReactSVGPanZoom
-              value={value ?? null}
+              value={value ?? INITIAL_VALUE}
               onChangeValue={onChangeValue}
-              tool="auto"
+              tool={TOOL_AUTO}
+              onChangeTool={onChangeTool}
               background={theme.colors['page-bg']}
               SVGBackground={theme.colors['page-bg']}
-              onChangeTool={() => {}}
               miniatureProps={{
                 position: 'none',
                 background: '',

@@ -99,6 +99,21 @@ const CompactSidebar: React.FC<Props> = ({
                 <input
                   type="checkbox"
                   className="hidden"
+                  id="toggle-INVISIBLE_PLANET"
+                  checked={visibleLayers.includes(MapLayer.INVISIBLE_PLANET)}
+                  onChange={() => toggleLayer(MapLayer.INVISIBLE_PLANET)}
+                />{' '}
+                <label htmlFor="toggle-INVISIBLE_PLANET">
+                  <MapLayerCheckbox
+                    checked={visibleLayers.includes(MapLayer.INVISIBLE_PLANET)}
+                    mapLayer={MapLayer.INVISIBLE_PLANET}
+                  />
+                </label>
+              </li>
+              <li className="inline-block md:block">
+                <input
+                  type="checkbox"
+                  className="hidden"
                   id="toggle-OTHER"
                   checked={visibleLayers.includes(MapLayer.OTHER)}
                   onChange={() => toggleLayer(MapLayer.OTHER)}

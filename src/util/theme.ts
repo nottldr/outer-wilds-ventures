@@ -2,7 +2,7 @@
 // https://tailwindcss.com/docs/configuration#referencing-in-java-script
 // but the TS/JS interplay is kinda weird, and the `preval` vs CRA is more trouble than it's worth
 
-const gameTheme = require('../data/assets/theme.json');
+import gameTheme from '../data/assets/theme.json';
 
 const theme = {
   colors: {
@@ -41,4 +41,4 @@ const theme = {
   },
 };
 
-module.exports = theme;
+export default theme;

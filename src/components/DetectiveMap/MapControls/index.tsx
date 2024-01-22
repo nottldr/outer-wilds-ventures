@@ -4,7 +4,7 @@ import trackUp from './assets/track-up.svg';
 import trackDown from './assets/track-down.svg';
 import trackMarker from './assets/track-marker.svg';
 import track from './assets/track.svg';
-import Draggable, { DraggableData, DraggableEvent } from 'react-draggable';
+import Draggable, { DraggableProps } from 'react-draggable';
 
 type Props = {
   level: number;
@@ -36,17 +36,16 @@ const MapControls: React.FC<Props> = ({
 
   const draggy = React.useRef<HTMLDivElement>(null);
 
-  const onStart = React.useCallback(() => {
+  const onStart = React.useCallback<DraggableProps['onStart']>(() => {
     setIsDragging(true);
   }, []);
 
-  const onStop = React.useCallback((e: DraggableEvent, data: DraggableData) => {
-    // console.log(e);
+  const onStop = React.useCallback<DraggableProps['onStop']>(() => {
     setIsDragging(false);
   }, []);
 
-  const onDrag = React.useCallback(
-    (e: DraggableEvent, data: DraggableData) => {
+  const onDrag = React.useCallback<DraggableProps['onDrag']>(
+    (e, data) => {
       const level = levelForY(data.y);
       onZoom(level);
     },

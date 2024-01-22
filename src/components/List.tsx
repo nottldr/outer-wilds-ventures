@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Universe as UniverseType } from '../data/universe/types';
 import keysOf from '../util/keys-of';
 
@@ -6,7 +6,7 @@ import theme from '../data/assets/theme.json';
 
 type Props = UniverseType;
 
-const List: React.FC<Props> = ({ nodes }) => {
+const List: FC<Props> = () => {
   return (
     <div>
       {keysOf(theme).map((key) => (

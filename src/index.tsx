@@ -1,14 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './assets/css/index.css';
-import App from './App';
+import { StrictMode } from 'react';
 import { CookiesProvider } from 'react-cookie';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import './assets/css/index.css';
 
-ReactDOM.render(
-  <React.StrictMode>
+const container = document.getElementById('root');
+const root = createRoot(container!);
+
+root.render(
+  <StrictMode>
     <CookiesProvider>
       <App />
     </CookiesProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );
