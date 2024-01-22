@@ -6,7 +6,11 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "check": "check:types && check:prettier && check:lint",
+    "check:types": "tsc --noEmit",
+    "check:prettier": "prettier --check .",
+    "check:lint": "eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "browserslist": {
     "production": [
@@ -37,10 +41,6 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.0.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^29.4.0",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
