@@ -2,11 +2,11 @@
   "name": "outerwilds-ventures",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "craco eject",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
     "check": "check:types && check:prettier && check:lint",
     "check:types": "tsc --noEmit",
     "check:prettier": "prettier --check .",
@@ -27,6 +27,7 @@
   "dependencies": {
     "@juggle/resize-observer": "^3.4.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
@@ -35,12 +36,12 @@
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
     "react-router-dom": "^6.21.3",
-    "react-scripts": "5.0.1",
     "react-svg-pan-zoom": "^3.12.1",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.12",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "devDependencies": {
-    "@craco/craco": "^7.1.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
@@ -52,6 +53,7 @@
     "progress-bar-webpack-plugin": "^2.1.0",
     "slugify": "^1.6.6",
     "typescript": "^5.3.3",
+    "vite-plugin-svgr": "^4.2.0",
     "webpack-bundle-analyzer": "^4.10.1"
   },
   "resolutions": {

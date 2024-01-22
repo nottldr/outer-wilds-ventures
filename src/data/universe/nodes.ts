@@ -1,7 +1,7 @@
 import notEmpty from '../../util/not-empty';
 import library from './library';
 import shipLogs, { ShipLog } from './ship-logs';
-import sprites from './sprites';
+import * as sprites from './sprites';
 import { Curiosity, MapNode, MapNodeSize } from './types';
 
 const entries: ShipLog['entries'] = shipLogs.flatMap((shipLog) => {
@@ -58,10 +58,16 @@ const nodes: MapNode[] = entries
       (c): c is MapNode['connections'][number] => c.sourceId != null
     );
 
+    // TODO: The types are a bit yolo, but we can generally (probably) trust it, all things considered
+    const spriteKey = libraryEntry.spritePath.replace(
+      /\.png/,
+      ''
+    ) as keyof typeof sprites;
+
     return {
       id: entry.id,
       name: entry.name,
-      image: sprites[libraryEntry.spritePath.replace(/\.png/, '.jpg')],
+      image: sprites[spriteKey],
       curiosity,
       sizeClass,
       logs: entry.facts.explore.map((f) => f.text),

@@ -40,11 +40,11 @@ const ShowLogCountsCookieName = 'show-log-counts';
 const VisibleLayersCookieName = 'visible-layers';
 
 const cookie2boolean = (s: unknown, defaultValue: boolean): boolean => {
-  if (s === 'true') {
+  if (s === 'true' || s === true) {
     return true;
   }
 
-  if (s === 'false') {
+  if (s === 'false' || s === false) {
     return false;
   }
 

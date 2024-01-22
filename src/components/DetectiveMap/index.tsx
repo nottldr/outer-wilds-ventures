@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as LinkChevron } from '../../assets/images/link_chevron.svg';
+import LinkChevron from '../../assets/images/link_chevron.svg?react';
 import { Connection, Curiosity, MapNode } from '../../data/universe/types';
 import { MapLayer } from '../../util/map-layer';
 import BoundingBox from '../../util/bounding-box';
@@ -152,15 +152,12 @@ const DetectiveMap: React.FC<Props> = ({
 }) => {
   const [sizes, setSizes] = React.useState<Record<MapNode['id'], Size>>({});
 
-  const onCardResize = React.useCallback(
-    (id: MapNode['id'], size: Size) => {
-      setSizes({
-        ...sizes,
-        [id]: size,
-      });
-    },
-    [sizes]
-  );
+  const onCardResize = React.useCallback((id: MapNode['id'], size: Size) => {
+    setSizes((prev) => ({
+      ...prev,
+      [id]: size,
+    }));
+  }, []);
 
   const mappableNodes = React.useMemo(() => {
     return unsortedNodes
@@ -391,7 +388,7 @@ const DetectiveMap: React.FC<Props> = ({
               height={frame.originalSize.height}
             >
               <div
-                // @ts-ignore
+                // @ts-expect-error: we're in an svg, but HTML divs don't use this. idk.
                 xmlns="http://www.w3.org/1999/xhtml"
               >
                 <Card

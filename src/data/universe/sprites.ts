@@ -3,105 +3,101 @@
 // cd ./src/data/assets/sprites
 // magick mogrify -resize 200x200 -quality 80 -format jpg -path ./jpg *.png
 // cd ./src/data/assets/sprites/jpg
-// ls -p | grep -v / | sed -E 's/(.*)/"\1": require("..\/assets\/sprites\/jpg\/\1"),/' | pbcopy
+// /bin/ls -p | grep -v / | sed -E 's/(.*).jpg/export { default as \1 } from "..\/assets\/sprites\/jpg\/\1.jpg"/' | pbcopy
 
-const sprites = {
-  'BH_BLACK_HOLE_FORGE.jpg': require('../assets/sprites/jpg/BH_BLACK_HOLE_FORGE.jpg'),
-  'BH_ESCAPE_POD.jpg': require('../assets/sprites/jpg/BH_ESCAPE_POD.jpg'),
-  'BH_GRAVITY_CANNON.jpg': require('../assets/sprites/jpg/BH_GRAVITY_CANNON.jpg'),
-  'BH_HANGING_CITY.jpg': require('../assets/sprites/jpg/BH_HANGING_CITY.jpg'),
-  'BH_MURAL_1.jpg': require('../assets/sprites/jpg/BH_MURAL_1.jpg'),
-  'BH_MURAL_2.jpg': require('../assets/sprites/jpg/BH_MURAL_2.jpg'),
-  'BH_MURAL_3.jpg': require('../assets/sprites/jpg/BH_MURAL_3.jpg'),
-  'BH_OBSERVATORY.jpg': require('../assets/sprites/jpg/BH_OBSERVATORY.jpg'),
-  'BH_OLD_SETTLEMENT.jpg': require('../assets/sprites/jpg/BH_OLD_SETTLEMENT.jpg'),
-  'BH_QUANTUM_RESEARCH_TOWER.jpg': require('../assets/sprites/jpg/BH_QUANTUM_RESEARCH_TOWER.jpg'),
-  'BH_QUANTUM_SHARD.jpg': require('../assets/sprites/jpg/BH_QUANTUM_SHARD.jpg'),
-  'BH_RIEBECK.jpg': require('../assets/sprites/jpg/BH_RIEBECK.jpg'),
-  'BH_TORNADO_SIMULATION.jpg': require('../assets/sprites/jpg/BH_TORNADO_SIMULATION.jpg'),
-  'BH_WARP_ALIGNMENT_MAP.jpg': require('../assets/sprites/jpg/BH_WARP_ALIGNMENT_MAP.jpg'),
-  'BH_WARP_RECEIVER.jpg': require('../assets/sprites/jpg/BH_WARP_RECEIVER.jpg'),
-  'COMET_INTERIOR.jpg': require('../assets/sprites/jpg/COMET_INTERIOR.jpg'),
-  'COMET_SHUTTLE.jpg': require('../assets/sprites/jpg/COMET_SHUTTLE.jpg'),
-  'COMET_SHUTTLE_ALT.jpg': require('../assets/sprites/jpg/COMET_SHUTTLE_ALT.jpg'),
-  'CT_ANGLERFISH_FOSSIL.jpg': require('../assets/sprites/jpg/CT_ANGLERFISH_FOSSIL.jpg'),
-  'CT_CHERTS_CAMP.jpg': require('../assets/sprites/jpg/CT_CHERTS_CAMP.jpg'),
-  'CT_ESCAPE_POD.jpg': require('../assets/sprites/jpg/CT_ESCAPE_POD.jpg'),
-  'CT_GRAVITY_CANNON.jpg': require('../assets/sprites/jpg/CT_GRAVITY_CANNON.jpg'),
-  'CT_HIGH_ENERGY_LAB.jpg': require('../assets/sprites/jpg/CT_HIGH_ENERGY_LAB.jpg'),
-  'CT_LAKEBED_CAVERN.jpg': require('../assets/sprites/jpg/CT_LAKEBED_CAVERN.jpg'),
-  'CT_QUANTUM_CAVES.jpg': require('../assets/sprites/jpg/CT_QUANTUM_CAVES.jpg'),
-  'CT_QUANTUM_MOON_LOCATOR.jpg': require('../assets/sprites/jpg/CT_QUANTUM_MOON_LOCATOR.jpg'),
-  'CT_SUNLESS_CITY.jpg': require('../assets/sprites/jpg/CT_SUNLESS_CITY.jpg'),
-  'CT_WARP_TOWER_MAP.jpg': require('../assets/sprites/jpg/CT_WARP_TOWER_MAP.jpg'),
-  'DB_ESCAPE_POD.jpg': require('../assets/sprites/jpg/DB_ESCAPE_POD.jpg'),
-  'DB_FELDSPAR.jpg': require('../assets/sprites/jpg/DB_FELDSPAR.jpg'),
-  'DB_FROZEN_JELLYFISH.jpg': require('../assets/sprites/jpg/DB_FROZEN_JELLYFISH.jpg'),
-  'DB_NOMAI_GRAVE.jpg': require('../assets/sprites/jpg/DB_NOMAI_GRAVE.jpg'),
-  'DB_VESSEL.jpg': require('../assets/sprites/jpg/DB_VESSEL.jpg'),
-  'DEFAULT_PHOTO.jpg': require('../assets/sprites/jpg/DEFAULT_PHOTO.jpg'),
-  'GD_BRAMBLE_ISLAND.jpg': require('../assets/sprites/jpg/GD_BRAMBLE_ISLAND.jpg'),
-  'GD_CONSTRUCTION_YARD.jpg': require('../assets/sprites/jpg/GD_CONSTRUCTION_YARD.jpg'),
-  'GD_GABBRO_ISLAND.jpg': require('../assets/sprites/jpg/GD_GABBRO_ISLAND.jpg'),
-  'GD_OCEAN.jpg': require('../assets/sprites/jpg/GD_OCEAN.jpg'),
-  'GD_QUANTUM_TOWER.jpg': require('../assets/sprites/jpg/GD_QUANTUM_TOWER.jpg'),
-  'GD_STATUE_ISLAND.jpg': require('../assets/sprites/jpg/GD_STATUE_ISLAND.jpg'),
-  'GD_STATUE_WORKSHOP.jpg': require('../assets/sprites/jpg/GD_STATUE_WORKSHOP.jpg'),
-  'IP_DREAM_LAKE.jpg': require('../assets/sprites/jpg/IP_DREAM_LAKE.jpg'),
-  'IP_DREAM_LAKE_ALT.jpg': require('../assets/sprites/jpg/IP_DREAM_LAKE_ALT.jpg'),
-  'IP_DREAM_LAKE_ALT_OPEN.jpg': require('../assets/sprites/jpg/IP_DREAM_LAKE_ALT_OPEN.jpg'),
-  'IP_DREAM_LIBRARY_1.jpg': require('../assets/sprites/jpg/IP_DREAM_LIBRARY_1.jpg'),
-  'IP_DREAM_LIBRARY_2.jpg': require('../assets/sprites/jpg/IP_DREAM_LIBRARY_2.jpg'),
-  'IP_DREAM_LIBRARY_3.jpg': require('../assets/sprites/jpg/IP_DREAM_LIBRARY_3.jpg'),
-  'IP_DREAM_ZONE_1.jpg': require('../assets/sprites/jpg/IP_DREAM_ZONE_1.jpg'),
-  'IP_DREAM_ZONE_2.jpg': require('../assets/sprites/jpg/IP_DREAM_ZONE_2.jpg'),
-  'IP_DREAM_ZONE_3.jpg': require('../assets/sprites/jpg/IP_DREAM_ZONE_3.jpg'),
-  'IP_MAP_PROJECTION_1.jpg': require('../assets/sprites/jpg/IP_MAP_PROJECTION_1.jpg'),
-  'IP_MAP_PROJECTION_2.jpg': require('../assets/sprites/jpg/IP_MAP_PROJECTION_2.jpg'),
-  'IP_MAP_PROJECTION_3.jpg': require('../assets/sprites/jpg/IP_MAP_PROJECTION_3.jpg'),
-  'IP_PRISON.jpg': require('../assets/sprites/jpg/IP_PRISON.jpg'),
-  'IP_RING_WORLD.jpg': require('../assets/sprites/jpg/IP_RING_WORLD.jpg'),
-  'IP_SARCOPHAGUS.jpg': require('../assets/sprites/jpg/IP_SARCOPHAGUS.jpg'),
-  'IP_ZONE_1.jpg': require('../assets/sprites/jpg/IP_ZONE_1.jpg'),
-  'IP_ZONE_1_SECRET.jpg': require('../assets/sprites/jpg/IP_ZONE_1_SECRET.jpg'),
-  'IP_ZONE_1_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_1_STORY.jpg'),
-  'IP_ZONE_2.jpg': require('../assets/sprites/jpg/IP_ZONE_2.jpg'),
-  'IP_ZONE_2_CODE.jpg': require('../assets/sprites/jpg/IP_ZONE_2_CODE.jpg'),
-  'IP_ZONE_2_CODE_ROOM.jpg': require('../assets/sprites/jpg/IP_ZONE_2_CODE_ROOM.jpg'),
-  'IP_ZONE_2_LIGHTHOUSE.jpg': require('../assets/sprites/jpg/IP_ZONE_2_LIGHTHOUSE.jpg'),
-  'IP_ZONE_2_SECRET.jpg': require('../assets/sprites/jpg/IP_ZONE_2_SECRET.jpg'),
-  'IP_ZONE_2_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_2_STORY.jpg'),
-  'IP_ZONE_3.jpg': require('../assets/sprites/jpg/IP_ZONE_3.jpg'),
-  'IP_ZONE_3_ENTRANCE.jpg': require('../assets/sprites/jpg/IP_ZONE_3_ENTRANCE.jpg'),
-  'IP_ZONE_3_LAB.jpg': require('../assets/sprites/jpg/IP_ZONE_3_LAB.jpg'),
-  'IP_ZONE_3_SECRET.jpg': require('../assets/sprites/jpg/IP_ZONE_3_SECRET.jpg'),
-  'IP_ZONE_3_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_3_STORY.jpg'),
-  'IP_ZONE_4.jpg': require('../assets/sprites/jpg/IP_ZONE_4.jpg'),
-  'IP_ZONE_4_STORY.jpg': require('../assets/sprites/jpg/IP_ZONE_4_STORY.jpg'),
-  'OPC_BROKEN_MODULE.jpg': require('../assets/sprites/jpg/OPC_BROKEN_MODULE.jpg'),
-  'OPC_EYE_COORDINATES.jpg': require('../assets/sprites/jpg/OPC_EYE_COORDINATES.jpg'),
-  'OPC_INTACT_MODULE.jpg': require('../assets/sprites/jpg/OPC_INTACT_MODULE.jpg'),
-  'OPC_SUNKEN_MODULE.jpg': require('../assets/sprites/jpg/OPC_SUNKEN_MODULE.jpg'),
-  'ORBITAL_PROBE_CANNON.jpg': require('../assets/sprites/jpg/ORBITAL_PROBE_CANNON.jpg'),
-  'QM_SHRINE.jpg': require('../assets/sprites/jpg/QM_SHRINE.jpg'),
-  'QM_SHUTTLE.jpg': require('../assets/sprites/jpg/QM_SHUTTLE.jpg'),
-  'QM_SHUTTLE_ALT.jpg': require('../assets/sprites/jpg/QM_SHUTTLE_ALT.jpg'),
-  'QM_SIXTH_LOCATION.jpg': require('../assets/sprites/jpg/QM_SIXTH_LOCATION.jpg'),
-  'QUANTUM_MOON.jpg': require('../assets/sprites/jpg/QUANTUM_MOON.jpg'),
-  'S_SUNSTATION.jpg': require('../assets/sprites/jpg/S_SUNSTATION.jpg'),
-  'TH_IMPACT_CRATER.jpg': require('../assets/sprites/jpg/TH_IMPACT_CRATER.jpg'),
-  'TH_NOMAI_MINE.jpg': require('../assets/sprites/jpg/TH_NOMAI_MINE.jpg'),
-  'TH_QUANTUM_SHARD.jpg': require('../assets/sprites/jpg/TH_QUANTUM_SHARD.jpg'),
-  'TH_RADIO_TOWER.jpg': require('../assets/sprites/jpg/TH_RADIO_TOWER.jpg'),
-  'TH_VILLAGE.jpg': require('../assets/sprites/jpg/TH_VILLAGE.jpg'),
-  'TH_ZERO_G_CAVE.jpg': require('../assets/sprites/jpg/TH_ZERO_G_CAVE.jpg'),
-  'TM_ESKER.jpg': require('../assets/sprites/jpg/TM_ESKER.jpg'),
-  'TM_EYE_LOCATOR.jpg': require('../assets/sprites/jpg/TM_EYE_LOCATOR.jpg'),
-  'TM_NORTH_POLE.jpg': require('../assets/sprites/jpg/TM_NORTH_POLE.jpg'),
-  'TT_TIME_LOOP_DEVICE.jpg': require('../assets/sprites/jpg/TT_TIME_LOOP_DEVICE.jpg'),
-  'TT_WARP_TOWERS.jpg': require('../assets/sprites/jpg/TT_WARP_TOWERS.jpg'),
-  'VM_VOLCANO.jpg': require('../assets/sprites/jpg/VM_VOLCANO.jpg'),
-  'WHITE_HOLE_STATION.jpg': require('../assets/sprites/jpg/WHITE_HOLE_STATION.jpg'),
-};
-
-export default sprites as Record<string, string>;
+export { default as BH_BLACK_HOLE_FORGE } from '../assets/sprites/jpg/BH_BLACK_HOLE_FORGE.jpg';
+export { default as BH_ESCAPE_POD } from '../assets/sprites/jpg/BH_ESCAPE_POD.jpg';
+export { default as BH_GRAVITY_CANNON } from '../assets/sprites/jpg/BH_GRAVITY_CANNON.jpg';
+export { default as BH_HANGING_CITY } from '../assets/sprites/jpg/BH_HANGING_CITY.jpg';
+export { default as BH_MURAL_1 } from '../assets/sprites/jpg/BH_MURAL_1.jpg';
+export { default as BH_MURAL_2 } from '../assets/sprites/jpg/BH_MURAL_2.jpg';
+export { default as BH_MURAL_3 } from '../assets/sprites/jpg/BH_MURAL_3.jpg';
+export { default as BH_OBSERVATORY } from '../assets/sprites/jpg/BH_OBSERVATORY.jpg';
+export { default as BH_OLD_SETTLEMENT } from '../assets/sprites/jpg/BH_OLD_SETTLEMENT.jpg';
+export { default as BH_QUANTUM_RESEARCH_TOWER } from '../assets/sprites/jpg/BH_QUANTUM_RESEARCH_TOWER.jpg';
+export { default as BH_QUANTUM_SHARD } from '../assets/sprites/jpg/BH_QUANTUM_SHARD.jpg';
+export { default as BH_RIEBECK } from '../assets/sprites/jpg/BH_RIEBECK.jpg';
+export { default as BH_TORNADO_SIMULATION } from '../assets/sprites/jpg/BH_TORNADO_SIMULATION.jpg';
+export { default as BH_WARP_ALIGNMENT_MAP } from '../assets/sprites/jpg/BH_WARP_ALIGNMENT_MAP.jpg';
+export { default as BH_WARP_RECEIVER } from '../assets/sprites/jpg/BH_WARP_RECEIVER.jpg';
+export { default as COMET_INTERIOR } from '../assets/sprites/jpg/COMET_INTERIOR.jpg';
+export { default as COMET_SHUTTLE } from '../assets/sprites/jpg/COMET_SHUTTLE.jpg';
+export { default as COMET_SHUTTLE_ALT } from '../assets/sprites/jpg/COMET_SHUTTLE_ALT.jpg';
+export { default as CT_ANGLERFISH_FOSSIL } from '../assets/sprites/jpg/CT_ANGLERFISH_FOSSIL.jpg';
+export { default as CT_CHERTS_CAMP } from '../assets/sprites/jpg/CT_CHERTS_CAMP.jpg';
+export { default as CT_ESCAPE_POD } from '../assets/sprites/jpg/CT_ESCAPE_POD.jpg';
+export { default as CT_GRAVITY_CANNON } from '../assets/sprites/jpg/CT_GRAVITY_CANNON.jpg';
+export { default as CT_HIGH_ENERGY_LAB } from '../assets/sprites/jpg/CT_HIGH_ENERGY_LAB.jpg';
+export { default as CT_LAKEBED_CAVERN } from '../assets/sprites/jpg/CT_LAKEBED_CAVERN.jpg';
+export { default as CT_QUANTUM_CAVES } from '../assets/sprites/jpg/CT_QUANTUM_CAVES.jpg';
+export { default as CT_QUANTUM_MOON_LOCATOR } from '../assets/sprites/jpg/CT_QUANTUM_MOON_LOCATOR.jpg';
+export { default as CT_SUNLESS_CITY } from '../assets/sprites/jpg/CT_SUNLESS_CITY.jpg';
+export { default as CT_WARP_TOWER_MAP } from '../assets/sprites/jpg/CT_WARP_TOWER_MAP.jpg';
+export { default as DB_ESCAPE_POD } from '../assets/sprites/jpg/DB_ESCAPE_POD.jpg';
+export { default as DB_FELDSPAR } from '../assets/sprites/jpg/DB_FELDSPAR.jpg';
+export { default as DB_FROZEN_JELLYFISH } from '../assets/sprites/jpg/DB_FROZEN_JELLYFISH.jpg';
+export { default as DB_NOMAI_GRAVE } from '../assets/sprites/jpg/DB_NOMAI_GRAVE.jpg';
+export { default as DB_VESSEL } from '../assets/sprites/jpg/DB_VESSEL.jpg';
+export { default as DEFAULT_PHOTO } from '../assets/sprites/jpg/DEFAULT_PHOTO.jpg';
+export { default as GD_BRAMBLE_ISLAND } from '../assets/sprites/jpg/GD_BRAMBLE_ISLAND.jpg';
+export { default as GD_CONSTRUCTION_YARD } from '../assets/sprites/jpg/GD_CONSTRUCTION_YARD.jpg';
+export { default as GD_GABBRO_ISLAND } from '../assets/sprites/jpg/GD_GABBRO_ISLAND.jpg';
+export { default as GD_OCEAN } from '../assets/sprites/jpg/GD_OCEAN.jpg';
+export { default as GD_QUANTUM_TOWER } from '../assets/sprites/jpg/GD_QUANTUM_TOWER.jpg';
+export { default as GD_STATUE_ISLAND } from '../assets/sprites/jpg/GD_STATUE_ISLAND.jpg';
+export { default as GD_STATUE_WORKSHOP } from '../assets/sprites/jpg/GD_STATUE_WORKSHOP.jpg';
+export { default as IP_DREAM_LAKE } from '../assets/sprites/jpg/IP_DREAM_LAKE.jpg';
+export { default as IP_DREAM_LAKE_ALT } from '../assets/sprites/jpg/IP_DREAM_LAKE_ALT.jpg';
+export { default as IP_DREAM_LAKE_ALT_OPEN } from '../assets/sprites/jpg/IP_DREAM_LAKE_ALT_OPEN.jpg';
+export { default as IP_DREAM_LIBRARY_1 } from '../assets/sprites/jpg/IP_DREAM_LIBRARY_1.jpg';
+export { default as IP_DREAM_LIBRARY_2 } from '../assets/sprites/jpg/IP_DREAM_LIBRARY_2.jpg';
+export { default as IP_DREAM_LIBRARY_3 } from '../assets/sprites/jpg/IP_DREAM_LIBRARY_3.jpg';
+export { default as IP_DREAM_ZONE_1 } from '../assets/sprites/jpg/IP_DREAM_ZONE_1.jpg';
+export { default as IP_DREAM_ZONE_2 } from '../assets/sprites/jpg/IP_DREAM_ZONE_2.jpg';
+export { default as IP_DREAM_ZONE_3 } from '../assets/sprites/jpg/IP_DREAM_ZONE_3.jpg';
+export { default as IP_MAP_PROJECTION_1 } from '../assets/sprites/jpg/IP_MAP_PROJECTION_1.jpg';
+export { default as IP_MAP_PROJECTION_2 } from '../assets/sprites/jpg/IP_MAP_PROJECTION_2.jpg';
+export { default as IP_MAP_PROJECTION_3 } from '../assets/sprites/jpg/IP_MAP_PROJECTION_3.jpg';
+export { default as IP_PRISON } from '../assets/sprites/jpg/IP_PRISON.jpg';
+export { default as IP_RING_WORLD } from '../assets/sprites/jpg/IP_RING_WORLD.jpg';
+export { default as IP_SARCOPHAGUS } from '../assets/sprites/jpg/IP_SARCOPHAGUS.jpg';
+export { default as IP_ZONE_1 } from '../assets/sprites/jpg/IP_ZONE_1.jpg';
+export { default as IP_ZONE_1_SECRET } from '../assets/sprites/jpg/IP_ZONE_1_SECRET.jpg';
+export { default as IP_ZONE_1_STORY } from '../assets/sprites/jpg/IP_ZONE_1_STORY.jpg';
+export { default as IP_ZONE_2 } from '../assets/sprites/jpg/IP_ZONE_2.jpg';
+export { default as IP_ZONE_2_CODE } from '../assets/sprites/jpg/IP_ZONE_2_CODE.jpg';
+export { default as IP_ZONE_2_CODE_ROOM } from '../assets/sprites/jpg/IP_ZONE_2_CODE_ROOM.jpg';
+export { default as IP_ZONE_2_LIGHTHOUSE } from '../assets/sprites/jpg/IP_ZONE_2_LIGHTHOUSE.jpg';
+export { default as IP_ZONE_2_SECRET } from '../assets/sprites/jpg/IP_ZONE_2_SECRET.jpg';
+export { default as IP_ZONE_2_STORY } from '../assets/sprites/jpg/IP_ZONE_2_STORY.jpg';
+export { default as IP_ZONE_3 } from '../assets/sprites/jpg/IP_ZONE_3.jpg';
+export { default as IP_ZONE_3_ENTRANCE } from '../assets/sprites/jpg/IP_ZONE_3_ENTRANCE.jpg';
+export { default as IP_ZONE_3_LAB } from '../assets/sprites/jpg/IP_ZONE_3_LAB.jpg';
+export { default as IP_ZONE_3_SECRET } from '../assets/sprites/jpg/IP_ZONE_3_SECRET.jpg';
+export { default as IP_ZONE_3_STORY } from '../assets/sprites/jpg/IP_ZONE_3_STORY.jpg';
+export { default as IP_ZONE_4 } from '../assets/sprites/jpg/IP_ZONE_4.jpg';
+export { default as IP_ZONE_4_STORY } from '../assets/sprites/jpg/IP_ZONE_4_STORY.jpg';
+export { default as OPC_BROKEN_MODULE } from '../assets/sprites/jpg/OPC_BROKEN_MODULE.jpg';
+export { default as OPC_EYE_COORDINATES } from '../assets/sprites/jpg/OPC_EYE_COORDINATES.jpg';
+export { default as OPC_INTACT_MODULE } from '../assets/sprites/jpg/OPC_INTACT_MODULE.jpg';
+export { default as OPC_SUNKEN_MODULE } from '../assets/sprites/jpg/OPC_SUNKEN_MODULE.jpg';
+export { default as ORBITAL_PROBE_CANNON } from '../assets/sprites/jpg/ORBITAL_PROBE_CANNON.jpg';
+export { default as QM_SHRINE } from '../assets/sprites/jpg/QM_SHRINE.jpg';
+export { default as QM_SHUTTLE } from '../assets/sprites/jpg/QM_SHUTTLE.jpg';
+export { default as QM_SHUTTLE_ALT } from '../assets/sprites/jpg/QM_SHUTTLE_ALT.jpg';
+export { default as QM_SIXTH_LOCATION } from '../assets/sprites/jpg/QM_SIXTH_LOCATION.jpg';
+export { default as QUANTUM_MOON } from '../assets/sprites/jpg/QUANTUM_MOON.jpg';
+export { default as S_SUNSTATION } from '../assets/sprites/jpg/S_SUNSTATION.jpg';
+export { default as TH_IMPACT_CRATER } from '../assets/sprites/jpg/TH_IMPACT_CRATER.jpg';
+export { default as TH_NOMAI_MINE } from '../assets/sprites/jpg/TH_NOMAI_MINE.jpg';
+export { default as TH_QUANTUM_SHARD } from '../assets/sprites/jpg/TH_QUANTUM_SHARD.jpg';
+export { default as TH_RADIO_TOWER } from '../assets/sprites/jpg/TH_RADIO_TOWER.jpg';
+export { default as TH_VILLAGE } from '../assets/sprites/jpg/TH_VILLAGE.jpg';
+export { default as TH_ZERO_G_CAVE } from '../assets/sprites/jpg/TH_ZERO_G_CAVE.jpg';
+export { default as TM_ESKER } from '../assets/sprites/jpg/TM_ESKER.jpg';
+export { default as TM_EYE_LOCATOR } from '../assets/sprites/jpg/TM_EYE_LOCATOR.jpg';
+export { default as TM_NORTH_POLE } from '../assets/sprites/jpg/TM_NORTH_POLE.jpg';
+export { default as TT_TIME_LOOP_DEVICE } from '../assets/sprites/jpg/TT_TIME_LOOP_DEVICE.jpg';
+export { default as TT_WARP_TOWERS } from '../assets/sprites/jpg/TT_WARP_TOWERS.jpg';
+export { default as VM_VOLCANO } from '../assets/sprites/jpg/VM_VOLCANO.jpg';
+export { default as WHITE_HOLE_STATION } from '../assets/sprites/jpg/WHITE_HOLE_STATION.jpg';
