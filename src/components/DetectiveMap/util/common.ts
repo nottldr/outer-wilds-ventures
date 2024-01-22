@@ -9,8 +9,8 @@ export type ValueV3 = Value & {
 export const ACTION_ZOOM = 'zoom';
 
 export function getSVGPoint(value: Value, viewerX: number, viewerY: number) {
-  let matrix = fromObject(value);
+  const matrix = fromObject(value);
 
-  let inverseMatrix = inverse(matrix);
+  const inverseMatrix = inverse(matrix);
   return applyToPoint(inverseMatrix, { x: viewerX, y: viewerY });
 }

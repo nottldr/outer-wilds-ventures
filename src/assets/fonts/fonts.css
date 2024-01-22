@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Space Mono';
-  src: url('SpaceMono-Regular.woff2') format('woff2'),
+  src:
+    url('SpaceMono-Regular.woff2') format('woff2'),
     url('SpaceMono-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -9,7 +10,8 @@
 
 @font-face {
   font-family: 'ITC Serif Gothic Std';
-  src: url('SerifGothicStd-ExtraBold.woff2') format('woff2'),
+  src:
+    url('SerifGothicStd-ExtraBold.woff2') format('woff2'),
     url('SerifGothicStd-ExtraBold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
@@ -18,7 +20,8 @@
 
 @font-face {
   font-family: 'Flow Block';
-  src: url('Flow-Block.woff2') format('woff2'),
+  src:
+    url('Flow-Block.woff2') format('woff2'),
     url('Flow-Block.woff') format('woff');
   font-weight: bold;
   font-style: normal;
@@ -27,7 +30,8 @@
 
 @font-face {
   font-family: 'Space Mono';
-  src: url('SpaceMono-Bold.woff2') format('woff2'),
+  src:
+    url('SpaceMono-Bold.woff2') format('woff2'),
     url('SpaceMono-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;

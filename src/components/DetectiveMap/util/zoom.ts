@@ -40,8 +40,8 @@ export function isZoomLevelWithinBounds(value: ValueV3, scaleValue: number) {
 }
 
 export function zoomToScaleOnViewerCenter(value: Value, scaleValue: number) {
-  let { viewerWidth, viewerHeight } = value;
-  let SVGPoint = getSVGPoint(value, viewerWidth / 2, viewerHeight / 2);
+  const { viewerWidth, viewerHeight } = value;
+  const SVGPoint = getSVGPoint(value, viewerWidth / 2, viewerHeight / 2);
   return zoomToScale(value, SVGPoint.x, SVGPoint.y, scaleValue);
 }
 

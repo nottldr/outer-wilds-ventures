@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-env node */
 const theme = require('./src/util/theme');
 
 module.exports = {

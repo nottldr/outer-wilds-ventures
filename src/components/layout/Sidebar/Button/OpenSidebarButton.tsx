@@ -1,8 +1,9 @@
+import { FC } from 'react';
 import SidebarButton from './SidebarButton';
 
 type Props = { toggle: () => void };
 
-const OpenSidebarButton: React.FC<Props> = ({ toggle }) => (
+const OpenSidebarButton: FC<Props> = ({ toggle }) => (
   <SidebarButton toggle={toggle}>
     <path
       fillRule="evenodd"

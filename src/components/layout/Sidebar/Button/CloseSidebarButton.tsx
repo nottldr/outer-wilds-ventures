@@ -1,3 +1,5 @@
+import React from 'react';
+
 import SidebarButton from './SidebarButton';
 
 type Props = { toggle: () => void };

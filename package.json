@@ -10,7 +10,7 @@
     "ci": "yarn ci:types && yarn ci:prettier && yarn ci:lint",
     "ci:types": "tsc --noEmit",
     "ci:prettier": "prettier --check .",
-    "ci:lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "ci:lint": "eslint --ext .cjs,.js,.mjs,.ts,.jsx,.tsx ."
   },
   "browserslist": {
     "production": [
@@ -47,8 +47,13 @@
     "@types/react-dom": "^18.2.18",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-svg-pan-zoom": "^3.3.9",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "postcss-import": "^16.0.0",
     "prettier": "^3.2.4",
     "slugify": "^1.6.6",
