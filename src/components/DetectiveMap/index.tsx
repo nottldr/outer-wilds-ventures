@@ -259,8 +259,8 @@ const DetectiveMap: React.FC<Props> = ({
         return prev;
       },
       [] as {
-        source: typeof mappableNodes[0];
-        destination: typeof mappableNodes[0];
+        source: (typeof mappableNodes)[0];
+        destination: (typeof mappableNodes)[0];
         isReversible: boolean;
       }[]
     );
